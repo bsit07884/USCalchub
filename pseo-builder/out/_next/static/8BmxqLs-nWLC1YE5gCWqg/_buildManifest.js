@@ -3,7 +3,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/26myvgwgkei9h.js"
   ],
   "/salary-calculator": [
-    "static/chunks/3m170ho4y8t08.js"
+    "static/chunks/0vyn3wtctcv4v.js"
   ],
   "/salary-calculator/[state]/[amount]": [
     "static/chunks/1_vx-vuen9qh-.js"
