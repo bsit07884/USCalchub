@@ -3,7 +3,7 @@ const path = require('path');
 
 const baseUrl = 'https://uscalchub.com';
 const rootDir = __dirname;
-const ignoreDirs = ['node_modules', '.git', '.github', 'embed'];
+const ignoreDirs = ['node_modules', '.git', '.github', 'embed', 'pseo-builder'];
 const ignoreFiles = ['404.html'];
 
 // Pages that typically have lower priority
