@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Security Tax Calculator Embed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: transparent;
+            margin: 0;
+            padding: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="../../styles.css">
+    <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
+</head>
+<body>
+    
+    <div class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-sm border border-slate-200 font-sans mt-8 mb-8">
+      <h2 class="text-xl font-bold text-slate-900 mb-4 text-center">Social Security Tax Calculator 2026</h2>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Filing Status</label>
+          <select id="status" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition bg-white">
+            <option value="single">Single / Head of Household</option>
+            <option value="married">Married Filing Jointly</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Annual Social Security Benefits ($)</label>
+          <input 
+            type="number" id="ssBenefits" min="0"
+            class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
+            placeholder="e.g., 20000"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Adjusted Gross Income (Other Income) ($)</label>
+          <input 
+            type="number" id="agi" min="0"
+            class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
+            placeholder="e.g., 15000"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-1">Nontaxable Interest ($)</label>
+          <input 
+            type="number" id="nonTaxInterest" min="0"
+            class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
+            placeholder="e.g., 0"
+          />
+        </div>
+      </div>
+
+      <div class="mt-8 bg-blue-50 p-4 rounded-xl border border-blue-100">
+        <h3 class="text-sm font-bold text-blue-900 uppercase tracking-wider mb-2">Estimated 2026 Results</h3>
+        
+        <div class="flex justify-between items-center py-2 border-b border-blue-200">
+          <span class="text-slate-600 text-sm">Combined Income:</span>
+          <span class="font-semibold text-slate-800" id="combinedIncome">$0.00</span>
+        </div>
+        
+        <div class="flex justify-between items-center py-2 border-b border-blue-200">
+          <span class="text-slate-600 text-sm">Portion of Benefits Taxed:</span>
+          <span class="font-semibold text-slate-800" id="taxPercent">0.0%</span>
+        </div>
+        
+        <div class="flex justify-between items-center py-2 mt-2">
+          <span class="text-slate-600 text-sm font-bold">Taxable Social Security:</span>
+          <span class="font-black text-red-600 text-lg" id="taxableAmount">$0.00</span>
+        </div>
+        
+        <p class="text-xs text-slate-500 mt-2 italic text-center">*This is the amount added to your taxable income, not the exact tax you will pay.</p>
+      </div>
+    </div>
+
+    
+    <script>
+        function calculateSSTax() {
+            const status = document.getElementById('status').value;
+            const ssBenefits = parseFloat(document.getElementById('ssBenefits').value) || 0;
+            const agi = parseFloat(document.getElementById('agi').value) || 0;
+            const nonTaxInterest = parseFloat(document.getElementById('nonTaxInterest').value) || 0;
+            
+            const combinedIncome = agi + nonTaxInterest + (0.5 * ssBenefits);
+            let taxableAmount = 0;
+            
+            if (status === 'single') {
+                if (combinedIncome > 34000) {
+                    const tier1 = Math.min(0.5 * ssBenefits, 0.5 * (34000 - 25000));
+                    const tier2 = 0.85 * (combinedIncome - 34000);
+                    taxableAmount = Math.min(0.85 * ssBenefits, tier1 + tier2);
+                } else if (combinedIncome > 25000) {
+                    taxableAmount = Math.min(0.5 * ssBenefits, 0.5 * (combinedIncome - 25000));
+                }
+            } else {
+                // married
+                if (combinedIncome > 44000) {
+                    const tier1 = Math.min(0.5 * ssBenefits, 0.5 * (44000 - 32000));
+                    const tier2 = 0.85 * (combinedIncome - 44000);
+                    taxableAmount = Math.min(0.85 * ssBenefits, tier1 + tier2);
+                } else if (combinedIncome > 32000) {
+                    taxableAmount = Math.min(0.5 * ssBenefits, 0.5 * (combinedIncome - 32000));
+                }
+            }
+            
+            document.getElementById('combinedIncome').textContent = '$' + combinedIncome.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('taxableAmount').textContent = '$' + taxableAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            
+            let taxPercent = ssBenefits > 0 ? (taxableAmount / ssBenefits) * 100 : 0;
+            document.getElementById('taxPercent').textContent = taxPercent.toFixed(1) + '%';
+        }
+        
+        document.getElementById('status').addEventListener('change', calculateSSTax);
+        document.getElementById('ssBenefits').addEventListener('input', calculateSSTax);
+        document.getElementById('agi').addEventListener('input', calculateSSTax);
+        document.getElementById('nonTaxInterest').addEventListener('input', calculateSSTax);
+        window.addEventListener('load', calculateSSTax);
+    </script>
+
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-700 text-slate-300 p-4 z-50 transform translate-y-full transition-transform duration-300 hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-center md:text-left">
+                We use cookies to ensure you get the best experience on our website. By continuing to use this site, you consent to our use of cookies in accordance with our 
+                <a href="/privacy-policy/" class="text-blue-400 hover:text-blue-300 underline font-medium">Privacy Policy</a>.
+            </p>
+            <div class="flex gap-3 flex-shrink-0">
+                <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-bold transition">Accept All</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem("cookiesAccepted")) {
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.remove("hidden");
+                // Small delay to allow CSS transition to work after removing hidden
+                setTimeout(() => {
+                    banner.classList.remove("translate-y-full");
+                }, 50);
+            }
+            
+            document.getElementById("accept-cookies")?.addEventListener("click", function() {
+                localStorage.setItem("cookiesAccepted", "true");
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.add("translate-y-full");
+                setTimeout(() => {
+                    banner.classList.add("hidden");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

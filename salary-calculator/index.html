@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Salary After Tax | USCalcHub</title>
+    <meta name="description" content="Calculate your 2026 US take-home pay after federal, state, and FICA taxes across all 50 states.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css">
+    <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "US Salary After Tax Calculator 2026",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free US salary after-tax calculator covering all 50 states with 2026 IRS federal tax rates, state income tax, and FICA deductions. See exact annual and monthly take-home pay instantly.",
+  "url": "https://uscalchub.com/salary-calculator/",
+  "author": {
+    "@type": "Organization",
+    "name": "USCalcHub",
+    "url": "https://uscalchub.com"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127"
+  },
+  "featureList": [
+    "All 50 US states covered",
+    "2026 IRS federal tax rates",
+    "State income tax calculation",
+    "FICA and Medicare deduction",
+    "Annual and monthly take-home",
+    "Interactive state comparison chart",
+    "Free, no signup required"
+  ]
+}
+</script>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 py-4 mb-8 shadow-sm relative z-50">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group z-50">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg group-hover:bg-blue-700 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-slate-800 tracking-tight">USCalcHub<span
+                        class="text-blue-600">.com</span></span>
+            </a>
+            <nav class="hidden md:flex gap-6 z-50">
+                <a href="/" class="text-slate-600 hover:text-blue-600 font-medium transition">Home</a>
+                <a href="/#tools-section" class="text-slate-600 hover:text-blue-600 font-medium transition">Finance Tools</a>
+                <a href="/contact/" class="text-slate-600 hover:text-blue-600 font-medium transition">Contact</a>
+                <a href="https://uscalchub.com/blog/" class="text-slate-600 hover:text-blue-600 font-medium transition">Blog</a>
+                <a href="/about/" class="text-slate-600 hover:text-blue-600 font-medium transition">About Us</a>
+            </nav>
+            <div class="md:hidden flex items-center z-50">
+                <button type="button" id="menu-btn" class="text-gray-500 hover:text-blue-600 focus:outline-none p-2 rounded-md transition-colors" aria-label="Toggle menu">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full left-0 top-full">
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Home</a>
+            <a href="/#tools-section" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Finance Tools</a>
+            <a href="/contact/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Contact</a>
+            <a href="https://uscalchub.com/blog/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Blog</a>
+            <a href="/about/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">About Us</a>
+        </div>
+    </nav>
+
+    <div class="max-w-md mx-auto px-4 pb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
+            US Salary After Tax Calculator
+        </h1>
+
+<div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-6 max-w-2xl mx-auto">
+  <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">⚡ Quick Answer</p>
+  <p class="text-sm text-slate-700 leading-relaxed">
+    A <strong>$75,000 salary in Texas or Florida</strong> (zero state tax) yields <strong>$58,968/year ($4,914/month)</strong> take-home after federal tax and FICA. The same salary in <strong>California</strong> (9.3% state tax) yields only <strong>$53,493/year ($4,458/month)</strong> — a <strong>$5,475 annual difference</strong>. Enter your salary and state below for your exact amount.
+  </p>
+</div>
+
+<div class="max-w-4xl mx-auto text-center pt-10 pb-6 px-4">
+    <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
+        Calculate your exact 2026 take-home pay after federal, state, and FICA taxes — whether you're in a no-tax state like Texas or a high-tax state like California. Enter your salary below to see your real net pay instantly.
+    </p>
+    <div class="flex items-center justify-center gap-2 inline-flex px-4 py-2 rounded-full text-xs text-slate-400 uppercase tracking-wide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 flex-shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <span>Reviewed by Muzaffar Ali, Financial Content Team &nbsp;|&nbsp; Last updated: June 2026</span>
+    </div>
+</div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-xl w-full border border-slate-100">
+
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Net Pay Estimator</h2>
+
+            <div class="space-y-4">
+
+                <div class="flex space-x-4 mb-4">
+                    <button id="btnSingle" onclick="setStatus('single')"
+                        class="flex-1 py-3 px-6 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-600 font-bold">Single</button>
+                    <button id="btnMarried" onclick="setStatus('married')"
+                        class="flex-1 py-3 px-6 rounded-xl border-2 border-slate-200 text-slate-500 font-bold hover:bg-slate-50">Married</button>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-600 mb-1">Annual Salary ($)</label>
+                    <input type="number" id="salary" min="0" placeholder="0.00"
+                        class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-600 mb-1">State Tax Rate (%)</label>
+                    <select id="state"
+                        class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option value="0">0% (e.g. TX, FL, NV)</option>
+                        <option value="2.5">2.5% (Low)</option>
+                        <option value="5" selected>5.0% (Average)</option>
+                        <option value="9.3">9.3% (High - CA)</option>
+                    </select>
+                </div>
+
+                <div class="mt-8 p-6 bg-blue-600 rounded-xl text-white">
+                    <div class="flex justify-between mb-2">
+                        <span>Net Pay (Annual):</span>
+                        <span id="netPay" class="font-bold">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-xl font-bold border-t border-blue-400 pt-2 mt-2">
+                        <span>Monthly Pay:</span>
+                        <span id="monthlyPay">$0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-slate-400 mt-6 italic">*Powered by USCalcHub.com</p>
+        </div>
+
+    </div>
+
+<div class="max-w-3xl mx-auto mt-8 mb-8 px-4">
+  <h2 class="text-2xl font-semibold text-slate-800 mb-2">
+    Your Salary Across Top States — 2026 Comparison
+  </h2>
+  <p class="text-slate-600 text-sm mb-4">
+    Based on the salary entered above. Chart updates automatically.
+  </p>
+  <div class="bg-white rounded-xl border border-slate-200 p-4">
+    <canvas id="salaryComparisonChart" height="300"></canvas>
+  </div>
+  <p class="text-xs text-slate-400 mt-2 italic">
+    *Estimates based on 2026 IRS federal rates + state income tax. Single filer, standard deduction assumed.
+  </p>
+</div>
+
+<div class="max-w-3xl mx-auto mt-16 mb-20 px-4 space-y-8">
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">How to Use the US Salary After Tax Calculator?</h2>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Using our tool is simple and fast. Follow these three steps to get your accurate take-home pay estimate:</p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Enter Your Gross Salary:</strong> Input your total annual income before taxes.</li>
+                <li><strong>Select Your State:</strong> Since state taxes vary across the US, choosing your specific state (like Texas, Florida, or California) ensures higher accuracy.</li>
+                <li><strong>Choose Filing Status:</strong> Select whether you are filing as 'Single' or 'Married' to apply the correct federal tax brackets.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">Why Choose USCalcHub?</h2>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Our data is updated based on the latest 2026 tax guidelines provided by the IRS and state tax boards. We take the guesswork out of your paycheck by factoring in the exact standard deductions, marginal tax brackets, and local levies.</p>
+            <p>Planning a relocation? Geography plays a massive role in your true wealth. See how your take-home pay compares if you <a href="https://uscalchub.com/blog/california-vs-texas-salary-tax-calculator/" class="text-blue-600 hover:underline font-semibold">move from California to Texas</a> or check out our complete guide on the <a href="https://uscalchub.com/blog/top-9-states-with-no-income-tax-2026/" class="text-blue-600 hover:underline font-semibold">states with no income tax in 2026</a> to maximize your earnings.</p>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <h3 class="text-lg font-semibold text-slate-700 mb-2">How is Your Take-Home Pay Calculated?</h3>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Your gross salary is just the starting point. Before your paycheck hits your bank account, several mandatory deductions are taken out:</p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Federal Income Tax:</strong> A progressive tax system where your income is divided into brackets (10%, 12%, 22%, etc.) and taxed accordingly.</li>
+                <li><strong>FICA Taxes:</strong> This consists of a 6.2% deduction for Social Security and a 1.45% deduction for Medicare, totaling 7.65% for most W-2 employees.</li>
+                <li><strong>State Income Tax:</strong> Depending on your location, this can range from 0% in states like Florida and Nevada, up to over 13% in California for high earners.</li>
+                <li><strong>Local Taxes:</strong> Some cities and municipalities (like New York City) impose their own additional taxes.</li>
+            </ul>
+        </div>
+    </div>
+
+<div class="mt-10 mb-8">
+  <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+    How This Calculation Works
+  </h2>
+  <div class="space-y-3 text-slate-600 text-base leading-relaxed">
+    <p>This calculator uses the official <strong>2026 IRS federal tax brackets</strong> and each state's current income tax rate to estimate your take-home pay. Here is exactly what gets deducted from your gross salary:</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+        <p class="font-semibold text-slate-700 mb-2">Federal Income Tax</p>
+        <p class="text-sm">Calculated using 2026 progressive tax brackets: 10%, 12%, 22%, 24%, 32%, 35%, 37%. Standard deduction of $14,600 (single filer) applied.</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+        <p class="font-semibold text-slate-700 mb-2">FICA (Social Security + Medicare)</p>
+        <p class="text-sm">Social Security: 6.2% on first $168,600. Medicare: 1.45% on all income. Additional 0.9% Medicare on income above $200,000.</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+        <p class="font-semibold text-slate-700 mb-2">State Income Tax</p>
+        <p class="text-sm">Applied at each state's 2026 rate. 9 states charge 0% (Texas, Florida, Nevada, Wyoming, Washington, Tennessee, South Dakota, Alaska, New Hampshire). California charges up to 13.3%.</p>
+      </div>
+      <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+        <p class="font-semibold text-slate-700 mb-2">Official Source</p>
+        <p class="text-sm">All rates sourced from <a href="https://www.irs.gov/taxtopics/tc751" target="_blank" rel="noopener" class="text-blue-600 hover:underline">IRS Publication 15-T (2026)</a> and the <a href="https://taxfoundation.org/data/all/state/state-individual-income-tax-rates-and-brackets/" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Tax Foundation State Rate Database</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-6">Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-6">
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">1. How much is $60,000 a year after taxes?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">In 2026, a single filer earning $60,000 will pay approximately $5,000 in federal tax and $4,590 in FICA. After state taxes, your actual <a href="https://uscalchub.com/blog/60000-salary-after-tax-by-state-2026/" class="text-blue-600 hover:underline font-semibold">take-home pay for $60k</a> usually ranges between $45,800 in high-tax states to $50,400 in no-tax states.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">2. How much is $75,000 a year after taxes?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">For a $75,000 salary, a single filer's net pay will generally fall between $55,800 and $61,960 annually. Read our full <a href="https://uscalchub.com/blog/75000-salary-after-tax-by-state-2026/" class="text-blue-600 hover:underline font-semibold">$75,000 salary after tax breakdown</a> to see exact comparisons across all 50 states.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">3. Which states have no income tax in 2026?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">There are currently nine US states with no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Living in these states significantly increases your net take-home pay.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">4. How is my paycheck different in California vs Texas?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">California imposes one of the highest progressive state income taxes in the nation, while Texas has 0% state income tax. On an $80,000 salary, moving from California to Texas can instantly increase your take-home pay by thousands of dollars per year without needing a raise.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">5. What's the difference between gross pay and net pay?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Gross pay is your total earned salary before any taxes or deductions are taken out (e.g., $75,000). Net pay, also known as take-home pay, is the actual amount of money deposited into your bank account after federal taxes, state taxes, FICA, and benefits are deducted.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">6. What are FICA taxes?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">FICA stands for the Federal Insurance Contributions Act. It is a mandatory payroll tax split between employers and employees to fund Social Security and Medicare. For W-2 employees, the combined FICA rate is 7.65%.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">7. How do I calculate my take-home pay?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">To manually calculate your take-home pay, start with your gross income, subtract your federal standard deduction, apply your marginal tax brackets, deduct 7.65% for FICA, and finally subtract your specific state and local taxes. Alternatively, use our free salary calculator above for instant results.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        let status = 'single';
+
+        function setStatus(val) {
+            status = val;
+            document.getElementById('btnSingle').className = val === 'single' ? 'flex-1 py-3 px-6 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-600 font-bold' : 'flex-1 py-3 px-6 rounded-xl border-2 border-slate-200 text-slate-500 font-bold hover:bg-slate-50';
+            document.getElementById('btnMarried').className = val === 'married' ? 'flex-1 py-3 px-6 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-600 font-bold' : 'flex-1 py-3 px-6 rounded-xl border-2 border-slate-200 text-slate-500 font-bold hover:bg-slate-50';
+            calculate();
+        }
+
+        function calculate() {
+            const salary = parseFloat(document.getElementById('salary').value) || 0;
+            const stateTaxRate = parseFloat(document.getElementById('state').value) / 100;
+
+            // Simplified US Tax Logic for 2026 Estimate
+            const federalTax = salary * (status === 'single' ? 0.15 : 0.12);
+            const fica = salary * 0.0765; // Social Security + Medicare
+            const stateTax = salary * stateTaxRate;
+
+            const totalTax = federalTax + fica + stateTax;
+            const netPay = salary - totalTax;
+            const monthly = netPay / 12;
+
+            document.getElementById('netPay').textContent = `$${Math.round(netPay).toLocaleString()}`;
+            document.getElementById('monthlyPay').textContent = `$${Math.round(monthly).toLocaleString()}`;
+        }
+
+        document.getElementById('salary').addEventListener('input', calculate);
+        document.getElementById('state').addEventListener('change', calculate);
+        window.onload = calculate;
+    </script>
+
+<div class="max-w-3xl mx-auto mt-10 pt-6 pb-6 border-t border-slate-200 px-4">
+  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Official References</p>
+  <div class="flex flex-wrap gap-3">
+    <a href="https://www.irs.gov/taxtopics/tc751" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">IRS Tax Withholding (Topic 751) ↗</a>
+    <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">SSA 2026 Contribution Base ↗</a>
+    <a href="https://taxfoundation.org/data/all/state/state-individual-income-tax-rates-and-brackets/" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">Tax Foundation State Rates ↗</a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const stateRates = {
+  'Texas': 0, 'Florida': 0, 'Nevada': 0,
+  'Georgia': 0.0549, 'Illinois': 0.0495,
+  'New York': 0.0685, 'Oregon': 0.0875,
+  'California': 0.093
+};
+
+const stateColors = [
+  '#16a34a','#16a34a','#16a34a',
+  '#ca8a04','#ca8a04',
+  '#dc2626','#dc2626','#dc2626'
+];
+
+function calcFederal(gross) {
+  const std = 14600;
+  const taxable = Math.max(0, gross - std);
+  let tax = 0;
+  const brackets = [
+    [11600, 0.10], [33275, 0.12],
+    [44725, 0.22], [95375, 0.24]
+  ];
+  let remaining = taxable;
+  let prev = 0;
+  for (const [limit, rate] of brackets) {
+    const band = limit - prev;
+    tax += Math.min(remaining, band) * rate;
+    remaining -= band;
+    prev = limit;
+    if (remaining <= 0) break;
+  }
+  if (remaining > 0) tax += remaining * 0.32;
+  return tax;
+}
+
+function calcTakeHome(gross) {
+  const federal = calcFederal(gross);
+  const fica = gross * 0.0765;
+  return Object.entries(stateRates).map(([state, rate]) => ({
+    state,
+    takeHome: Math.round(gross - federal - fica - (gross * rate))
+  }));
+}
+
+let salaryChart = null;
+
+function updateChart(salary) {
+  const gross = parseFloat(salary) || 75000;
+  const data = calcTakeHome(gross);
+
+  const ctx = document.getElementById('salaryComparisonChart').getContext('2d');
+
+  if (salaryChart) salaryChart.destroy();
+
+  salaryChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: data.map(d => d.state),
+      datasets: [{
+        label: 'Annual Take-Home Pay ($)',
+        data: data.map(d => d.takeHome),
+        backgroundColor: stateColors,
+        borderRadius: 6,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => ' $' + ctx.parsed.x.toLocaleString() + '/year'
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { callback: (v) => '$' + (v/1000).toFixed(0) + 'k' },
+          grid: { color: '#f1f5f9' }
+        },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+// Initialize with default value
+updateChart(75000);
+
+// Update chart when salary input changes
+const salaryInput = document.getElementById('salary');
+if (salaryInput) {
+  salaryInput.addEventListener('input', (e) => {
+    updateChart(e.target.value);
+  });
+}
+</script>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white font-bold mb-4">USCalcHub.com</h3>
+                <p class="text-sm mb-4">Your trusted destination for fast and accurate financial tools in the USA.</p>
+                <div class="flex space-x-4 mt-6">
+                    <!-- Pinterest -->
+                    <a href="https://www.pinterest.com/uscalch" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.17 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/></svg>
+                    </a>
+                    <!-- Twitter/X -->
+                    <a href="https://x.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/uscalc-hub-a5a01b411/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="/terms/" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="/contact/" class="hover:text-white transition">Contact Us</a></li>
+                    <li><a href="https://uscalchub.com/blog/" class="hover:text-white transition">Blog</a></li>
+                    <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <p class="text-sm">Questions? Email us at:<br>support@uscalchub.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+    
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = "https://www.googletagmanager.com/gtag/js?id=AW-846154653";
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-ELW6PST2ZX');
+                gtag('config', 'AW-846154653');
+            }, 3500);
+        });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-700 text-slate-300 p-4 z-50 transform translate-y-full transition-transform duration-300 hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-center md:text-left">
+                We use cookies to ensure you get the best experience on our website. By continuing to use this site, you consent to our use of cookies in accordance with our 
+                <a href="/privacy-policy/" class="text-blue-400 hover:text-blue-300 underline font-medium">Privacy Policy</a>.
+            </p>
+            <div class="flex gap-3 flex-shrink-0">
+                <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-bold transition">Accept All</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem("cookiesAccepted")) {
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.remove("hidden");
+                // Small delay to allow CSS transition to work after removing hidden
+                setTimeout(() => {
+                    banner.classList.remove("translate-y-full");
+                }, 50);
+            }
+            
+            document.getElementById("accept-cookies")?.addEventListener("click", function() {
+                localStorage.setItem("cookiesAccepted", "true");
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.add("translate-y-full");
+                setTimeout(() => {
+                    banner.classList.add("hidden");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Commission Calculator | USCalcHub</title>
+    <meta name="description" content="Estimate agent commissions and net proceeds for US property sales instantly.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css">
+    <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Real Estate Commission Calculator 2026",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "description": "Free real estate commission calculator updated for 2026 post-NAR settlement. Enter home sale price and commission rate to see exact agent fees, net proceeds, and savings at negotiated rates.",
+  "url": "https://uscalchub.com/real-estate-calculator/",
+  "author": {"@type": "Organization", "name": "USCalcHub", "url": "https://uscalchub.com"},
+  "featureList": [
+    "2026 post-NAR settlement rates",
+    "Exact agent fee calculation",
+    "Net proceeds display",
+    "Multi-rate comparison table",
+    "Savings calculator at negotiated rates",
+    "Free, instant results"
+  ]
+}
+</script>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 py-4 mb-8 shadow-sm relative z-50">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group z-50">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg group-hover:bg-blue-700 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-slate-800 tracking-tight">USCalcHub<span
+                        class="text-blue-600">.com</span></span>
+            </a>
+            <nav class="hidden md:flex gap-6 z-50">
+                <a href="/" class="text-slate-600 hover:text-blue-600 font-medium transition">Home</a>
+                <a href="/#tools-section" class="text-slate-600 hover:text-blue-600 font-medium transition">Finance Tools</a>
+                <a href="/contact/" class="text-slate-600 hover:text-blue-600 font-medium transition">Contact</a>
+                <a href="https://uscalchub.com/blog/" class="text-slate-600 hover:text-blue-600 font-medium transition">Blog</a>
+                <a href="/about/" class="text-slate-600 hover:text-blue-600 font-medium transition">About Us</a>
+            </nav>
+            <div class="md:hidden flex items-center z-50">
+                <button type="button" id="menu-btn" class="text-gray-500 hover:text-blue-600 focus:outline-none p-2 rounded-md transition-colors" aria-label="Toggle menu">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full left-0 top-full">
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Home</a>
+            <a href="/#tools-section" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Finance Tools</a>
+            <a href="/contact/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Contact</a>
+            <a href="https://uscalchub.com/blog/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Blog</a>
+            <a href="/about/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">About Us</a>
+        </div>
+    </nav>
+
+    <div class="max-w-md mx-auto px-4 pb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
+            Real Estate Commission Calculator
+        </h1>
+
+<div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-6 max-w-2xl mx-auto">
+  <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">⚡ Quick Answer</p>
+  <p class="text-sm text-slate-700 leading-relaxed">
+    The 2026 average US real estate commission is <strong>5.70%</strong> post-NAR settlement. On a <strong>$400,000 home</strong>, that is <strong>$22,800 in agent fees</strong> with <strong>$377,200 net proceeds</strong>. Sellers negotiating <strong>4.0%</strong> save an additional <strong>$6,800</strong>. Enter your home price below.
+  </p>
+</div>
+
+<div class="max-w-4xl mx-auto text-center pt-10 pb-6 px-4">
+    <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
+        Selling your home? Use our free real estate commission calculator to instantly discover the exact dollar amount you will pay your agents. Understand how standard commission rates impact your net proceeds so you can price your property correctly and negotiate better fees.
+    </p>
+    <div class="flex items-center justify-center gap-2 inline-flex px-4 py-2 rounded-full text-xs text-slate-400 uppercase tracking-wide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 flex-shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <span>Reviewed by Muzaffar Ali, Financial Content Team &nbsp;|&nbsp; Last updated: June 2026</span>
+    </div>
+</div>
+
+        <div class="bg-white rounded-3xl shadow-xl p-8 border border-slate-100">
+            <h2 class="text-2xl font-bold text-slate-800 mb-2">Real Estate Commission</h2>
+            <p class="text-slate-500 text-sm mb-8">Calculate agent fees and net proceeds instantly.</p>
+
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Property Sale Price ($)</label>
+                    <input type="number" id="price" value="450000"
+                        class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none font-bold text-lg text-slate-800">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Commission Rate (%)</label>
+                    <div class="flex items-center gap-4">
+                        <input type="range" id="rateRange" min="1" max="10" step="0.5" value="6"
+                            class="flex-1 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                        <span id="rateValue" class="font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-lg">6%</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-2xl p-6 text-white mt-8 shadow-inner">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-slate-400 text-sm">Total Commission:</span>
+                        <span id="totalComm" class="text-2xl font-bold text-blue-400">$0</span>
+                    </div>
+                    <div class="flex justify-between items-center border-t border-slate-700 pt-4">
+                        <span class="text-slate-400 text-sm">You Receive (Net):</span>
+                        <span id="netSale" class="text-2xl font-bold text-green-400">$0</span>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-yellow-50 rounded-xl border border-yellow-100">
+                    <p class="text-xs text-yellow-800 leading-relaxed">
+                        <strong>Note:</strong> Standard commission in the US is typically 5-6%, often split 50/50
+                        between the buyer's and seller's agents.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center text-xs text-slate-400 mt-8 italic">*Verified by USCalcHub</p>
+    </div>
+
+<div class="max-w-3xl mx-auto mt-8 mb-6 px-4">
+  <h2 class="text-2xl font-semibold text-slate-800 mb-3">
+    Commission Rate Comparison — See Your Options
+  </h2>
+  <p class="text-slate-600 text-sm mb-4">
+    Based on your entered home price. Shows exact fees and net proceeds at every common commission rate.
+  </p>
+  <div class="overflow-x-auto rounded-xl border border-slate-200">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr class="bg-slate-800 text-white">
+          <th class="p-3 text-left">Commission Rate</th>
+          <th class="p-3 text-left">Agent Fees</th>
+          <th class="p-3 text-left">Your Net Proceeds</th>
+          <th class="p-3 text-left">vs 6% Savings</th>
+        </tr>
+      </thead>
+      <tbody id="rateComparisonBody">
+        <tr class="border-b border-slate-200 bg-red-50">
+          <td class="p-3 font-medium">6.0% (Old Standard)</td>
+          <td class="p-3 text-red-600">$24,000</td>
+          <td class="p-3">$376,000</td>
+          <td class="p-3 text-slate-400">—</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-white">
+          <td class="p-3 font-medium">5.70% (2026 Average)</td>
+          <td class="p-3">$22,800</td>
+          <td class="p-3">$377,200</td>
+          <td class="p-3 text-green-600">+$1,200</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-white">
+          <td class="p-3 font-medium">5.0%</td>
+          <td class="p-3">$20,000</td>
+          <td class="p-3">$380,000</td>
+          <td class="p-3 text-green-600">+$4,000</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-green-50">
+          <td class="p-3 font-semibold text-green-700">4.0% (Negotiated)</td>
+          <td class="p-3 text-green-700">$16,000</td>
+          <td class="p-3 text-green-700 font-semibold">$384,000</td>
+          <td class="p-3 text-green-700 font-semibold">+$8,000</td>
+        </tr>
+        <tr class="bg-green-50">
+          <td class="p-3 font-semibold text-green-700">3.0% (Discount Broker)</td>
+          <td class="p-3 text-green-700">$12,000</td>
+          <td class="p-3 text-green-700 font-semibold">$388,000</td>
+          <td class="p-3 text-green-700 font-semibold">+$12,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-xs text-slate-400 mt-2 italic">
+    *Example based on $400,000 home price. Your results update based on the price entered above.
+  </p>
+</div>
+
+<div class="max-w-3xl mx-auto mt-6 mb-8 px-4">
+  <h2 class="text-xl font-semibold text-slate-800 mb-3">
+    Net Proceeds by Commission Rate
+  </h2>
+  <div class="bg-white rounded-xl border border-slate-200 p-4">
+    <canvas id="commissionChart" height="260"></canvas>
+  </div>
+</div>
+
+<div class="max-w-3xl mx-auto mt-16 mb-20 px-4 space-y-8">
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">How Real Estate Commissions Work in 2026</h2>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Real estate commissions are typically the single largest expense a homeowner faces when selling a property. Traditionally calculated as a percentage of the final home sale price, this fee is designed to compensate the real estate professionals who market, negotiate, and facilitate the transaction. But how exactly is this fee distributed, and who is responsible for paying it?</p>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <h3 class="text-lg font-semibold text-slate-700 mb-2">Who Pays the Commission: Buyer or Seller?</h3>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Historically, the seller has been responsible for paying the entire real estate commission out of their home's equity. This total fee was usually split down the middle between the seller's listing agent and the buyer's agent. However, recent legal shifts have changed this dynamic. While sellers still primarily pay their own listing agent, they are no longer strictly obligated to cover the buyer's agent fees, opening up new avenues for negotiation.</p>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <h3 class="text-lg font-semibold text-slate-700 mb-2">Are Commission Rates Negotiable?</h3>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Absolutely. There is no federal or state law that sets a standard or mandatory real estate commission rate. Everything is negotiable. Depending on the local housing market conditions, the condition of your home, and the level of service provided by the brokerage, you can often negotiate these rates down to protect your equity. Many discount brokerages even offer 1% to 2% listing fees in exchange for fewer premium marketing services.</p>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <h3 class="text-lg font-semibold text-slate-700 mb-2">Average 2026 Commission Rates</h3>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>While rates vary by city and state, the national average total real estate commission in 2026 hovers around 5.0% to 5.8%. Typically, this is broken down into approximately 2.5% to 3.0% for the listing agent and a similar percentage for the buyer's agent. Understanding these averages gives you a solid baseline when interviewing potential realtors for your property.</p>
+        </div>
+    </div>
+
+    <div class="mt-10 mb-8">
+      <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+        How This Calculation Works
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">Commission Formula</p>
+          <p class="text-sm text-slate-600">Agent Fees = Sale Price × Commission Rate. Net Proceeds = Sale Price − Agent Fees. Note: Additional closing costs (title, escrow, transfer tax) are not included in this calculator.</p>
+        </div>
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">2026 NAR Settlement Impact</p>
+          <p class="text-sm text-slate-600">Since August 2024, buyers and sellers negotiate agent commissions separately. The average total dropped from 6% to 5.70%. Savvy sellers achieve 4.0-4.5% in competitive markets.</p>
+        </div>
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">What Is Not Included</p>
+          <p class="text-sm text-slate-600">Title insurance, escrow fees, transfer taxes, staging costs, and mortgage payoff are not included. Add 1-3% for total closing costs.</p>
+        </div>
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">Official Reference</p>
+          <p class="text-sm text-slate-600"><a href="https://www.nar.realtor/newsroom/nar-reaches-landmark-agreement-that-could-reshape-real-estate" target="_blank" rel="noopener" class="text-blue-600 hover:underline">NAR Settlement Official Announcement ↗</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-6">Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-6">
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">1. How do I calculate my realtor's commission fee manually?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">To calculate the fee manually, multiply the final sale price of your home by the total commission percentage. For example, if you sell a house for $400,000 at a 5% commission rate, you multiply 400,000 by 0.05, resulting in a $20,000 total commission fee.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">2. What percentage do most realtors charge?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Most traditional real estate agents charge a total commission ranging between 5% and 6% of the home's sale price. This total is usually divided between the seller's agent and the buyer's agent, often resulting in a 2.5% to 3% split for each professional.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">3. How much commission do you get on a $300,000 house?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Assuming a standard total commission rate of 6%, the total fee on a $300,000 house would be $18,000. If this is split evenly, both the listing agent's brokerage and the buyer's agent's brokerage would receive $9,000 each.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">4. Is 2% a good commission?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Yes, securing a 2% listing commission is generally considered a good deal for the seller, as it sits below the traditional 2.5% to 3% average. Many modern brokerages and highly competitive agents will accept a 2% rate, allowing the seller to retain more equity.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">5. Does the buyer ever pay real estate commission?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Yes, it is becoming more common. If a seller chooses not to offer a commission to the buyer's agent, the buyer may be responsible for paying their agent directly out of pocket, or they may negotiate for the seller to cover it through closing cost concessions.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">6. What's the difference between listing agent and buyer's agent commission?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">The listing agent's commission pays the professional who markets the home, hosts open houses, and represents the seller's interests. The buyer's agent commission compensates the professional who brings a qualified buyer, shows them the property, and helps them negotiate the purchase offer.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">7. Can I sell my home without paying full commission (FSBO)?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Yes, you can list your home "For Sale By Owner" (FSBO) to avoid paying a listing agent's commission entirely. However, you may still need to offer a competitive commission to a buyer's agent if you want them to show your property to their clients.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">8. How has the 2026 NAR settlement changed real estate commissions?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">The landmark NAR settlement decoupled commissions, meaning offers of compensation to buyer agents are strictly banned from the MLS, giving sellers absolute freedom in what they pay. For a complete breakdown, read our guide on the <a href="https://uscalchub.com/blog/realtor-commission-calculator-2026-nar-settlement/" class="text-blue-600 hover:underline">Realtor Commission Calculator 2026 NAR Settlement</a> rules.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        const priceInput = document.getElementById('price');
+        const rateRange = document.getElementById('rateRange');
+        const rateValue = document.getElementById('rateValue');
+
+        const totalCommDisplay = document.getElementById('totalComm');
+        const netSaleDisplay = document.getElementById('netSale');
+
+        function update() {
+            const price = parseFloat(priceInput.value) || 0;
+            const rate = parseFloat(rateRange.value);
+
+            rateValue.textContent = rate + '%';
+
+            const commission = (price * rate) / 100;
+            const net = price - commission;
+
+            totalCommDisplay.textContent = `$${commission.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+            netSaleDisplay.textContent = `$${net.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+        }
+
+        priceInput.addEventListener('input', update);
+        rateRange.addEventListener('input', update);
+        window.onload = update;
+    </script>
+
+<div class="max-w-3xl mx-auto mt-10 pt-6 pb-6 border-t border-slate-200 px-4">
+  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Official References</p>
+  <div class="flex flex-wrap gap-3">
+    <a href="https://www.nar.realtor/about-nar/governing-documents/settlement-faqs" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">NAR Settlement FAQs 2026 ↗</a>
+    <a href="https://www.consumerfinance.gov/about-us/blog/what-the-nar-settlement-means-for-homebuyers-and-sellers/" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">CFPB: NAR Settlement Guide ↗</a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+let commChart = null;
+const rates = [6.0, 5.7, 5.0, 4.0, 3.0];
+const rateLabels = ['6.0%\n(Old)', '5.70%\n(2026 Avg)', '5.0%', '4.0%\n(Negotiated)', '3.0%\n(Discount)'];
+const rateColors = ['#ef4444','#f97316','#eab308','#16a34a','#15803d'];
+
+function updateRealEstateTools(price) {
+  const p = parseFloat(price) || 400000;
+
+  // Update chart
+  const proceeds = rates.map(r => Math.round(p - (p * r / 100)));
+  const ctx = document.getElementById('commissionChart').getContext('2d');
+  
+  if (commChart) commChart.destroy();
+  
+  commChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: rateLabels,
+      datasets: [{
+        data: proceeds,
+        backgroundColor: rateColors,
+        borderRadius: 6,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {display: false},
+        tooltip: {
+          callbacks: {
+            label: (c) => 'Net Proceeds: $' + c.parsed.y.toLocaleString()
+          }
+        }
+      },
+      scales: {
+        y: {
+          min: Math.round(p * 0.88),
+          ticks: {
+            callback: (v) => '$' + Math.round(v/1000) + 'k'
+          },
+          grid: {color: '#f1f5f9'}
+        },
+        x: {grid: {display: false}}
+      }
+    }
+  });
+
+  // Update table
+  const baseFee = p * 0.06;
+  const rows = [
+    ['6.0% (Old Standard)', p*0.06, p-p*0.06, '—', 'bg-red-50'],
+    ['5.70% (2026 Average)', p*0.057, p-p*0.057, '+$'+Math.round(p*0.003).toLocaleString(), 'bg-white'],
+    ['5.0%', p*0.05, p-p*0.05, '+$'+Math.round(p*0.01).toLocaleString(), 'bg-white'],
+    ['4.0% (Negotiated)', p*0.04, p-p*0.04, '+$'+Math.round(p*0.02).toLocaleString(), 'bg-green-50'],
+    ['3.0% (Discount Broker)', p*0.03, p-p*0.03, '+$'+Math.round(p*0.03).toLocaleString(), 'bg-green-50']
+  ];
+
+  const tbody = document.getElementById('rateComparisonBody');
+  if (tbody) {
+    tbody.innerHTML = rows.map(([label, fee, net, save, cls]) =>
+      `<tr class="border-b border-slate-200 ${cls}">
+        <td class="p-3 font-medium">${label}</td>
+        <td class="p-3">$${Math.round(fee).toLocaleString()}</td>
+        <td class="p-3 font-semibold">$${Math.round(net).toLocaleString()}</td>
+        <td class="p-3 text-green-600">${save}</td>
+      </tr>`
+    ).join('');
+  }
+}
+
+// Ensure the main price input triggers our new chart and table
+const pInput = document.getElementById('price');
+if (pInput) {
+  // Initialize
+  updateRealEstateTools(pInput.value);
+  
+  // Hook listener
+  pInput.addEventListener('input', (e) => {
+    updateRealEstateTools(e.target.value);
+  });
+} else {
+    updateRealEstateTools(400000);
+}
+</script>
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white font-bold mb-4">USCalcHub.com</h3>
+                <p class="text-sm mb-4">Your trusted destination for fast and accurate financial tools in the USA.</p>
+                <div class="flex space-x-4 mt-6">
+                    <!-- Pinterest -->
+                    <a href="https://www.pinterest.com/uscalch" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.17 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/></svg>
+                    </a>
+                    <!-- Twitter/X -->
+                    <a href="https://x.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/uscalc-hub-a5a01b411/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="/terms/" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="/contact/" class="hover:text-white transition">Contact Us</a></li>
+                    <li><a href="https://uscalchub.com/blog/" class="hover:text-white transition">Blog</a></li>
+                    <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <p class="text-sm">Questions? Email us at:<br>support@uscalchub.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+    
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = "https://www.googletagmanager.com/gtag/js?id=AW-846154653";
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-ELW6PST2ZX');
+                gtag('config', 'AW-846154653');
+            }, 3500);
+        });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-700 text-slate-300 p-4 z-50 transform translate-y-full transition-transform duration-300 hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-center md:text-left">
+                We use cookies to ensure you get the best experience on our website. By continuing to use this site, you consent to our use of cookies in accordance with our 
+                <a href="/privacy-policy/" class="text-blue-400 hover:text-blue-300 underline font-medium">Privacy Policy</a>.
+            </p>
+            <div class="flex gap-3 flex-shrink-0">
+                <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-bold transition">Accept All</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem("cookiesAccepted")) {
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.remove("hidden");
+                // Small delay to allow CSS transition to work after removing hidden
+                setTimeout(() => {
+                    banner.classList.remove("translate-y-full");
+                }, 50);
+            }
+            
+            document.getElementById("accept-cookies")?.addEventListener("click", function() {
+                localStorage.setItem("cookiesAccepted", "true");
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.add("translate-y-full");
+                setTimeout(() => {
+                    banner.classList.add("hidden");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+
+</html>

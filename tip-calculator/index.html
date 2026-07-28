@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip & Bill Splitter | USCalcHub</title>
+    <meta name="description" content="Easily calculate tips and split bills with friends using our US standard tip percentages.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css">
+    <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Tip Calculator & Bill Splitter 2026",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "description": "Free US tip calculator and bill splitter for 2026. Calculate restaurant tips, delivery tips, and salon gratuity. Split any bill among any number of people with per-person amounts.",
+  "url": "https://uscalchub.com/tip-calculator/",
+  "author": {"@type": "Organization", "name": "USCalcHub", "url": "https://uscalchub.com"},
+  "featureList": [
+    "Restaurant tip calculation",
+    "Delivery and salon tip guidance",
+    "Bill splitting any number of people",
+    "Custom tip percentage",
+    "Per-person amount display",
+    "Free, instant results"
+  ]
+}
+</script>
+</head>
+
+<body class="bg-slate-50 min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200 py-4 mb-8 shadow-sm relative z-50">
+        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2 group z-50">
+                <div class="bg-blue-600 text-white p-1.5 rounded-lg group-hover:bg-blue-700 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-slate-800 tracking-tight">USCalcHub<span
+                        class="text-blue-600">.com</span></span>
+            </a>
+            <nav class="hidden md:flex gap-6 z-50">
+                <a href="/" class="text-slate-600 hover:text-blue-600 font-medium transition">Home</a>
+                <a href="/#tools-section" class="text-slate-600 hover:text-blue-600 font-medium transition">Finance Tools</a>
+                <a href="/contact/" class="text-slate-600 hover:text-blue-600 font-medium transition">Contact</a>
+                <a href="https://uscalchub.com/blog/" class="text-slate-600 hover:text-blue-600 font-medium transition">Blog</a>
+                <a href="/about/" class="text-slate-600 hover:text-blue-600 font-medium transition">About Us</a>
+            </nav>
+            <div class="md:hidden flex items-center z-50">
+                <button type="button" id="menu-btn" class="text-gray-500 hover:text-blue-600 focus:outline-none p-2 rounded-md transition-colors" aria-label="Toggle menu">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full left-0 top-full">
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Home</a>
+            <a href="/#tools-section" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Finance Tools</a>
+            <a href="/contact/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Contact</a>
+            <a href="https://uscalchub.com/blog/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Blog</a>
+            <a href="/about/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">About Us</a>
+        </div>
+    </nav>
+
+    <div class="max-w-md mx-auto px-4 pb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
+            Tip & Bill Splitter Calculator
+        </h1>
+
+<div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-6 max-w-2xl mx-auto">
+  <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">⚡ Quick Answer</p>
+  <p class="text-sm text-slate-700 leading-relaxed text-left">
+    Standard US tip in 2026: <strong>18-20% for restaurants</strong>, <strong>$3-4 minimum for delivery</strong>, <strong>15-20% for salons</strong>. On an <strong>$85 bill for 4 people</strong> with 20% tip, total is <strong>$102 — $25.50 per person</strong>. Calculate your exact split below.
+  </p>
+</div>
+
+<div class="max-w-4xl mx-auto text-center pt-10 pb-6 px-4">
+    <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
+        Quickly calculate the perfect tip and split any bill fairly among friends. Whether you're dining out, splitting a delivery order, or sharing a salon visit, get instant per-person amounts with our free tip calculator.
+    </p>
+    <div class="flex items-center justify-center gap-2 inline-flex px-4 py-2 rounded-full text-xs text-slate-400 uppercase tracking-wide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 flex-shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <span>Reviewed by Muzaffar Ali, Financial Content Team &nbsp;|&nbsp; Last updated: June 2026</span>
+    </div>
+</div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-xl w-full border border-slate-100">
+
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Tip & Bill Splitter</h2>
+
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-slate-600 mb-1">Total Bill Amount ($)</label>
+                <input type="number" id="billAmount" min="0" placeholder="0.00"
+                    class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-600 mb-1">Tip Percentage (%)</label>
+                <select id="tipPercentage"
+                    class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    <option value="15">15% (Good)</option>
+                    <option value="18" selected>18% (Standard)</option>
+                    <option value="20">20% (Great)</option>
+                    <option value="25">25% (Amazing)</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-600 mb-1">Split Between (People)</label>
+                <input type="number" id="numPeople" value="1" min="1"
+                    class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+
+            <div class="mt-8 p-6 bg-blue-600 rounded-xl text-white">
+                <div class="flex justify-between mb-2">
+                    <span>Total Tip:</span>
+                    <span id="totalTip" class="font-bold">$0.00</span>
+                </div>
+                <div class="flex justify-between text-xl font-bold border-t border-blue-400 pt-2 mt-2">
+                    <span>Per Person:</span>
+                    <span id="perPerson">$0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center text-xs text-slate-400 mt-6 italic">*Powered by USCalcHub.com</p>
+    </div>
+
+    </div>
+
+<div class="max-w-3xl mx-auto mt-8 mb-8 px-4">
+  <h2 class="text-2xl font-semibold text-slate-800 mb-3">
+    2026 US Tipping Standards — Quick Reference
+  </h2>
+  <div class="overflow-x-auto rounded-xl border border-slate-200">
+    <table class="w-full text-sm border-collapse">
+      <thead>
+        <tr class="bg-slate-800 text-white">
+          <th class="p-3 text-left">Service Type</th>
+          <th class="p-3 text-left">Good</th>
+          <th class="p-3 text-left">Great</th>
+          <th class="p-3 text-left">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-slate-200 bg-white">
+          <td class="p-3 font-medium">🍽️ Sit-Down Restaurant</td>
+          <td class="p-3">18%</td>
+          <td class="p-3 text-green-700 font-semibold">20-22%</td>
+          <td class="p-3 text-xs text-slate-500">On pre-tax amount</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-slate-50">
+          <td class="p-3 font-medium">🛵 Food Delivery</td>
+          <td class="p-3">$3 min</td>
+          <td class="p-3 text-green-700 font-semibold">15-18%</td>
+          <td class="p-3 text-xs text-slate-500">Minimum flat amount</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-white">
+          <td class="p-3 font-medium">💇 Salon / Barber</td>
+          <td class="p-3">15%</td>
+          <td class="p-3 text-green-700 font-semibold">20%</td>
+          <td class="p-3 text-xs text-slate-500">Regular clients tip 20%+</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-slate-50">
+          <td class="p-3 font-medium">☕ Counter / Café</td>
+          <td class="p-3">Optional</td>
+          <td class="p-3 text-green-700 font-semibold">$1-2 flat</td>
+          <td class="p-3 text-xs text-slate-500">Not expected</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-white">
+          <td class="p-3 font-medium">🏨 Hotel Housekeeping</td>
+          <td class="p-3">$3-5/day</td>
+          <td class="p-3 text-green-700 font-semibold">$5/day</td>
+          <td class="p-3 text-xs text-slate-500">Leave daily, not checkout</td>
+        </tr>
+        <tr class="border-b border-slate-200 bg-slate-50">
+          <td class="p-3 font-medium">🚕 Rideshare / Taxi</td>
+          <td class="p-3">10-15%</td>
+          <td class="p-3 text-green-700 font-semibold">15-20%</td>
+          <td class="p-3 text-xs text-slate-500">Long trips: 15%+</td>
+        </tr>
+        <tr class="bg-white">
+          <td class="p-3 font-medium">📦 Moving Services</td>
+          <td class="p-3">$20/person</td>
+          <td class="p-3 text-green-700 font-semibold">$50/person</td>
+          <td class="p-3 text-xs text-slate-500">Per mover, not total</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="max-w-3xl mx-auto mt-16 mb-20 px-4 space-y-8">
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">How to Use the Tip & Bill Splitter?</h2>
+        <p class="text-base text-slate-600 leading-relaxed max-w-3xl">
+            Our Tip & Bill Splitter is designed for quick calculations while dining out or sharing services. 
+            Simply enter the <strong>Total Bill Amount</strong>, select your desired <strong>Tip Percentage</strong> (15%, 18%, or 20%), 
+            and enter the <strong>Number of People</strong> sharing the cost. The tool will instantly show you the total tip and the exact amount each person needs to pay.
+        </p>
+    </div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">Why Choose USCalcHub?</h2>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Our tip calculator is designed to eliminate the awkward math at the end of a great meal. Need tips on splitting bills fairly when orders are uneven? Check out our complete guide on <a href="https://uscalchub.com/blog/how-to-split-a-bill-fairly/" class="text-blue-600 hover:underline font-semibold">how to split a bill fairly with friends</a> to avoid any post-dinner drama.</p>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <h3 class="text-lg font-semibold text-slate-700 mb-2">Understanding US Tipping Culture in 2026</h3>
+        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
+            <p>Unlike many other countries, service industry workers in the United States often rely heavily on tips to make a living wage. Tipping in the US varies significantly by service type. Here is a quick reference guide for common scenarios:</p>
+            <ul class="list-disc pl-5 space-y-2">
+                <li><strong>Restaurants (Sit-down):</strong> 15% for average service, 18% for good service, and 20% or more for excellent service.</li>
+                <li><strong>Food Delivery:</strong> Typically 10% to 15% of the total bill, or a flat $3 to $5 minimum depending on the distance, traffic, and weather conditions.</li>
+                <li><strong>Salons and Spas:</strong> A 15% to 20% gratuity is the standard expectation for haircuts, massages, and personal care services.</li>
+                <li><strong>Takeout / Pick-up:</strong> Tipping is generally optional, but leaving 5% to 10% is highly appreciated for large, complicated, or curbside orders.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-10 mb-8">
+      <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+        How This Calculation Works
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">Tip Formula</p>
+          <p class="text-sm text-slate-600">Tip Amount = Bill Total × (Tip % ÷ 100). Total = Bill + Tip. Per Person = Total ÷ Number of People. Always calculate tip BEFORE splitting for accuracy.</p>
+        </div>
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">Pre-Tax vs Post-Tax Tipping</p>
+          <p class="text-sm text-slate-600">Standard practice is to tip on the pre-tax bill amount. However, most people calculate on the total including tax for simplicity. The difference on a $100 bill is usually under $2.</p>
+        </div>
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">Splitting Uneven Bills</p>
+          <p class="text-sm text-slate-600">When people ordered differently, calculate each person's share of the bill first, add their proportional tip (based on their subtotal), then sum for their total. This calculator uses equal split for simplicity.</p>
+        </div>
+        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+          <p class="font-semibold text-slate-700 mb-2">Tipping Etiquette Source</p>
+          <p class="text-sm text-slate-600">Standards based on <a href="https://www.cnbc.com/tipping-guide" target="_blank" rel="noopener" class="text-blue-600 hover:underline">CNBC Tipping Guide 2026 ↗</a> and Emily Post Institute standards.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-6">Frequently Asked Questions (FAQs)</h2>
+        <div class="space-y-6">
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">1. How do I split a bill fairly when everyone ordered different amounts?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">When orders are uneven, the most precise method is to calculate each person's individual items, then add their proportional share of the tax and the tip. Our tip calculator provides a simple even split, but for complex situations, read our detailed guide on how to split a bill fairly.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">2. Should the tip be split equally even if people ordered different amounts?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">If the bill varies drastically (e.g., someone ordered an expensive steak and cocktails while another had a side salad), it is fairer to calculate the tip proportionally based on each person's subtotal. However, for relatively similar orders, an equal split is the quickest and most socially common practice.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">3. What is a fair tip for bad service?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">In the US, leaving no tip is considered highly offensive, as servers rely on gratuities to meet minimum wage requirements. If the service was exceptionally poor, a 10% tip sends a clear message without completely depriving the worker of their income. It is also recommended to politely express your concerns to a manager.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">4. How much should I tip for delivery or takeout?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">For food delivery, a standard tip is 10% to 15%, with a minimum of $3 to $5. If the weather is severe or the order is unusually large, a 20% tip is appropriate. For takeout or pickup, tipping is technically optional, but leaving 5% to 10% is customary for well-packaged orders.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">5. Is gratuity calculated before or after tax?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Standard tipping etiquette dictates that you calculate the tip based on the pre-tax subtotal of your bill. However, many modern point-of-sale systems calculate their suggested percentage tips on the post-tax total, resulting in a slightly higher tip amount.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">6. What is the standard tipping percentage in 2026?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">The national average for standard sit-down restaurant service remains between 18% and 20% in 2026. Exceptional service often warrants 22% to 25%, while basic service typically merits around 15%.</p>
+            </div>
+            <div>
+                <h3 class="text-base font-semibold text-slate-800 mb-2">7. How does the tip calculator work?</h3>
+                <p class="text-sm md:text-base text-slate-600 pl-1">Simply enter your total bill amount, select your desired tip percentage, and input the number of people sharing the cost. The tool instantly computes the total tip, the new grand total, and exactly how much each person needs to pay to cover the bill evenly.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        const billInput = document.getElementById('billAmount');
+        const tipInput = document.getElementById('tipPercentage');
+        const peopleInput = document.getElementById('numPeople');
+
+        const totalTipDisplay = document.getElementById('totalTip');
+        const perPersonDisplay = document.getElementById('perPerson');
+
+        function calculate() {
+            // Using Math.max to prevent negative values in case user types them manually
+            const bill = Math.max(0, parseFloat(billInput.value) || 0);
+            const tipPercent = parseFloat(tipInput.value) || 0;
+            const people = Math.max(1, parseInt(peopleInput.value) || 1);
+
+            const totalTip = (bill * tipPercent) / 100;
+            const totalBill = bill + totalTip;
+            const perPerson = totalBill / people;
+
+            totalTipDisplay.textContent = `$${totalTip.toFixed(2)}`;
+            perPersonDisplay.textContent = `$${perPerson.toFixed(2)}`;
+        }
+
+        [billInput, tipInput, peopleInput].forEach(input => {
+            input.addEventListener('input', calculate);
+        });
+    </script>
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-white font-bold mb-4">USCalcHub.com</h3>
+                <p class="text-sm mb-4">Your trusted destination for fast and accurate financial tools in the USA.</p>
+                <div class="flex space-x-4 mt-6">
+                    <!-- Pinterest -->
+                    <a href="https://www.pinterest.com/uscalch" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.17 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/></svg>
+                    </a>
+                    <!-- Twitter/X -->
+                    <a href="https://x.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/uscalc-hub-a5a01b411/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="/terms/" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="/contact/" class="hover:text-white transition">Contact Us</a></li>
+                    <li><a href="https://uscalchub.com/blog/" class="hover:text-white transition">Blog</a></li>
+                    <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <p class="text-sm">Questions? Email us at:<br>support@uscalchub.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+
+    
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = "https://www.googletagmanager.com/gtag/js?id=AW-846154653";
+                document.head.appendChild(script);
+
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-ELW6PST2ZX');
+                gtag('config', 'AW-846154653');
+            }, 3500);
+        });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-700 text-slate-300 p-4 z-50 transform translate-y-full transition-transform duration-300 hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-center md:text-left">
+                We use cookies to ensure you get the best experience on our website. By continuing to use this site, you consent to our use of cookies in accordance with our 
+                <a href="/privacy-policy/" class="text-blue-400 hover:text-blue-300 underline font-medium">Privacy Policy</a>.
+            </p>
+            <div class="flex gap-3 flex-shrink-0">
+                <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-bold transition">Accept All</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem("cookiesAccepted")) {
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.remove("hidden");
+                // Small delay to allow CSS transition to work after removing hidden
+                setTimeout(() => {
+                    banner.classList.remove("translate-y-full");
+                }, 50);
+            }
+            
+            document.getElementById("accept-cookies")?.addEventListener("click", function() {
+                localStorage.setItem("cookiesAccepted", "true");
+                const banner = document.getElementById("cookie-consent-banner");
+                banner.classList.add("translate-y-full");
+                setTimeout(() => {
+                    banner.classList.add("hidden");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+
+</html>

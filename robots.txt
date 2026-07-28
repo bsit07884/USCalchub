@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uscalchub.com/sitemap.xml
+Sitemap: https://uscalchub.com/blog/sitemap_index.xml
