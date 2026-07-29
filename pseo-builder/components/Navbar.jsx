@@ -1,65 +1,45 @@
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const router = useRouter();
 
   return (
-    <>
-      <header
-        className={`bg-white border-b border-gray-100 sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}
-        id="main-header"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex-shrink-0 flex items-center cursor-pointer group">
-              <span className="font-bold text-2xl tracking-tight text-gray-900 group-hover:opacity-90 transition-opacity">
-                <span className="text-blue-600">US</span>CalcHub
-              </span>
-            </Link>
+    <nav className="h-[52px] bg-white border-b border-slate-200 sticky top-0 z-50 px-6">
+      <div className="max-w-5xl mx-auto h-full flex justify-between items-center">
+        {/* Left side: Logo */}
+        <Link href="/" className="text-[15px] font-medium text-slate-900 tracking-tight flex items-center">
+          <span>US</span>
+          <span className="text-blue-600">Calc</span>
+          <span>Hub</span>
+        </Link>
 
-            <nav className="hidden md:flex gap-6 items-center">
-              <Link href="/" className="text-slate-600 hover:text-blue-600 font-medium">Home</Link>
-              <Link href="/#tools-section" className="text-slate-600 hover:text-blue-600 font-medium">Finance Tools</Link>
-              <Link href="/contact/" className="text-slate-600 hover:text-blue-600 font-medium">Contact</Link>
-              <a href="https://uscalchub.com/blog/" className="text-slate-600 hover:text-blue-600 font-medium">Blog</a>
-              <Link href="/about/" className="text-slate-600 hover:text-blue-600 font-medium">About Us</Link>
-            </nav>
-
-            <div className="md:hidden flex items-center">
-              <button
-                type="button"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-500 hover:text-blue-600 focus:outline-none p-2 rounded-md transition-colors"
-                aria-label="Toggle menu"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
+        {/* Right side: Links & CTA */}
+        <div className="flex gap-[18px] items-center">
+          <Link href="/" className="text-[12px] text-slate-500 hover:text-blue-600 transition-colors">
+            Home
+          </Link>
+          <Link 
+            href="/salary-calculator/" 
+            className={`text-[12px] transition-colors ${
+              router.pathname.startsWith('/salary-calculator') 
+                ? 'text-blue-600 font-medium' 
+                : 'text-slate-500 hover:text-blue-600'
+            }`}
+          >
+            Finance Tools
+          </Link>
+          <a href="https://uscalchub.com/blog/" className="text-[12px] text-slate-500 hover:text-blue-600 transition-colors hidden sm:block">
+            Blog
+          </a>
+          <Link href="/about/" className="text-[12px] text-slate-500 hover:text-blue-600 transition-colors hidden sm:block">
+            About Us
+          </Link>
+          <Link href="/#tools-section" className="bg-blue-600 text-white text-[12px] font-medium px-[14px] py-[5px] rounded-full hover:bg-blue-700 transition-colors border-none ml-2">
+            Free Tools
+          </Link>
         </div>
-
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full z-40">
-            <Link href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors">Home</Link>
-            <Link href="/#tools-section" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors">Finance Tools</Link>
-            <Link href="/contact/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors">Contact</Link>
-            <a href="https://uscalchub.com/blog/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors">Blog</a>
-            <Link href="/about/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-blue-600 transition-colors">About Us</Link>
-          </div>
-        )}
-      </header>
-    </>
+      </div>
+    </nav>
   );
 }
