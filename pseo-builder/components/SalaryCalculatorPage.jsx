@@ -22,6 +22,11 @@ export default function SalaryCalculatorPage({
   const [calc, setCalc] = useState(initialCalc);
   const [includeNYC, setIncludeNYC] = useState(false);
 
+  // Sync state when navigating between different preset amounts (e.g. clicking 75k while on 60k)
+  useEffect(() => {
+    setSalary(salaryConfig.amount);
+  }, [salaryConfig.amount]);
+
   useEffect(() => {
     const result = calculateTakeHome(salary, state);
     if (result) setCalc(result);
