@@ -1,13 +1,25 @@
-import { TAX_DATA } from '../lib/taxData';
+import { TAX_DATA, calculateTakeHome } from '../lib/taxData';
 
-export default function ComparisonChart({ salaryConfig, comparisonData, currentStateSlug, currentTakeHome }) {
+export default function ComparisonChart({ salary, currentStateSlug, currentTakeHome }) {
+  // Generate comparisonData on the fly based on dynamic salary
+  const comparisonData = Object.values(TAX_DATA).map(state => {
+    const calc = calculateTakeHome(salary, state.slug);
+    return {
+      slug: state.slug,
+      name: state.name,
+      flag: state.flag,
+      stateTaxRate: state.stateTaxRate,
+      annualTakeHome: calc.annualTakeHome
+    };
+  }).sort((a, b) => b.annualTakeHome - a.annualTakeHome);
+
   // Max take-home for 100% width reference
   const maxTakeHome = Math.max(...comparisonData.map(c => c.annualTakeHome));
 
   return (
     <div className="bg-white border border-slate-200 rounded-xl p-[14px] mb-[14px]">
       <div className="text-[12px] font-medium text-slate-900 mb-3">
-        {salaryConfig.display} — state comparison
+        ${salary.toLocaleString()} - state comparison
       </div>
 
       <div className="flex gap-3 mb-2">
@@ -25,7 +37,7 @@ export default function ComparisonChart({ salaryConfig, comparisonData, currentS
       <div className="flex flex-col gap-[7px] max-w-[550px] mx-auto mt-2">
         {comparisonData.map(state => {
           const isCurrent = state.slug === currentStateSlug;
-          const isNoTax = TAX_DATA[state.slug].stateTaxRate === 0;
+          const isNoTax = state.stateTaxRate === 0;
           const isHighTax = !isNoTax && !isCurrent;
           
           const diff = Math.abs(state.annualTakeHome - currentTakeHome);
@@ -64,7 +76,7 @@ export default function ComparisonChart({ salaryConfig, comparisonData, currentS
                   <span className="text-green-600">+{'$' + diff.toLocaleString()}</span>
                 )}
                 {!isCurrent && state.annualTakeHome < currentTakeHome && (
-                  <span className="text-red-400">−{'$' + diff.toLocaleString()}</span>
+                  <span className="text-red-400">-{'$' + diff.toLocaleString()}</span>
                 )}
                 {!isCurrent && state.annualTakeHome === currentTakeHome && (
                   <span className="text-slate-400">$0</span>

@@ -213,8 +213,7 @@ export default function SalaryCalculatorPage({
 
           {/* STATE COMPARISON CHART */}
           <ComparisonChart 
-            salaryConfig={salaryConfig}
-            comparisonData={comparisonData}
+            salary={salary}
             currentStateSlug={state}
             currentTakeHome={currentAnnualTakeHome}
           />
@@ -222,7 +221,7 @@ export default function SalaryCalculatorPage({
           {/* INTERNAL LINKS */}
           <InternalLinks 
             stateData={stateData}
-            salaryConfig={salaryConfig}
+            salary={salary}
             currentAmount={amount}
             currentTakeHome={currentAnnualTakeHome}
           />

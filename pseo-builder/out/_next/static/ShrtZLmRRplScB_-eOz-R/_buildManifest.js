@@ -6,7 +6,7 @@ self.__BUILD_MANIFEST = {
     "static/chunks/1imzw1ij-sbgv.js"
   ],
   "/salary-calculator/[state]/[amount]": [
-    "static/chunks/1ycu7yys83gfq.js"
+    "static/chunks/1ib9lx1ao1ugp.js"
   ],
   "__rewrites": {
     "afterFiles": [],
