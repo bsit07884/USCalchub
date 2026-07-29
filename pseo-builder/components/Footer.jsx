@@ -40,6 +40,13 @@ export default function Footer() {
           <p className="text-sm">Questions? Email us at:<br/>support@uscalchub.com</p>
         </div>
       </div>
+      
+      {/* Global Legal Disclaimer */}
+      <div className="max-w-6xl mx-auto px-4 mt-12 border-t border-slate-800 pt-6 text-center">
+        <p className="text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto">
+          <strong>Disclaimer:</strong> All calculations are estimates based on 2026 data for educational purposes only; actual figures may vary, and USCalcHub assumes no financial or legal liability.
+        </p>
+      </div>
     </footer>
   );
 }

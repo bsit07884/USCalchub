@@ -76,7 +76,7 @@ export default function SalaryCalculatorHub() {
 
       <Navbar />
 
-      <main className="flex-grow w-full max-w-5xl mx-auto border-x border-slate-100">
+      <main className="flex-grow w-full max-w-3xl mx-auto border-x border-slate-100">
         
         {/* SECTION 2: Hero with embedded calculator */}
         <section className="bg-slate-50 border-b border-slate-200 px-6 pt-8 pb-6">

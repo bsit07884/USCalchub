@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 function FAQItem({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="border-b border-slate-100 py-[10px] first:border-t">

@@ -6,7 +6,7 @@ export default function Navbar() {
 
   return (
     <nav className="h-[52px] bg-white border-b border-slate-200 sticky top-0 z-50 px-6">
-      <div className="max-w-5xl mx-auto h-full flex justify-between items-center">
+      <div className="max-w-3xl mx-auto h-full flex justify-between items-center">
         {/* Left side: Logo */}
         <Link href="/" className="text-[15px] font-medium text-slate-900 tracking-tight flex items-center">
           <span>US</span>

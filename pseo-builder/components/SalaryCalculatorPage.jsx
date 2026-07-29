@@ -73,7 +73,7 @@ export default function SalaryCalculatorPage({
     <div className="bg-white min-h-screen font-sans flex flex-col">
       <Navbar />
 
-      <main className="flex-grow w-full max-w-5xl mx-auto border-x border-slate-100">
+      <main className="flex-grow w-full max-w-3xl mx-auto border-x border-slate-100">
         
         {/* HERO SECTION */}
         <div className="bg-slate-50 border-b border-slate-200 px-6 pt-5 pb-5">

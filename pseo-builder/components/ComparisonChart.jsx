@@ -22,7 +22,7 @@ export default function ComparisonChart({ salaryConfig, comparisonData, currentS
         </div>
       </div>
 
-      <div className="flex flex-col gap-[7px]">
+      <div className="flex flex-col gap-[7px] max-w-[550px] mx-auto mt-2">
         {comparisonData.map(state => {
           const isCurrent = state.slug === currentStateSlug;
           const isNoTax = TAX_DATA[state.slug].stateTaxRate === 0;
