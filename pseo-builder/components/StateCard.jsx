@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { calculateTakeHome, SALARY_CONFIG } from '../lib/taxData';
+import { calculateTakeHome, SALARY_CONFIG, isLiveScope } from '../lib/taxData';
 
 export default function StateCard({ state }) {
   const isNoTax = state.incomeTax.type === "none";
@@ -35,7 +35,7 @@ export default function StateCard({ state }) {
 
       {/* Salary Rows */}
       <div>
-        {Object.keys(SALARY_CONFIG).map(amount => {
+        {Object.keys(SALARY_CONFIG).filter(amount => isLiveScope(state.slug, amount)).map(amount => {
           const config = SALARY_CONFIG[amount];
           const calc = calculateTakeHome(config.amount, state.slug);
           const isFeatured = amount === '75k';
@@ -63,7 +63,7 @@ export default function StateCard({ state }) {
       {/* Card Footer */}
       <div className="px-[14px] py-[7px] border-t border-slate-100">
         <Link 
-          href={`/salary-calculator/${state.slug}/75k/`} // Link to a default child page since there is no state hub yet
+          href={`/salary-calculator/${state.slug}/${isLiveScope(state.slug, '75k') ? '75k' : '85k'}/`} // Link to a default child page based on live scope
           className="text-[11px] text-blue-600 flex items-center justify-center gap-[3px] hover:text-blue-700 transition-colors font-medium"
         >
           View {state.name} calculator <i className="ti ti-arrow-right text-[11px]"></i>

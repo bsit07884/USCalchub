@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fsalary-calculator\u002F[state]\u002F[amount]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

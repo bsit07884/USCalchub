@@ -694,11 +694,33 @@ export function getStateComparison(grossSalary) {
   })).sort((a, b) => b.annualTakeHome - a.annualTakeHome);
 }
 
+// ---------------------------------------------------------------------------
+// ROLLOUT SCOPE — Defines exactly which pages are live.
+// Anything not in these groups will 404 (fallback: false in getStaticPaths)
+// ---------------------------------------------------------------------------
+const LIVE_GROUP_A_STATES = ["texas", "florida", "california", "new-york"];
+const LIVE_GROUP_A_BRACKETS = ["60k", "75k", "100k"];
+
+const LIVE_GROUP_B_STATES = ["nevada", "tennessee", "arizona", "north-carolina", "georgia", "idaho", "utah", "south-carolina", "oregon", "montana"];
+const LIVE_GROUP_B_BRACKETS = ["50k", "85k"];
+
+export function isLiveScope(stateSlug, bracketShort) {
+  if (LIVE_GROUP_A_STATES.includes(stateSlug) && LIVE_GROUP_A_BRACKETS.includes(bracketShort)) {
+    return true;
+  }
+  if (LIVE_GROUP_B_STATES.includes(stateSlug) && LIVE_GROUP_B_BRACKETS.includes(bracketShort)) {
+    return true;
+  }
+  return false;
+}
+
 export function getAllChildPagePaths() {
   const paths = [];
   for (const state of STATES) {
     for (const shortAmount of Object.keys(SALARY_CONFIG)) {
-      paths.push({ params: { state: state.slug, amount: shortAmount } });
+      if (isLiveScope(state.slug, shortAmount)) {
+        paths.push({ params: { state: state.slug, amount: shortAmount } });
+      }
     }
   }
   return paths;
@@ -708,8 +730,8 @@ export function getStateBySlug(slug) {
   return STATES.find((s) => s.slug === slug) || null;
 }
 
-export function getTier1States() {
-  return STATES.filter((s) => s.migrationTier === 1);
+export function getLiveStates() {
+  return STATES.filter(s => LIVE_GROUP_A_STATES.includes(s.slug) || LIVE_GROUP_B_STATES.includes(s.slug));
 }
 
 export default STATES;

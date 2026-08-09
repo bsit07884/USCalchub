@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { calculateTakeHome, STATES, SALARY_CONFIG } from '../lib/taxData';
+import { calculateTakeHome, STATES, SALARY_CONFIG, isLiveScope } from '../lib/taxData';
 
 export default function InternalLinks({ stateData, salary, currentAmount, currentTakeHome }) {
   // If the user's custom salary matches a preset amount string (like "75k"), we use its config display.
@@ -9,8 +9,8 @@ export default function InternalLinks({ stateData, salary, currentAmount, curren
     currentSalaryDisplay = SALARY_CONFIG[currentAmount].display;
   }
 
-  // Pick top states to show in the "other states" section (e.g. Tier 0 and Tier 1)
-  const otherStatesToShow = STATES.filter(s => (s.migrationTier === 0 || s.migrationTier === 1) && s.slug !== stateData.slug).slice(0, 9);
+  // Pick top states to show in the "other states" section that have the current bracket live
+  const otherStatesToShow = STATES.filter(s => s.slug !== stateData.slug && isLiveScope(s.slug, currentAmount)).slice(0, 9);
 
   return (
     <>
@@ -20,7 +20,7 @@ export default function InternalLinks({ stateData, salary, currentAmount, curren
           Other salaries in {stateData.name}
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          {Object.keys(SALARY_CONFIG).map(a => {
+          {Object.keys(SALARY_CONFIG).filter(a => isLiveScope(stateData.slug, a)).map(a => {
             const config = SALARY_CONFIG[a];
             const isCurrentPageAmount = a === currentAmount;
             

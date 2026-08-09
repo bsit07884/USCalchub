@@ -6,11 +6,17 @@ import StateCard from '../../components/StateCard';
 import HowItWorksGrid from '../../components/HowItWorksGrid';
 import FAQAccordion from '../../components/FAQAccordion';
 import ReferenceChips from '../../components/ReferenceChips';
-import { calculateTakeHome, STATES } from '../../lib/taxData';
+import { calculateTakeHome, STATES, getLiveStates } from '../../lib/taxData';
 
 export default function SalaryCalculatorHub() {
   const [salary, setSalary] = useState(75000);
   const [selectedState, setSelectedState] = useState('texas');
+  const [searchTerm, setSearchTerm] = useState('');
+  
+  const liveStates = getLiveStates();
+  const popularSlugs = ['texas', 'florida', 'nevada', 'tennessee'];
+  const popularStates = liveStates.filter(s => popularSlugs.includes(s.slug));
+  const searchResults = searchTerm.trim() ? liveStates.filter(s => s.name.toLowerCase().includes(searchTerm.toLowerCase())) : [];
   
   const calc = calculateTakeHome(salary, selectedState) || {
     annualTakeHome: 0,
@@ -121,7 +127,7 @@ export default function SalaryCalculatorHub() {
                   onChange={(e) => setSelectedState(e.target.value)}
                   className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-[13px] text-slate-600 w-full focus:ring-2 focus:ring-blue-500 outline-none appearance-none"
                 >
-                  {STATES.map(s => {
+                  {liveStates.map(s => {
                     let rateLabel = "";
                     if (s.incomeTax.type === "none") rateLabel = "0% state tax";
                     else if (s.incomeTax.type === "progressive" && s.incomeTax.brackets.length > 0) rateLabel = `${(s.incomeTax.brackets[s.incomeTax.brackets.length - 1].rate * 100).toFixed(1)}% top`;
@@ -153,21 +159,61 @@ export default function SalaryCalculatorHub() {
           </div>
         </section>
 
-        {/* SECTION 3: State cards grid */}
+        {/* SECTION 3: State cards search & grid */}
         <section className="px-6 py-5">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-[14px]">
-            <h2 className="text-[15px] font-medium text-slate-900">
-              Browse by state and salary
-            </h2>
-            <p className="text-[11px] text-slate-400 mt-1 sm:mt-0">
-              Click any row for full breakdown and FAQ
-            </p>
+          <div className="mb-6">
+            <h2 className="text-[16px] font-medium text-slate-900 mb-3">Find your state</h2>
+            <div className="relative">
+              <i className="ti ti-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+              <input 
+                type="text" 
+                placeholder="Search your state..." 
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+                className="w-full bg-white border border-slate-200 rounded-lg pl-9 pr-4 py-[10px] text-[14px] text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            
+            {searchTerm.trim() && searchResults.length > 0 && (
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-[10px]">
+                {searchResults.map(state => (
+                  <StateCard key={state.slug} state={state} />
+                ))}
+              </div>
+            )}
+            {searchTerm.trim() && searchResults.length === 0 && (
+              <div className="mt-4 text-[13px] text-slate-500 text-center py-4 bg-slate-50 rounded-lg border border-slate-100">
+                No states found or not yet available.
+              </div>
+            )}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px]">
-            {STATES.map(state => (
-              <StateCard key={state.slug} state={state} />
-            ))}
-          </div>
+
+          {!searchTerm.trim() && (
+            <>
+              <div className="mb-6">
+                <h3 className="text-[14px] font-medium text-slate-900 mb-3 flex items-center gap-2">
+                  <i className="ti ti-trending-up text-blue-500"></i> Popular this month
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px]">
+                  {popularStates.map(state => (
+                    <StateCard key={state.slug} state={state} />
+                  ))}
+                </div>
+              </div>
+
+              <details className="group border border-slate-200 rounded-xl bg-white overflow-hidden">
+                <summary className="px-4 py-3 text-[14px] font-medium text-slate-900 cursor-pointer select-none flex justify-between items-center bg-slate-50 group-open:border-b border-slate-200 transition-colors">
+                  Browse all states
+                  <i className="ti ti-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-[10px] bg-slate-50/50">
+                  {liveStates.map(state => (
+                    <StateCard key={state.slug} state={state} />
+                  ))}
+                </div>
+              </details>
+            </>
+          )}
         </section>
 
         {/* SECTION 4: How this works */}
