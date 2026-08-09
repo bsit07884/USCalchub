@@ -2,12 +2,14 @@ import Link from 'next/link';
 import { calculateTakeHome, SALARY_CONFIG } from '../lib/taxData';
 
 export default function StateCard({ state }) {
-  const isNoTax = state.stateTaxRate === 0;
+  const isNoTax = state.incomeTax.type === "none";
   
   // Get top bracket rate
   let topRate = 0;
-  if (state.brackets && state.brackets.length > 0) {
-    topRate = state.brackets[state.brackets.length - 1].rate * 100;
+  if (state.incomeTax.type === "progressive" && state.incomeTax.brackets && state.incomeTax.brackets.length > 0) {
+    topRate = state.incomeTax.brackets[state.incomeTax.brackets.length - 1].rate * 100;
+  } else if (state.incomeTax.type === "flat") {
+    topRate = state.incomeTax.rate * 100;
   }
 
   return (

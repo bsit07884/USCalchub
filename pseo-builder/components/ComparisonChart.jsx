@@ -1,14 +1,22 @@
-import { TAX_DATA, calculateTakeHome } from '../lib/taxData';
+import { STATES, calculateTakeHome } from '../lib/taxData';
 
 export default function ComparisonChart({ salary, currentStateSlug, currentTakeHome }) {
   // Generate comparisonData on the fly based on dynamic salary
-  const comparisonData = Object.values(TAX_DATA).map(state => {
+  const benchmarkSlugs = ['texas', 'florida', 'california', 'new-york'];
+  if (!benchmarkSlugs.includes(currentStateSlug)) {
+    benchmarkSlugs.push(currentStateSlug);
+  }
+
+  const statesToCompare = STATES.filter(s => benchmarkSlugs.includes(s.slug));
+
+  const comparisonData = statesToCompare.map(state => {
     const calc = calculateTakeHome(salary, state.slug);
+    const taxRate = state.incomeTax.type === "none" ? 0 : (state.incomeTax.rate || state.incomeTax.topRate);
     return {
       slug: state.slug,
       name: state.name,
       flag: state.flag,
-      stateTaxRate: state.stateTaxRate,
+      stateTaxRate: taxRate,
       annualTakeHome: calc.annualTakeHome
     };
   }).sort((a, b) => b.annualTakeHome - a.annualTakeHome);

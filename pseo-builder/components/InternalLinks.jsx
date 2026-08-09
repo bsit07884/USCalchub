@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { calculateTakeHome, TAX_DATA, SALARY_CONFIG } from '../lib/taxData';
+import { calculateTakeHome, STATES, SALARY_CONFIG } from '../lib/taxData';
 
 export default function InternalLinks({ stateData, salary, currentAmount, currentTakeHome }) {
   // If the user's custom salary matches a preset amount string (like "75k"), we use its config display.
@@ -8,6 +8,9 @@ export default function InternalLinks({ stateData, salary, currentAmount, curren
   if (currentAmount && SALARY_CONFIG[currentAmount] && SALARY_CONFIG[currentAmount].amount === salary) {
     currentSalaryDisplay = SALARY_CONFIG[currentAmount].display;
   }
+
+  // Pick top states to show in the "other states" section (e.g. Tier 0 and Tier 1)
+  const otherStatesToShow = STATES.filter(s => (s.migrationTier === 0 || s.migrationTier === 1) && s.slug !== stateData.slug).slice(0, 9);
 
   return (
     <>
@@ -51,10 +54,8 @@ export default function InternalLinks({ stateData, salary, currentAmount, curren
           {currentSalaryDisplay} in other states
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          {Object.keys(TAX_DATA)
-            .filter(s => s !== stateData.slug)
-            .map(s => {
-              const otherState = TAX_DATA[s];
+          {otherStatesToShow.map(otherState => {
+              const s = otherState.slug;
               const calc = calculateTakeHome(salary, s);
               const isHigher = calc.annualTakeHome > currentTakeHome;
               const diff = Math.abs(calc.annualTakeHome - currentTakeHome);
@@ -64,7 +65,7 @@ export default function InternalLinks({ stateData, salary, currentAmount, curren
                   className="bg-white border border-slate-200 rounded-[10px] px-3 py-[10px] transition-colors hover:border-slate-400 cursor-pointer block"
                 >
                   <div className="text-[12px] font-medium text-slate-900">
-                    {otherState.flag} {otherState.name}
+                    {otherState.flag || "🇺🇸"} {otherState.name}
                   </div>
                   <div className={`text-[13px] font-medium mt-[3px] ${isHigher ? 'text-green-600' : 'text-red-500'}`}>
                     ${calc.annualTakeHome.toLocaleString()}

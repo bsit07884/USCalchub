@@ -1,5 +1,5 @@
 export default function QuickAnswerBox({ stateData, salaryConfig, calculation, comparisonData }) {
-  const isNoTax = stateData.stateTaxRate === 0;
+  const isNoTax = stateData.incomeTax.type === "none";
   
   // Calculate difference vs CA for no-tax states
   const caData = comparisonData.find(c => c.slug === 'california');

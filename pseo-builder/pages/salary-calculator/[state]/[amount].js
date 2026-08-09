@@ -1,21 +1,11 @@
 // pages/salary-calculator/[state]/[amount].js
 
 import Head from 'next/head';
-import { TAX_DATA, SALARY_CONFIG, calculateTakeHome, getStateComparison } from '../../../lib/taxData';
+import { SALARY_CONFIG, calculateTakeHome, getStateComparison, getAllChildPagePaths, getStateBySlug } from '../../../lib/taxData';
 import SalaryCalculatorPage from '../../../components/SalaryCalculatorPage';
 
 export async function getStaticPaths() {
-  const states = Object.keys(TAX_DATA);
-  const amounts = Object.keys(SALARY_CONFIG);
-
-  const paths = [];
-  for (const state of states) {
-    for (const amount of amounts) {
-      paths.push({
-        params: { state, amount }
-      });
-    }
-  }
+  const paths = getAllChildPagePaths();
 
   return {
     paths,
@@ -26,17 +16,18 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { state, amount } = params;
 
-  if (!TAX_DATA[state] || !SALARY_CONFIG[amount]) {
+  const stateData = getStateBySlug(state);
+  const salaryConfig = SALARY_CONFIG[amount];
+
+  if (!stateData || !salaryConfig) {
     return { notFound: true };
   }
 
-  const salaryConfig = SALARY_CONFIG[amount];
-  const stateData = TAX_DATA[state];
   const calculation = calculateTakeHome(salaryConfig.amount, state);
   const comparisonData = getStateComparison(salaryConfig.amount);
 
   const pageTitle = `${salaryConfig.display} Salary After Taxes in ${stateData.name} 2026 — Exact Take-Home Pay`;
-  const metaDescription = stateData.stateTaxRate === 0
+  const metaDescription = stateData.incomeTax.type === "none"
     ? `Earning ${salaryConfig.display} in ${stateData.name}? With zero state income tax, your 2026 take-home is approximately $${calculation.annualTakeHome.toLocaleString()}/year ($${calculation.monthlyTakeHome.toLocaleString()}/month). Full federal + FICA breakdown inside.`
     : `Earning ${salaryConfig.display} in ${stateData.name}? After federal tax and ${(calculation.effectiveStateRate)}% effective state income tax, your 2026 take-home is approximately $${calculation.annualTakeHome.toLocaleString()}/year. See how much more you'd keep in Texas or Florida.`;
 
@@ -139,7 +130,7 @@ export default function SalaryPage({
                       "name": `How much is ${salaryConfig.display} after taxes in ${stateData.name}?`,
                       "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": `A ${salaryConfig.display} salary in ${stateData.name} yields approximately $${calculation.annualTakeHome.toLocaleString()} per year ($${calculation.monthlyTakeHome.toLocaleString()} per month) after federal income tax ($${calculation.federalTax.toLocaleString()}), FICA ($${calculation.ficaTotal.toLocaleString()}), and ${stateData.stateTaxRate === 0 ? 'zero state income tax' : `state income tax ($${calculation.stateTax.toLocaleString()})`}.`
+                        "text": `A ${salaryConfig.display} salary in ${stateData.name} yields approximately $${calculation.annualTakeHome.toLocaleString()} per year ($${calculation.monthlyTakeHome.toLocaleString()} per month) after federal income tax ($${calculation.federalTax.toLocaleString()}), FICA ($${calculation.ficaTotal.toLocaleString()}), and ${stateData.incomeTax.type === "none" ? 'zero state income tax' : `state income tax ($${calculation.stateTax.toLocaleString()})`}.`
                       }
                     },
                     {
@@ -155,7 +146,7 @@ export default function SalaryPage({
                       "name": `Does ${stateData.name} have state income tax?`,
                       "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": stateData.stateTaxRate === 0
+                        "text": stateData.incomeTax.type === "none"
                           ? `No. ${stateData.name} charges zero state income tax, making it one of the most tax-efficient states for workers at any salary level.`
                           : `Yes. ${stateData.name} has a progressive state income tax. On a ${salaryConfig.display} salary, the effective state tax rate is approximately ${calculation.effectiveStateRate}%, adding $${calculation.stateTax.toLocaleString()} to your annual tax burden.`
                       }

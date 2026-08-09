@@ -1,5 +1,5 @@
 export default function HowItWorksGrid({ isChildPage, stateData, salaryConfig, comparisonData }) {
-  const isNoTax = stateData?.stateTaxRate === 0;
+  const isNoTax = stateData?.incomeTax?.type === "none";
 
   let diffVsCA = 0;
   if (isChildPage && isNoTax && comparisonData) {

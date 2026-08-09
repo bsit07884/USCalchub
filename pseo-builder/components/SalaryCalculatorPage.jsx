@@ -38,7 +38,7 @@ export default function SalaryCalculatorPage({
   const currentMonthlyTakeHome = Math.round(currentAnnualTakeHome / 12);
   const currentBiweeklyTakeHome = Math.round(currentAnnualTakeHome / 26);
 
-  const isNoTax = stateData.stateTaxRate === 0;
+  const isNoTax = stateData.incomeTax.type === "none";
 
   // Generate dynamic FAQs
   const diffVsCA = comparisonData.find(c => c.slug === 'california') 
@@ -57,7 +57,7 @@ export default function SalaryCalculatorPage({
       q: `Does ${stateData.name} take state income tax from my paycheck?`,
       a: isNoTax 
         ? `No. ${stateData.name} has zero state income tax. Only federal income tax and FICA are deducted from your paycheck in ${stateData.name}.`
-        : `Yes. ${stateData.name} applies a ${stateData.stateTaxType} state income tax. On ${salaryConfig.display}, the effective state rate is ${calc.effectiveStateRate}%, totaling $${calc.stateTax.toLocaleString()} annually.`
+        : `Yes. ${stateData.name} applies a ${stateData.incomeTax.type} state income tax. On ${salaryConfig.display}, the effective state rate is ${calc.effectiveStateRate}%, totaling $${calc.stateTax.toLocaleString()} annually.`
     },
     {
       q: isNoTax 
@@ -70,8 +70,10 @@ export default function SalaryCalculatorPage({
   ];
 
   let topRate = 0;
-  if (stateData.brackets && stateData.brackets.length > 0) {
-    topRate = stateData.brackets[stateData.brackets.length - 1].rate * 100;
+  if (stateData.incomeTax.type === "progressive" && stateData.incomeTax.brackets && stateData.incomeTax.brackets.length > 0) {
+    topRate = stateData.incomeTax.brackets[stateData.incomeTax.brackets.length - 1].rate * 100;
+  } else if (stateData.incomeTax.type === "flat") {
+    topRate = stateData.incomeTax.rate * 100;
   }
 
   return (

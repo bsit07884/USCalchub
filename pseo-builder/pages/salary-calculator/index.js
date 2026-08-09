@@ -6,7 +6,7 @@ import StateCard from '../../components/StateCard';
 import HowItWorksGrid from '../../components/HowItWorksGrid';
 import FAQAccordion from '../../components/FAQAccordion';
 import ReferenceChips from '../../components/ReferenceChips';
-import { calculateTakeHome, TAX_DATA } from '../../lib/taxData';
+import { calculateTakeHome, STATES } from '../../lib/taxData';
 
 export default function SalaryCalculatorHub() {
   const [salary, setSalary] = useState(75000);
@@ -121,10 +121,16 @@ export default function SalaryCalculatorHub() {
                   onChange={(e) => setSelectedState(e.target.value)}
                   className="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-[13px] text-slate-600 w-full focus:ring-2 focus:ring-blue-500 outline-none appearance-none"
                 >
-                  <option value="texas">Texas (0% state tax)</option>
-                  <option value="florida">Florida (0% state tax)</option>
-                  <option value="california">California (13.3% top)</option>
-                  <option value="new-york">New York (10.9% top)</option>
+                  {STATES.map(s => {
+                    let rateLabel = "";
+                    if (s.incomeTax.type === "none") rateLabel = "0% state tax";
+                    else if (s.incomeTax.type === "progressive" && s.incomeTax.brackets.length > 0) rateLabel = `${(s.incomeTax.brackets[s.incomeTax.brackets.length - 1].rate * 100).toFixed(1)}% top`;
+                    else if (s.incomeTax.type === "flat") rateLabel = `${(s.incomeTax.rate * 100).toFixed(1)}% flat`;
+                    
+                    return (
+                      <option key={s.slug} value={s.slug}>{s.name} ({rateLabel})</option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -158,7 +164,7 @@ export default function SalaryCalculatorHub() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px]">
-            {Object.values(TAX_DATA).map(state => (
+            {STATES.map(state => (
               <StateCard key={state.slug} state={state} />
             ))}
           </div>
