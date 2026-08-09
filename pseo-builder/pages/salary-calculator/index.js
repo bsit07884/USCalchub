@@ -170,7 +170,7 @@ export default function SalaryCalculatorHub() {
                 placeholder="Search your state..." 
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="w-full bg-white border border-slate-200 rounded-lg pl-9 pr-4 py-[10px] text-[14px] text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-white border border-slate-200 rounded-lg pl-11 pr-4 py-[10px] text-[14px] text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             
