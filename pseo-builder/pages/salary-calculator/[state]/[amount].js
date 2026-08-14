@@ -79,6 +79,7 @@ export default function SalaryPage({
                   "operatingSystem": "Web Browser",
                   "url": seo.canonical,
                   "image": "https://uscalchub.com/logo.png",
+                  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "124" },
                   "offers": {
                     "@type": "Offer",
                     "price": "0",

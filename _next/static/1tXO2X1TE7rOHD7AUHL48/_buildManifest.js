@@ -3,10 +3,10 @@ self.__BUILD_MANIFEST = {
     "static/chunks/13g4cgmjjhvz0.js"
   ],
   "/salary-calculator": [
-    "static/chunks/3pv4oyzuoumj-.js"
+    "static/chunks/0xemvlyw6by72.js"
   ],
   "/salary-calculator/[state]/[amount]": [
-    "static/chunks/2meilt503qyff.js"
+    "static/chunks/10kf_13m4w4hx.js"
   ],
   "__rewrites": {
     "afterFiles": [],

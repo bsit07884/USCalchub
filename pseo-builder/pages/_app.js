@@ -14,6 +14,11 @@ export default function MyApp({ Component, pageProps }) {
         <meta property="og:type" content="website" key="ogtype" />
         <meta property="og:url" content={url} key="ogurl" />
         <meta property="og:image" content={image} key="ogimage" />
+
+        <meta name="twitter:card" content="summary_large_image" key="twcard" />
+        <meta name="twitter:title" content={title} key="twtitle" />
+        <meta name="twitter:description" content={description} key="twdesc" />
+        <meta name="twitter:image" content={image} key="twimage" />
       </Head>
       <Component {...pageProps} />
     </>
