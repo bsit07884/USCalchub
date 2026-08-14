@@ -702,7 +702,7 @@ const LIVE_GROUP_A_STATES = ["texas", "florida", "california", "new-york"];
 const LIVE_GROUP_A_BRACKETS = ["60k", "75k", "100k"];
 
 const LIVE_GROUP_B_STATES = ["nevada", "tennessee", "arizona", "north-carolina", "georgia", "idaho", "utah", "south-carolina", "oregon", "montana"];
-const LIVE_GROUP_B_BRACKETS = ["50k", "85k"];
+const LIVE_GROUP_B_BRACKETS = ["50k", "75k", "85k"];
 
 export function isLiveScope(stateSlug, bracketShort) {
   if (LIVE_GROUP_A_STATES.includes(stateSlug) && LIVE_GROUP_A_BRACKETS.includes(bracketShort)) {

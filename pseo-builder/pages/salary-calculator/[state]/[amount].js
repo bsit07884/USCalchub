@@ -26,7 +26,7 @@ export async function getStaticProps({ params }) {
   const calculation = calculateTakeHome(salaryConfig.amount, state);
   const comparisonData = getStateComparison(salaryConfig.amount);
 
-  const pageTitle = `${salaryConfig.display} Salary After Taxes in ${stateData.name} 2026 — Exact Take-Home Pay`;
+  const pageTitle = `${salaryConfig.display} Salary in ${stateData.name} (2026 After Tax)`;
   const metaDescription = stateData.incomeTax.type === "none"
     ? `Earning ${salaryConfig.display} in ${stateData.name}? With zero state income tax, your 2026 take-home is approximately $${calculation.annualTakeHome.toLocaleString()}/year ($${calculation.monthlyTakeHome.toLocaleString()}/month). Full federal + FICA breakdown inside.`
     : `Earning ${salaryConfig.display} in ${stateData.name}? After federal tax and ${(calculation.effectiveStateRate)}% effective state income tax, your 2026 take-home is approximately $${calculation.annualTakeHome.toLocaleString()}/year. See how much more you'd keep in Texas or Florida.`;
@@ -64,10 +64,7 @@ export default function SalaryPage({
         <meta name="description" content={seo.description} />
         <link rel="canonical" href={seo.canonical} />
 
-        <meta property="og:title" content={seo.ogTitle} />
-        <meta property="og:description" content={seo.ogDescription} />
-        <meta property="og:url" content={seo.canonical} />
-        <meta property="og:type" content="website" />
+
 
         <script
           type="application/ld+json"
@@ -81,6 +78,7 @@ export default function SalaryPage({
                   "applicationCategory": "FinanceApplication",
                   "operatingSystem": "Web Browser",
                   "url": seo.canonical,
+                  "image": "https://uscalchub.com/logo.png",
                   "offers": {
                     "@type": "Offer",
                     "price": "0",
