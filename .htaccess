@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Exclude existing files from being redirected
+RewriteCond %{REQUEST_FILENAME} !-f
+# Ensure we don't redirect if it already has a trailing slash
+RewriteCond %{REQUEST_URI} !(.*)/$
+# Add trailing slash
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+</IfModule>

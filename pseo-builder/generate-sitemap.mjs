@@ -8,7 +8,6 @@ const __dirname = path.dirname(__filename);
 
 const STATIC_URLS = [
   { loc: 'https://uscalchub.com/', priority: '1.0' },
-  { loc: 'https://uscalchub.com/404/', priority: '0.8' },
   { loc: 'https://uscalchub.com/credit-card-payoff/', priority: '0.8' },
   { loc: 'https://uscalchub.com/overtime-calculator/', priority: '0.8' },
   { loc: 'https://uscalchub.com/real-estate-calculator/', priority: '0.8' },

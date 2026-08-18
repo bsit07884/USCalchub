@@ -28,8 +28,8 @@ export async function getStaticProps({ params }) {
 
   const pageTitle = `${salaryConfig.display} Salary in ${stateData.name} (2026 After Tax)`;
   const metaDescription = stateData.incomeTax.type === "none"
-    ? `Earning ${salaryConfig.display} in ${stateData.name}? With zero state income tax, your 2026 take-home is approximately $${calculation.annualTakeHome.toLocaleString()}/year ($${calculation.monthlyTakeHome.toLocaleString()}/month). Full federal + FICA breakdown inside.`
-    : `Earning ${salaryConfig.display} in ${stateData.name}? After federal tax and ${(calculation.effectiveStateRate)}% effective state income tax, your 2026 take-home is approximately $${calculation.annualTakeHome.toLocaleString()}/year. See how much more you'd keep in Texas or Florida.`;
+    ? `${salaryConfig.display} salary in ${stateData.name}? With zero state tax, your 2026 take-home pay is ~$${calculation.annualTakeHome.toLocaleString()}/yr. See full federal and FICA breakdown.`
+    : `${salaryConfig.display} salary in ${stateData.name}? Your 2026 take-home pay is ~$${calculation.annualTakeHome.toLocaleString()}/yr after federal & ${calculation.effectiveStateRate}% state tax. See full breakdown.`;
 
   const h1Text = `${salaryConfig.short.charAt(0).toUpperCase() + salaryConfig.short.slice(1)} Salary After Taxes in ${stateData.name} 2026`;
 
@@ -79,7 +79,6 @@ export default function SalaryPage({
                   "operatingSystem": "Web Browser",
                   "url": seo.canonical,
                   "image": "https://uscalchub.com/logo.png",
-                  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "124" },
                   "offers": {
                     "@type": "Offer",
                     "price": "0",

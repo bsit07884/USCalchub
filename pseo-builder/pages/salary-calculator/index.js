@@ -49,7 +49,6 @@ export default function SalaryCalculatorHub() {
         "operatingSystem": "Web Browser",
         "url": "https://uscalchub.com/salary-calculator/",
         "image": "https://uscalchub.com/logo.png",
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "124" },
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "description": "Free US salary after-tax calculator covering Texas, Florida, California, and New York with 2026 IRS federal tax rates, state income tax, and FICA deductions.",
         "author": { "@type": "Organization", "name": "USCalcHub", "url": "https://uscalchub.com" },
