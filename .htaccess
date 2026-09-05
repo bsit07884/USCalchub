@@ -1,9 +1,10 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# 1. If non-file and missing trailing slash -> redirect to canonical non-www WITH slash
+# 1. If non-file, missing trailing slash, and not a file extension -> redirect to canonical non-www WITH slash
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]+$
 RewriteRule ^(.*)$ https://uscalchub.com/$1/ [L,R=301]
 
 # 2. If it already has a slash (or is a file), but has 'www.' -> redirect to canonical non-www
