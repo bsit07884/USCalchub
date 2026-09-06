@@ -216,4 +216,36 @@
     <loc>https://uscalchub.com/salary-calculator/utah/85k/</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/colorado/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/connecticut/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/minnesota/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/montana/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/new-mexico/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/rhode-island/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/utah/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/vermont/</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getAllChildPagePaths } from './lib/taxData.js';
+import { SS_TAXING_STATES } from './lib/ssData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,13 +46,21 @@ async function generateSitemap() {
     xml += `  </url>\n`;
   }
 
+  // Add dynamic Social Security taxing state URLs
+  for (const s of SS_TAXING_STATES) {
+    xml += `  <url>\n`;
+    xml += `    <loc>https://uscalchub.com/social-security-calculator/${s.slug}/</loc>\n`;
+    xml += `    <priority>0.8</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
   xml += `</urlset>\n`;
 
   // Write to repository root
   const rootSitemapPath = path.join(__dirname, '..', 'sitemap.xml');
   fs.writeFileSync(rootSitemapPath, xml);
   
-  console.log(`Generated sitemap with ${STATIC_URLS.length + dynamicPaths.length} URLs at ${rootSitemapPath}`);
+  console.log(`Generated sitemap with ${STATIC_URLS.length + dynamicPaths.length + SS_TAXING_STATES.length} URLs at ${rootSitemapPath}`);
 }
 
 generateSitemap();
