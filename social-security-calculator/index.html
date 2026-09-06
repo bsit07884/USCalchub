@@ -99,7 +99,7 @@
             </p>
             <div class="flex items-center justify-center gap-2 inline-flex px-4 py-2 rounded-full text-xs text-slate-400 uppercase tracking-wide">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 flex-shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-                <span>Reviewed by Muzaffar Ali, Financial Content Team &nbsp;|&nbsp; Last updated: June 2026</span>
+                <span>Reviewed by Muzaffar Ali, Financial Content Team &nbsp;|&nbsp; Last updated: September 2026</span>
             </div>
         </div>
 
@@ -181,21 +181,489 @@
   </p>
 </div>
 
-<div class="max-w-3xl mx-auto mt-6 mb-8 px-4">
-  <h2 class="text-xl font-semibold text-slate-800 mb-3">
-    Do States Tax Social Security? 2026 Guide
-  </h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="bg-green-50 rounded-lg p-4 border border-green-200">
-      <p class="font-semibold text-green-800 mb-2">✅ States With NO SS Tax (13 states)</p>
-      <p class="text-sm text-green-700">Florida, Texas, Nevada, Tennessee, Wyoming, South Dakota, Alaska, New Hampshire, Washington, Georgia, Illinois, Mississippi, Pennsylvania</p>
-    </div>
-    <div class="bg-red-50 rounded-lg p-4 border border-red-200">
-      <p class="font-semibold text-red-800 mb-2">⚠️ States That Tax SS Benefits</p>
-      <p class="text-sm text-red-700">Colorado (up to $24k deduction), Connecticut (75% exempt above threshold), Minnesota (full rate), Montana (full rate), New Mexico (partial), Rhode Island, Utah, Vermont, West Virginia (phasing out 2026)</p>
+<!-- State-by-State Tax Explorer (HubStateExplorer) -->
+<div class="max-w-3xl mx-auto mt-10 mb-12 px-4" id="state-explorer">
+  
+  <!-- Section Statutory Overview Banner -->
+  <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-4 mb-6 flex items-start gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+      <div class="text-xs font-semibold text-blue-900 uppercase tracking-wide mb-1">
+        2026 State Taxability Overview
+      </div>
+      <p class="text-xs text-slate-700 leading-relaxed">
+        In 2026, <strong>42 states and Washington, D.C. do NOT tax Social Security benefits</strong> at the state level (including West Virginia, which completed its full tax phaseout). Only <strong>8 states</strong> levy state taxes on benefits, each offering distinct income, age, or credit exemptions.
+      </p>
     </div>
   </div>
+
+  <!-- Explorer Header & Search Bar -->
+  <div class="mb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+      <div>
+        <h2 class="text-lg font-semibold text-slate-900">Find Your State's Social Security Tax Rule</h2>
+        <p class="text-xs text-slate-500">Explore exact exemption thresholds and statutory deduction rules for 2026.</p>
+      </div>
+      <span class="inline-flex items-center gap-1.5 self-start sm:self-auto bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-medium px-2.5 py-1 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+        8 Taxing States
+      </span>
+    </div>
+
+    <!-- Search Input -->
+    <div class="relative">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input 
+        type="text" 
+        id="ssStateSearch" 
+        placeholder="Search one of the 8 taxing states (e.g., Colorado, Minnesota, Utah)..." 
+        class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition shadow-sm"
+      />
+    </div>
+
+    <!-- Search Results Container (hidden by default) -->
+    <div id="ssSearchResultsContainer" class="hidden mt-4">
+      <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+        <span>Matching States</span>
+      </div>
+      <div id="ssSearchResultsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+      <div id="ssSearchNoResults" class="hidden text-xs text-slate-500 text-center py-6 bg-slate-50 rounded-xl border border-slate-200">
+        No taxing state found matching your search. <br><span class="text-[11px] text-slate-400 mt-1 inline-block">Remember: 42 states + D.C. do not tax Social Security at all.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Default View: Popular States + Collapsible Full List -->
+  <div id="ssDefaultView">
+    <!-- Popular / Highlighted States -->
+    <div class="mb-6">
+      <h3 class="text-xs font-semibold text-slate-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+        Popular Taxing States
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        
+        <!-- Colorado Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Colorado</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">4.40% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Age-Based Exemption</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-exempt at age 65+ (no cap). Ages 55–64 exempt ≤ $75k ($95k joint), max $20,000 deduction above cap.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/colorado/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Colorado 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Minnesota Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Minnesota</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">9.85% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Gradual Phaseout Subtraction</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">Full exemption up to $84,490 ($108,320 joint). Exemption phases out 10% per $4,000 over threshold.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/minnesota/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Minnesota 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Connecticut Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Connecticut</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">6.99% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">AGI Exemption Cutoff</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-free for AGI ≤ $75,000 ($100,000 joint). Max 25% of taxable benefits taxed above cap.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/connecticut/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Connecticut 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Utah Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Utah</span>
+              <span class="text-[10px] bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full font-medium border border-amber-200">4.55% flat rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Retirement Tax Credit</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">Nonrefundable credit phases out above $54,000 MAGI ($90,000 joint), reducing or eliminating state tax.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/utah/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Utah 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Collapsible: Browse All 8 Taxing States -->
+    <details class="group border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
+      <summary class="px-4 py-3 text-sm font-medium text-slate-900 cursor-pointer select-none flex justify-between items-center bg-slate-50 group-open:border-b border-slate-200 transition-colors">
+        <span class="flex items-center gap-2">
+          <span>Browse all 8 taxing states</span>
+          <span class="text-[11px] text-slate-400 font-normal">(Full list & comparisons)</span>
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50/50">
+
+        <!-- Colorado Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Colorado</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">4.40% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Age-Based Exemption</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-exempt at age 65+ (no cap). Ages 55–64 exempt ≤ $75k ($95k joint), max $20,000 deduction above cap.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/colorado/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Colorado 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Connecticut Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Connecticut</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">6.99% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">AGI Exemption Cutoff</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-free for AGI ≤ $75,000 ($100,000 joint). Max 25% of taxable benefits taxed above cap.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/connecticut/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Connecticut 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Minnesota Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Minnesota</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">9.85% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Gradual Phaseout Subtraction</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">Full exemption up to $84,490 ($108,320 joint). Exemption phases out 10% per $4,000 over threshold.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/minnesota/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Minnesota 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Montana Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Montana</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">5.90% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Federal-Method Deduction</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">Taxes federal taxable portion; filers age 65+ deduct up to $5,500 (single) or $11,000 (joint).</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/montana/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Montana 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- New Mexico Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">New Mexico</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">5.90% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">High-Cap Exemption</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">100% exempt for AGI ≤ $100,000 ($150,000 joint). Most retirees pay zero state tax on Social Security.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/new-mexico/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View New Mexico 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Rhode Island Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Rhode Island</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">5.99% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">FRA + Income Threshold</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">100% exempt at Full Retirement Age (FRA) with AGI ≤ $107,000 ($133,750 joint).</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/rhode-island/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Rhode Island 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Utah Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Utah</span>
+              <span class="text-[10px] bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full font-medium border border-amber-200">4.55% flat rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Retirement Tax Credit</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">Nonrefundable credit phases out above $54,000 MAGI ($90,000 joint), reducing or eliminating state tax.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/utah/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Utah 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Vermont Card -->
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-slate-900">Vermont</span>
+              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">8.75% top rate</span>
+            </div>
+            <div class="p-3 bg-slate-50/50">
+              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
+                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Threshold + Phaseout</div>
+                <div class="text-xs text-slate-700 leading-snug font-medium">100% exempt for AGI ≤ $50,000 ($65,000 joint); a partial exemption phases out at higher incomes — consult a tax professional for your exact threshold.</div>
+              </div>
+            </div>
+          </div>
+          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
+            <a href="/social-security-calculator/vermont/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
+              <span>View Vermont 2026 Rules</span>
+              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </details>
+  </div>
+
 </div>
+
+<!-- State Explorer Client-Side Filtering Script -->
+<script>
+  (function() {
+    var searchInput = document.getElementById('ssStateSearch');
+    var resultsContainer = document.getElementById('ssSearchResultsContainer');
+    var resultsGrid = document.getElementById('ssSearchResultsGrid');
+    var noResults = document.getElementById('ssSearchNoResults');
+    var defaultView = document.getElementById('ssDefaultView');
+    
+    var stateCards = [
+      {
+        slug: 'colorado',
+        name: 'Colorado',
+        topRate: '4.40%',
+        badgeColor: 'bg-red-50 text-red-600 border-red-100',
+        ruleType: 'Age-Based Exemption',
+        highlight: '100% tax-exempt at age 65+ (no cap). Ages 55–64 exempt ≤ $75k ($95k joint), max $20,000 deduction above cap.'
+      },
+      {
+        slug: 'connecticut',
+        name: 'Connecticut',
+        topRate: '6.99%',
+        badgeColor: 'bg-red-50 text-red-600 border-red-100',
+        ruleType: 'AGI Exemption Cutoff',
+        highlight: '100% tax-free for AGI ≤ $75,000 ($100,000 joint). Max 25% of taxable benefits taxed above cap.'
+      },
+      {
+        slug: 'minnesota',
+        name: 'Minnesota',
+        topRate: '9.85%',
+        badgeColor: 'bg-red-50 text-red-600 border-red-100',
+        ruleType: 'Gradual Phaseout Subtraction',
+        highlight: 'Full exemption up to $84,490 ($108,320 joint). Exemption phases out 10% per $4,000 over threshold.'
+      },
+      {
+        slug: 'montana',
+        name: 'Montana',
+        topRate: '5.90%',
+        badgeColor: 'bg-red-50 text-red-600 border-red-100',
+        ruleType: 'Federal-Method Deduction',
+        highlight: 'Taxes federal taxable portion; filers age 65+ deduct up to $5,500 (single) or $11,000 (joint).'
+      },
+      {
+        slug: 'new-mexico',
+        name: 'New Mexico',
+        topRate: '5.90%',
+        badgeColor: 'bg-red-50 text-red-600 border-red-100',
+        ruleType: 'High-Cap Exemption',
+        highlight: '100% exempt for AGI ≤ $100,000 ($150,000 joint). Most retirees pay zero state tax on Social Security.'
+      },
+      {
+        slug: 'rhode-island',
+        name: 'Rhode Island',
+        topRate: '5.99%',
+        badgeColor: 'bg-red-50 text-red-600 border-red-100',
+        ruleType: 'FRA + Income Threshold',
+        highlight: '100% exempt at Full Retirement Age (FRA) with AGI ≤ $107,000 ($133,750 joint).'
+      },
+      {
+        slug: 'utah',
+        name: 'Utah',
+        topRate: '4.55%',
+        badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
+        ruleType: 'Retirement Tax Credit',
+        highlight: 'Nonrefundable credit phases out above $54,000 MAGI ($90,000 joint), reducing or eliminating state tax.'
+      },
+      {
+        slug: 'vermont',
+        name: 'Vermont',
+        topRate: '8.75%',
+        badgeColor: 'bg-red-50 text-red-600 border-red-100',
+        ruleType: 'Threshold + Phaseout',
+        highlight: '100% exempt for AGI ≤ $50,000 ($65,000 joint); a partial exemption phases out at higher incomes — consult a tax professional for your exact threshold.'
+      }
+    ];
+
+    function renderCard(s) {
+      return '<div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">' +
+        '<div>' +
+          '<div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">' +
+            '<span class="text-sm font-semibold text-slate-900">' + s.name + '</span>' +
+            '<span class="text-[10px] ' + s.badgeColor + ' px-2 py-0.5 rounded-full font-medium border">' + s.topRate + ' top rate</span>' +
+          '</div>' +
+          '<div class="p-3 bg-slate-50/50">' +
+            '<div class="bg-white p-2.5 rounded-lg border border-slate-200">' +
+              '<div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">' + s.ruleType + '</div>' +
+              '<div class="text-xs text-slate-700 leading-snug font-medium">' + s.highlight + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="px-4 py-2.5 border-t border-slate-100 bg-white">' +
+          '<a href="/social-security-calculator/' + s.slug + '/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">' +
+            '<span>View ' + s.name + ' 2026 Rules</span>' +
+            '<span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>' +
+          '</a>' +
+        '</div>' +
+      '</div>';
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        var query = e.target.value.trim().toLowerCase();
+        if (!query) {
+          resultsContainer.classList.add('hidden');
+          defaultView.classList.remove('hidden');
+          return;
+        }
+
+        defaultView.classList.add('hidden');
+        resultsContainer.classList.remove('hidden');
+
+        var matches = stateCards.filter(function(s) {
+          return s.name.toLowerCase().indexOf(query) !== -1 || 
+                 s.slug.indexOf(query) !== -1 || 
+                 s.ruleType.toLowerCase().indexOf(query) !== -1;
+        });
+
+        if (matches.length > 0) {
+          noResults.classList.add('hidden');
+          resultsGrid.innerHTML = matches.map(renderCard).join('');
+        } else {
+          resultsGrid.innerHTML = '';
+          noResults.classList.remove('hidden');
+        }
+      });
+    }
+  })();
+</script>
+
 
 <div class="max-w-3xl mx-auto mt-16 mb-20 px-4 space-y-8">
 
@@ -365,48 +833,6 @@ new Chart(ctx, {
 });
 </script>
 
-<div class="max-w-4xl mx-auto mt-10 px-4">
-    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-        <h2 class="text-lg font-bold text-slate-900 mb-2">State-by-State Social Security Tax Rules (2026)</h2>
-        <p class="text-sm text-slate-600 mb-4">
-            Only 8 states in the US tax Social Security benefits in 2026. Select a state below to view its specific income exemptions, age-based deduction rules, and tax credit thresholds:
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-            <a href="/social-security-calculator/colorado/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">Colorado</div>
-                <div class="text-xs text-slate-500 mt-0.5">100% exempt at 65+</div>
-            </a>
-            <a href="/social-security-calculator/connecticut/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">Connecticut</div>
-                <div class="text-xs text-slate-500 mt-0.5">Exempt ≤ $75k ($100k joint)</div>
-            </a>
-            <a href="/social-security-calculator/minnesota/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">Minnesota</div>
-                <div class="text-xs text-slate-500 mt-0.5">Exempt ≤ $84k ($108k joint)</div>
-            </a>
-            <a href="/social-security-calculator/montana/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">Montana</div>
-                <div class="text-xs text-slate-500 mt-0.5">Federal method deduction</div>
-            </a>
-            <a href="/social-security-calculator/new-mexico/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">New Mexico</div>
-                <div class="text-xs text-slate-500 mt-0.5">Exempt ≤ $100k ($150k joint)</div>
-            </a>
-            <a href="/social-security-calculator/rhode-island/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">Rhode Island</div>
-                <div class="text-xs text-slate-500 mt-0.5">FRA + AGI threshold</div>
-            </a>
-            <a href="/social-security-calculator/utah/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">Utah</div>
-                <div class="text-xs text-slate-500 mt-0.5">Tax credit mechanism</div>
-            </a>
-            <a href="/social-security-calculator/vermont/" class="block p-3 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 transition">
-                <div class="font-semibold text-sm text-slate-800">Vermont</div>
-                <div class="text-xs text-slate-500 mt-0.5">Exempt ≤ $50k ($65k joint)</div>
-            </a>
-        </div>
-    </div>
-</div>
 
     <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">

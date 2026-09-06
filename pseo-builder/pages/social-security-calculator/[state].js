@@ -420,12 +420,12 @@ export default function SocialSecurityStatePage({ stateData, otherTaxingStates, 
                     <div className="bg-white p-3 rounded border border-slate-200">
                       <div className="text-slate-500 font-medium mb-1">Single Filers</div>
                       <div className="text-slate-900 font-semibold text-sm">AGI ≤ $50,000: 100% Exempt</div>
-                      <div className="text-[11px] text-slate-400 mt-1">Phases out between $50,000 and $60,000</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Partial exemption phases out at higher incomes</div>
                     </div>
                     <div className="bg-white p-3 rounded border border-slate-200">
                       <div className="text-slate-500 font-medium mb-1">Married Filing Jointly</div>
                       <div className="text-slate-900 font-semibold text-sm">AGI ≤ $65,000: 100% Exempt</div>
-                      <div className="text-[11px] text-slate-400 mt-1">Phases out between $65,000 and $75,000</div>
+                      <div className="text-[11px] text-slate-400 mt-1">Partial exemption phases out at higher incomes</div>
                     </div>
                   </div>
                 </div>
