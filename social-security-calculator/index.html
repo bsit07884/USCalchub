@@ -1,953 +1,804 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="scroll-smooth" lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Security Tax Calculator 2026 | USCalcHub</title>
-    <meta name="description" content="Calculate how much of your Social Security benefits will be taxable in 2026 based on your Combined Income and IRS rules.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-    <link rel="stylesheet" href="../styles.css">
-    <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Social Security Tax Calculator 2026",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "description": "Free 2026 Social Security tax calculator. Enter combined income to find how much of your SS benefits are taxable under IRS thresholds for single and married filers.",
-  "url": "https://uscalchub.com/social-security-calculator/",
-  "author": {"@type": "Organization", "name": "USCalcHub", "url": "https://uscalchub.com"},
-  "featureList": [
-    "2026 IRS combined income thresholds",
-    "Single and married filer modes",
-    "Taxable percentage visualization",
-    "Interactive threshold chart",
-    "Free, instant, private"
-  ]
-}
-</script>
-<meta property="og:image" content="https://uscalchub.com/logo.png" /><meta name="twitter:image" content="https://uscalchub.com/logo.png" /></head>
-
-<body class="bg-slate-50 min-h-screen">
-
-    <nav class="bg-white border-b border-slate-200 py-4 mb-8 shadow-sm relative z-50">
-        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
-            <a href="/" class="flex items-center gap-2 group z-50">
-                <div class="bg-blue-600 text-white p-1.5 rounded-lg group-hover:bg-blue-700 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                </div>
-                <span class="text-xl font-bold text-slate-800 tracking-tight">USCalcHub<span
-                        class="text-blue-600">.com</span></span>
-            </a>
-            <nav class="hidden md:flex gap-6 z-50">
-                <a href="/" class="text-slate-600 hover:text-blue-600 font-medium transition">Home</a>
-                <a href="/#tools-section" class="text-slate-600 hover:text-blue-600 font-medium transition">Finance Tools</a>
-                <a href="/contact/" class="text-slate-600 hover:text-blue-600 font-medium transition">Contact</a>
-                <a href="https://uscalchub.com/blog/" class="text-slate-600 hover:text-blue-600 font-medium transition">Blog</a>
-                <a href="/about/" class="text-slate-600 hover:text-blue-600 font-medium transition">About Us</a>
-            </nav>
-            <div class="md:hidden flex items-center z-50">
-                <button type="button" id="menu-btn" class="text-gray-500 hover:text-blue-600 focus:outline-none p-2 rounded-md transition-colors" aria-label="Toggle menu">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full left-0 top-full">
-            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Home</a>
-            <a href="/#tools-section" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Finance Tools</a>
-            <a href="/contact/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Contact</a>
-            <a href="https://uscalchub.com/blog/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">Blog</a>
-            <a href="/about/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50 hover:text-blue-600 transition-colors">About Us</a>
-        </div>
-    </nav>
-
-    <div class="px-4 pb-12">
-
-        <div class="max-w-4xl mx-auto text-center pt-10 pb-6 px-4">
-            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">Social Security Tax Calculator 2026</h1>
-
-<div class="bg-blue-50 border-l-4 border-blue-500 rounded-r-lg p-4 mb-6 max-w-2xl mx-auto">
-  <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">⚡ Quick Answer</p>
-  <p class="text-sm text-slate-700 leading-relaxed text-left">
-    In 2026, <strong>single filers</strong> with combined income above <strong>$34,000</strong> have up to <strong>85% of SS benefits taxable</strong>. Below <strong>$25,000</strong> — completely tax-free. For <strong>married filing jointly</strong>: tax-free below <strong>$32,000</strong>, 85% taxable above <strong>$44,000</strong>.
-  </p>
-</div>
-            <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-6">
-                Find out how much of your Social Security benefits are taxable in 2026 based on your Combined Income. Enter your benefits, other income, and filing status to get an instant IRS-based estimate.
-            </p>
-            <div class="flex items-center justify-center gap-2 inline-flex px-4 py-2 rounded-full text-xs text-slate-400 uppercase tracking-wide">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 flex-shrink-0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-                <span>Reviewed by Muzaffar Ali, Financial Content Team &nbsp;|&nbsp; Last updated: September 2026</span>
-            </div>
-        </div>
-
-    <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-xl border border-slate-100 font-sans mt-4 mb-8">
-      <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Taxable Benefits Estimator</h2>
-      
-      <div class="space-y-4">
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1">Filing Status</label>
-          <select id="status" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition bg-white">
-            <option value="single">Single / Head of Household</option>
-            <option value="married">Married Filing Jointly</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1">Annual Social Security Benefits ($)</label>
-          <input 
-            type="number" id="ssBenefits" min="0"
-            class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
-            placeholder="e.g., 20000"
-          />
-        </div>
-
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1">Adjusted Gross Income (Other Income) ($)</label>
-          <input 
-            type="number" id="agi" min="0"
-            class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
-            placeholder="e.g., 15000"
-          />
-        </div>
-
-        <div>
-          <label class="block text-sm font-semibold text-slate-700 mb-1">Nontaxable Interest ($)</label>
-          <input 
-            type="number" id="nonTaxInterest" min="0"
-            class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition"
-            placeholder="e.g., 0"
-          />
-        </div>
-      </div>
-
-      <div class="mt-8 bg-blue-50 p-4 rounded-xl border border-blue-100">
-        <h3 class="text-sm font-bold text-blue-900 uppercase tracking-wider mb-2">Estimated 2026 Results</h3>
-        
-        <div class="flex justify-between items-center py-2 border-b border-blue-200">
-          <span class="text-slate-600 text-sm">Combined Income:</span>
-          <span class="font-semibold text-slate-800" id="combinedIncome">$0.00</span>
-        </div>
-        
-        <div class="flex justify-between items-center py-2 border-b border-blue-200">
-          <span class="text-slate-600 text-sm">Portion of Benefits Taxed:</span>
-          <span class="font-semibold text-slate-800" id="taxPercent">0.0%</span>
-        </div>
-        
-        <div class="flex justify-between items-center py-2 mt-2">
-          <span class="text-slate-600 text-sm font-bold">Taxable Social Security:</span>
-          <span class="font-black text-red-600 text-lg" id="taxableAmount">$0.00</span>
-        </div>
-        
-        <p class="text-xs text-slate-500 mt-2 italic text-center">*This is the amount added to your taxable income, not the exact tax you will pay.</p>
-      </div>
-    </div>
-</div>
-
-<div class="max-w-3xl mx-auto mt-8 mb-8 px-4">
-  <h2 class="text-2xl font-semibold text-slate-800 mb-2">
-    2026 IRS Taxability Thresholds — Visual Guide
-  </h2>
-  <p class="text-slate-600 text-sm mb-4">
-    How your combined income determines the taxable percentage of your Social Security benefits.
-  </p>
-  <div class="bg-white rounded-xl border border-slate-200 p-4">
-    <canvas id="ssChart" height="260"></canvas>
-  </div>
-  <p class="text-xs text-slate-400 mt-2 italic">
-    *Combined Income = AGI + Non-taxable Interest + 50% of Social Security Benefits
-  </p>
-</div>
-
-<!-- State-by-State Tax Explorer (HubStateExplorer) -->
-<div class="max-w-3xl mx-auto mt-10 mb-12 px-4" id="state-explorer">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>US Social Security Tax Calculator 2026 — USCalcHub</title>
+  <meta name="description" content="Calculate how much of your Social Security benefits will be taxable in 2026 based on your Combined Income and IRS rules.">
+  <link rel="canonical" href="https://uscalchub.com/social-security-calculator/">
   
-  <!-- Section Statutory Overview Banner -->
-  <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-4 mb-6 flex items-start gap-3">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-      <div class="text-xs font-semibold text-blue-900 uppercase tracking-wide mb-1">
-        2026 State Taxability Overview
-      </div>
-      <p class="text-xs text-slate-700 leading-relaxed">
-        In 2026, <strong>42 states and Washington, D.C. do NOT tax Social Security benefits</strong> at the state level (including West Virginia, which completed its full tax phaseout). Only <strong>8 states</strong> levy state taxes on benefits, each offering distinct income, age, or credit exemptions.
-      </p>
-    </div>
-  </div>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-  <!-- Explorer Header & Search Bar -->
-  <div class="mb-6">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-      <div>
-        <h2 class="text-lg font-semibold text-slate-900">Find Your State's Social Security Tax Rule</h2>
-        <p class="text-xs text-slate-500">Explore exact exemption thresholds and statutory deduction rules for 2026.</p>
-      </div>
-      <span class="inline-flex items-center gap-1.5 self-start sm:self-auto bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-medium px-2.5 py-1 rounded-full">
-        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-        8 Taxing States
-      </span>
-    </div>
+  <!-- Tailwind CSS v3 CDN with forms and container queries -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 
-    <!-- Search Input -->
-    <div class="relative">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-      <input 
-        type="text" 
-        id="ssStateSearch" 
-        placeholder="Search one of the 8 taxing states (e.g., Colorado, Minnesota, Utah)..." 
-        class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition shadow-sm"
-      />
-    </div>
-
-    <!-- Search Results Container (hidden by default) -->
-    <div id="ssSearchResultsContainer" class="hidden mt-4">
-      <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
-        <span>Matching States</span>
-      </div>
-      <div id="ssSearchResultsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
-      <div id="ssSearchNoResults" class="hidden text-xs text-slate-500 text-center py-6 bg-slate-50 rounded-xl border border-slate-200">
-        No taxing state found matching your search. <br><span class="text-[11px] text-slate-400 mt-1 inline-block">Remember: 42 states + D.C. do not tax Social Security at all.</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Default View: Popular States + Collapsible Full List -->
-  <div id="ssDefaultView">
-    <!-- Popular / Highlighted States -->
-    <div class="mb-6">
-      <h3 class="text-xs font-semibold text-slate-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-        Popular Taxing States
-      </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        
-        <!-- Colorado Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Colorado</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">4.40% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Age-Based Exemption</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-exempt at age 65+ (no cap). Ages 55–64 exempt ≤ $75k ($95k joint), max $20,000 deduction above cap.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/colorado/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Colorado 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Minnesota Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Minnesota</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">9.85% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Gradual Phaseout Subtraction</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">Full exemption up to $84,490 ($108,320 joint). Exemption phases out 10% per $4,000 over threshold.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/minnesota/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Minnesota 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Connecticut Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Connecticut</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">6.99% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">AGI Exemption Cutoff</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-free for AGI ≤ $75,000 ($100,000 joint). Max 25% of taxable benefits taxed above cap.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/connecticut/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Connecticut 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Utah Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Utah</span>
-              <span class="text-[10px] bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full font-medium border border-amber-200">4.55% flat rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Retirement Tax Credit</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">Nonrefundable credit phases out above $54,000 MAGI ($90,000 joint), reducing or eliminating state tax.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/utah/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Utah 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Collapsible: Browse All 8 Taxing States -->
-    <details class="group border border-slate-200 rounded-xl bg-white overflow-hidden shadow-sm">
-      <summary class="px-4 py-3 text-sm font-medium text-slate-900 cursor-pointer select-none flex justify-between items-center bg-slate-50 group-open:border-b border-slate-200 transition-colors">
-        <span class="flex items-center gap-2">
-          <span>Browse all 8 taxing states</span>
-          <span class="text-[11px] text-slate-400 font-normal">(Full list & comparisons)</span>
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </summary>
-      <div class="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50/50">
-
-        <!-- Colorado Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Colorado</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">4.40% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Age-Based Exemption</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-exempt at age 65+ (no cap). Ages 55–64 exempt ≤ $75k ($95k joint), max $20,000 deduction above cap.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/colorado/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Colorado 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Connecticut Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Connecticut</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">6.99% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">AGI Exemption Cutoff</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">100% tax-free for AGI ≤ $75,000 ($100,000 joint). Max 25% of taxable benefits taxed above cap.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/connecticut/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Connecticut 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Minnesota Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Minnesota</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">9.85% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Gradual Phaseout Subtraction</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">Full exemption up to $84,490 ($108,320 joint). Exemption phases out 10% per $4,000 over threshold.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/minnesota/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Minnesota 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Montana Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Montana</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">5.90% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Federal-Method Deduction</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">Taxes federal taxable portion; filers age 65+ deduct up to $5,500 (single) or $11,000 (joint).</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/montana/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Montana 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- New Mexico Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">New Mexico</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">5.90% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">High-Cap Exemption</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">100% exempt for AGI ≤ $100,000 ($150,000 joint). Most retirees pay zero state tax on Social Security.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/new-mexico/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View New Mexico 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Rhode Island Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Rhode Island</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">5.99% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">FRA + Income Threshold</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">100% exempt at Full Retirement Age (FRA) with AGI ≤ $107,000 ($133,750 joint).</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/rhode-island/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Rhode Island 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Utah Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Utah</span>
-              <span class="text-[10px] bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full font-medium border border-amber-200">4.55% flat rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Retirement Tax Credit</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">Nonrefundable credit phases out above $54,000 MAGI ($90,000 joint), reducing or eliminating state tax.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/utah/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Utah 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Vermont Card -->
-        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">
-          <div>
-            <div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">
-              <span class="text-sm font-semibold text-slate-900">Vermont</span>
-              <span class="text-[10px] bg-red-50 text-red-600 px-2 py-0.5 rounded-full font-medium border border-red-100">8.75% top rate</span>
-            </div>
-            <div class="p-3 bg-slate-50/50">
-              <div class="bg-white p-2.5 rounded-lg border border-slate-200">
-                <div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">Threshold + Phaseout</div>
-                <div class="text-xs text-slate-700 leading-snug font-medium">100% exempt for AGI ≤ $50,000 ($65,000 joint); a partial exemption phases out at higher incomes — consult a tax professional for your exact threshold.</div>
-              </div>
-            </div>
-          </div>
-          <div class="px-4 py-2.5 border-t border-slate-100 bg-white">
-            <a href="/social-security-calculator/vermont/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">
-              <span>View Vermont 2026 Rules</span>
-              <span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </details>
-  </div>
-
-</div>
-
-<!-- State Explorer Client-Side Filtering Script -->
-<script>
-  (function() {
-    var searchInput = document.getElementById('ssStateSearch');
-    var resultsContainer = document.getElementById('ssSearchResultsContainer');
-    var resultsGrid = document.getElementById('ssSearchResultsGrid');
-    var noResults = document.getElementById('ssSearchNoResults');
-    var defaultView = document.getElementById('ssDefaultView');
-    
-    var stateCards = [
-      {
-        slug: 'colorado',
-        name: 'Colorado',
-        topRate: '4.40%',
-        badgeColor: 'bg-red-50 text-red-600 border-red-100',
-        ruleType: 'Age-Based Exemption',
-        highlight: '100% tax-exempt at age 65+ (no cap). Ages 55–64 exempt ≤ $75k ($95k joint), max $20,000 deduction above cap.'
-      },
-      {
-        slug: 'connecticut',
-        name: 'Connecticut',
-        topRate: '6.99%',
-        badgeColor: 'bg-red-50 text-red-600 border-red-100',
-        ruleType: 'AGI Exemption Cutoff',
-        highlight: '100% tax-free for AGI ≤ $75,000 ($100,000 joint). Max 25% of taxable benefits taxed above cap.'
-      },
-      {
-        slug: 'minnesota',
-        name: 'Minnesota',
-        topRate: '9.85%',
-        badgeColor: 'bg-red-50 text-red-600 border-red-100',
-        ruleType: 'Gradual Phaseout Subtraction',
-        highlight: 'Full exemption up to $84,490 ($108,320 joint). Exemption phases out 10% per $4,000 over threshold.'
-      },
-      {
-        slug: 'montana',
-        name: 'Montana',
-        topRate: '5.90%',
-        badgeColor: 'bg-red-50 text-red-600 border-red-100',
-        ruleType: 'Federal-Method Deduction',
-        highlight: 'Taxes federal taxable portion; filers age 65+ deduct up to $5,500 (single) or $11,000 (joint).'
-      },
-      {
-        slug: 'new-mexico',
-        name: 'New Mexico',
-        topRate: '5.90%',
-        badgeColor: 'bg-red-50 text-red-600 border-red-100',
-        ruleType: 'High-Cap Exemption',
-        highlight: '100% exempt for AGI ≤ $100,000 ($150,000 joint). Most retirees pay zero state tax on Social Security.'
-      },
-      {
-        slug: 'rhode-island',
-        name: 'Rhode Island',
-        topRate: '5.99%',
-        badgeColor: 'bg-red-50 text-red-600 border-red-100',
-        ruleType: 'FRA + Income Threshold',
-        highlight: '100% exempt at Full Retirement Age (FRA) with AGI ≤ $107,000 ($133,750 joint).'
-      },
-      {
-        slug: 'utah',
-        name: 'Utah',
-        topRate: '4.55%',
-        badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
-        ruleType: 'Retirement Tax Credit',
-        highlight: 'Nonrefundable credit phases out above $54,000 MAGI ($90,000 joint), reducing or eliminating state tax.'
-      },
-      {
-        slug: 'vermont',
-        name: 'Vermont',
-        topRate: '8.75%',
-        badgeColor: 'bg-red-50 text-red-600 border-red-100',
-        ruleType: 'Threshold + Phaseout',
-        highlight: '100% exempt for AGI ≤ $50,000 ($65,000 joint); a partial exemption phases out at higher incomes — consult a tax professional for your exact threshold.'
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f6fe',
+              100: '#ddecfd',
+              200: '#c2defc',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              900: '#0b192f',
+              dark: '#0a1628'
+            }
+          }
+        }
       }
-    ];
-
-    function renderCard(s) {
-      return '<div class="bg-white border border-slate-200 rounded-xl overflow-hidden transition-all duration-150 hover:border-blue-400 hover:shadow-sm flex flex-col justify-between">' +
-        '<div>' +
-          '<div class="px-4 py-3 border-b border-slate-100 flex justify-between items-center bg-white">' +
-            '<span class="text-sm font-semibold text-slate-900">' + s.name + '</span>' +
-            '<span class="text-[10px] ' + s.badgeColor + ' px-2 py-0.5 rounded-full font-medium border">' + s.topRate + ' top rate</span>' +
-          '</div>' +
-          '<div class="p-3 bg-slate-50/50">' +
-            '<div class="bg-white p-2.5 rounded-lg border border-slate-200">' +
-              '<div class="text-[10px] font-semibold uppercase tracking-wider text-blue-600 mb-1">' + s.ruleType + '</div>' +
-              '<div class="text-xs text-slate-700 leading-snug font-medium">' + s.highlight + '</div>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="px-4 py-2.5 border-t border-slate-100 bg-white">' +
-          '<a href="/social-security-calculator/' + s.slug + '/" class="text-xs text-blue-600 hover:text-blue-700 font-medium flex items-center justify-between group">' +
-            '<span>View ' + s.name + ' 2026 Rules</span>' +
-            '<span class="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-transform">→</span>' +
-          '</a>' +
-        '</div>' +
-      '</div>';
     }
+  </script>
 
-    if (searchInput) {
-      searchInput.addEventListener('input', function(e) {
-        var query = e.target.value.trim().toLowerCase();
-        if (!query) {
-          resultsContainer.classList.add('hidden');
-          defaultView.classList.remove('hidden');
-          return;
-        }
-
-        defaultView.classList.add('hidden');
-        resultsContainer.classList.remove('hidden');
-
-        var matches = stateCards.filter(function(s) {
-          return s.name.toLowerCase().indexOf(query) !== -1 || 
-                 s.slug.indexOf(query) !== -1 || 
-                 s.ruleType.toLowerCase().indexOf(query) !== -1;
-        });
-
-        if (matches.length > 0) {
-          noResults.classList.add('hidden');
-          resultsGrid.innerHTML = matches.map(renderCard).join('');
-        } else {
-          resultsGrid.innerHTML = '';
-          noResults.classList.remove('hidden');
-        }
-      });
+  <!-- BEGIN: Custom Page Styles -->
+  <style data-purpose="background-patterns">
+    /* Subtle USCalcHub dot pattern background */
+    .bg-dot-pattern {
+      background-image: radial-gradient(#cbd5e1 0.85px, transparent 0.85px);
+      background-size: 20px 20px;
     }
-  })();
-</script>
+    .chart-bar {
+      transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Social Security Tax Calculator 2026",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Free 2026 Social Security tax calculator. Enter combined income to find how much of your SS benefits are taxable under IRS thresholds for single and married filers.",
+    "url": "https://uscalchub.com/social-security-calculator/",
+    "author": {"@type": "Organization", "name": "USCalcHub", "url": "https://uscalchub.com"},
+    "featureList": [
+      "2026 IRS combined income thresholds",
+      "Single and married filer modes",
+      "Taxable percentage visualization",
+      "Interactive threshold chart",
+      "Free, instant, private"
+    ]
+  }
+  </script>
+  <meta property="og:title" content="Social Security Tax Calculator 2026 | USCalcHub" />
+  <meta property="og:description" content="Calculate how much of your Social Security benefits will be taxable in 2026 based on your Combined Income and IRS rules." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://uscalchub.com/social-security-calculator/" />
+  <meta property="og:image" content="https://uscalchub.com/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Social Security Tax Calculator 2026 | USCalcHub" />
+  <meta name="twitter:description" content="Calculate how much of your Social Security benefits will be taxable in 2026 based on your Combined Income and IRS rules." />
+  <meta name="twitter:image" content="https://uscalchub.com/logo.png" />
+</head>
 
-<div class="max-w-3xl mx-auto mt-16 mb-20 px-4 space-y-8">
-
-    <div class="mt-12">
-        <h2 class="text-2xl font-semibold text-slate-800 mb-4">Why Choose Our Social Security Tax Calculator?</h2>
-        <div class="space-y-4 text-base text-slate-600 leading-relaxed max-w-3xl">
-            <p>Navigating retirement taxes can be incredibly stressful, especially with shifting tax laws and inflation. Our calculator operates strictly according to the latest 2026 IRS guidelines to provide you with a highly accurate estimate of your tax liability. Whether you are a single filer managing part-time income or a married couple balancing multiple retirement accounts, this tool instantly processes your Combined Income. Best of all, there is no sign-up required, and your financial data never leaves your browser.</p>
-            <p>Understanding the exact math behind your tax bill is essential for preserving your nest egg. Want a deeper explanation of how these thresholds work? Read our full guide on <a href="https://uscalchub.com/blog/how-much-social-security-is-taxable-2026/" class="text-blue-600 hover:underline font-semibold">how much Social Security is taxable in 2026</a> to learn about the new deductions and strategies to lower your Adjusted Gross Income.</p>
+<body class="font-sans text-slate-800 bg-[#fafcff] antialiased selection:bg-blue-100 selection:text-blue-700">
+  <!-- BEGIN: Navigation -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-[0_1px_3px_rgba(0,0,0,0.03)]" data-purpose="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a class="flex items-center gap-2 group" href="/">
+        <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+          </svg>
         </div>
+        <div class="flex items-baseline font-extrabold text-2xl tracking-tight">
+          <span class="text-blue-600">USCalc</span>
+          <span class="text-slate-900">Hub</span>
+          <span class="text-xs font-semibold text-slate-400 ml-1">.com</span>
+        </div>
+      </a>
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a class="hover:text-blue-600 transition-colors" href="/">Home</a>
+        <a class="text-blue-600 transition-colors" href="/salary-calculator/">Finance Tools</a>
+        <a class="hover:text-blue-600 transition-colors" href="/blog/">Blog</a>
+        <a class="hover:text-blue-600 transition-colors" href="/contact/">Contact</a>
+        <a class="hover:text-blue-600 transition-colors" href="/about/">About Us</a>
+      </nav>
+      <!-- Header CTA -->
+      <div class="flex items-center gap-3">
+        <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-500/30 transition-all hover:shadow-md" href="#calculator-card">
+          <svg class="w-4 h-4 text-blue-200" fill="currentColor" viewbox="0 0 20 20">
+            <path clip-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm4-1a1 1 0 100 2h.01a1 1 0 100-2H13zM7 8a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1z" fill-rule="evenodd"></path>
+          </svg>
+          2026 Tax Tools
+        </a>
+      </div>
     </div>
+  </header>
+  <!-- END: Navigation -->
 
-    <div class="mt-10 mb-8">
-      <h2 class="text-2xl font-semibold text-slate-800 mb-4">
-        How This Calculation Works
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
-          <p class="font-semibold text-slate-700 mb-2">Combined Income Formula</p>
-          <p class="text-sm text-slate-600">Combined Income = Adjusted Gross Income + Non-taxable Interest Income + 50% of your annual Social Security benefits. This is the IRS's "provisional income" metric.</p>
+  <!-- BEGIN: Hero Section -->
+  <section class="relative bg-dot-pattern pt-12 pb-16 border-b border-slate-200/60 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <!-- IRS Status Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
+        <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor" viewbox="0 0 20 20">
+          <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+        </svg>
+        2026 IRS RULES UPDATED
+      </div>
+      <!-- Main Heading -->
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-4">
+        US Social Security Tax Calculator — See Your <span class="text-blue-600 underline decoration-blue-200 decoration-wavy underline-offset-4">Taxable</span> Benefits
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto mb-6">
+        Enter your benefits and income to determine your exact provisional IRS Combined Income and calculate how much of your Social Security is subject to federal taxation.
+      </p>
+      <!-- Reviewer Meta Information -->
+      <div class="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-500 font-medium">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
+          Reviewed by Muzaffar Ali, Financial Content Team
+        </span>
+        <span class="text-slate-300">•</span>
+        <span>Last updated: September 2026</span>
+      </div>
+    </div>
+  </section>
+  <!-- END: Hero Section -->
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 -mt-8 pb-20 space-y-12">
+    <!-- BEGIN: Calculator Interactive Card -->
+    <div class="bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-200/80 overflow-hidden" data-purpose="tax-calculator" id="calculator-card">
+      <div class="p-6 sm:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <!-- Filing Status Field -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2" for="filingStatus">
+              Filing Status
+            </label>
+            <div class="relative">
+              <select class="w-full h-12 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-sm font-medium rounded-xl px-4 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" id="filingStatus">
+                <option value="single">Single / Head of Household</option>
+                <option value="married">Married Filing Jointly</option>
+                <option value="separate">Married Filing Separately (Lived with spouse)</option>
+              </select>
+            </div>
+            <p class="text-xs text-slate-400 mt-1.5">Determines IRS Combined Income phaseout brackets.</p>
+          </div>
+          <!-- Annual Social Security Benefits -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-600" for="annualSS">
+                Annual SS Benefits ($)
+              </label>
+              <span class="text-[11px] text-blue-600 font-medium cursor-help" title="Found on Box 5 of your SSA-1099 form">Form SSA-1099 Box 5</span>
+            </div>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-semibold">$</span>
+              <input class="w-full h-12 pl-8 pr-4 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-sm font-semibold rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" id="annualSS" min="0" placeholder="20,000" step="100" type="number" value="20000"/>
+            </div>
+            <p class="text-xs text-slate-400 mt-1.5">Total gross benefits received before deductions.</p>
+          </div>
+          <!-- Other Income / Adjusted Gross Income (AGI) -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-600" for="otherIncome">
+                Other Income / AGI ($)
+              </label>
+              <span class="text-[11px] text-slate-400">Pensions, 401(k), Wages</span>
+            </div>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-semibold">$</span>
+              <input class="w-full h-12 pl-8 pr-4 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-sm font-semibold rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" id="otherIncome" min="0" placeholder="15,000" step="500" type="number" value="15000"/>
+            </div>
+            <p class="text-xs text-slate-400 mt-1.5">Adjusted Gross Income excluding Social Security benefits.</p>
+          </div>
+          <!-- Non-taxable Interest -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-600" for="nontaxableInterest">
+                Nontaxable Interest ($)
+              </label>
+              <span class="text-[11px] text-slate-400">e.g., Municipal Bonds</span>
+            </div>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-semibold">$</span>
+              <input class="w-full h-12 pl-8 pr-4 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 text-slate-800 text-sm font-semibold rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" id="nontaxableInterest" min="0" placeholder="0" step="100" type="number" value="0"/>
+            </div>
+            <p class="text-xs text-slate-400 mt-1.5">Tax-exempt interest must be added back by IRS law.</p>
+          </div>
         </div>
-        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
-          <p class="font-semibold text-slate-700 mb-2">The 85% Maximum Rule</p>
-          <p class="text-sm text-slate-600">The IRS can tax at most 85% of your Social Security benefits. 15% is always tax-free. Even at the highest income levels, you keep at least 15% of benefits completely free from federal income tax.</p>
+
+        <!-- Real-time Calculation Result Box -->
+        <div class="bg-gradient-to-br from-emerald-50/90 via-teal-50/50 to-emerald-50/70 border border-emerald-300/80 rounded-2xl p-6 transition-all duration-300" id="resultsCard">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">✓</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Estimated Taxable Social Security</span>
+              </div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-3xl sm:text-4xl font-extrabold text-emerald-900 tracking-tight" id="resultTaxableAmount">$0.00</span>
+                <span class="text-xs font-semibold text-emerald-700">subject to regular income tax</span>
+              </div>
+            </div>
+            <!-- Metric chips -->
+            <div class="flex flex-wrap sm:flex-nowrap items-center gap-4 bg-white/80 backdrop-blur-sm border border-emerald-200/60 rounded-xl px-4 py-3 shadow-xs">
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Provisional Combined Income</div>
+                <div class="text-base font-bold text-slate-900" id="resultCombinedIncome">$25,000.00</div>
+              </div>
+              <div class="h-8 w-px bg-slate-200"></div>
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Portion Taxed</div>
+                <div class="text-base font-bold text-emerald-700" id="resultTaxablePercentage">0.0% of Benefits</div>
+              </div>
+            </div>
+          </div>
+          <!-- Calculation Disclaimer Footer -->
+          <div class="mt-4 pt-3 border-t border-emerald-200/60 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-emerald-800/80 gap-2">
+            <p>
+              * This is the amount added to your taxable gross income, <strong>not the exact dollars you will pay</strong> in federal income taxes.
+            </p>
+            <div class="flex items-center gap-3 shrink-0">
+              <button class="text-emerald-900 hover:text-emerald-950 font-bold underline cursor-pointer" onclick="window.print()">Print Summary</button>
+            </div>
+          </div>
         </div>
-        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
-          <p class="font-semibold text-slate-700 mb-2">Reducing Taxable SS Benefits</p>
-          <p class="text-sm text-slate-600">Strategies include: Roth IRA conversions (reduce future AGI), timing SS benefit start date, managing other income sources, qualified charitable distributions (QCDs) from IRAs at 70½+.</p>
+      </div>
+    </div>
+    <!-- END: Calculator Interactive Card -->
+
+    <!-- BEGIN: Quick Answer Callout -->
+    <div class="bg-blue-50/70 border border-blue-200/80 rounded-2xl p-6 sm:p-7 relative overflow-hidden" data-purpose="quick-answer-banner">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/30">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          </svg>
         </div>
-        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
-          <p class="font-semibold text-slate-700 mb-2">Official Reference</p>
-          <p class="text-sm text-slate-600">
-          <a href="https://www.ssa.gov/benefits/retirement/planner/taxes.html" target="_blank" rel="noopener" class="text-blue-600 hover:underline">SSA: Are Benefits Taxable? ↗</a> | 
-          <a href="https://www.irs.gov/pub/irs-pdf/p915.pdf" target="_blank" rel="noopener" class="text-blue-600 hover:underline">IRS Publication 915 ↗</a>
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-800 mb-1">Quick Answer &amp; IRS Thresholds</div>
+          <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+            In 2026, <strong>single filers</strong> with combined income above <strong>$34,000</strong> have up to <strong>85% of SS benefits taxable</strong>. Below <strong>$25,000</strong> — completely tax-free. For <strong>married filing jointly</strong>: tax-free below <strong>$32,000</strong>, and up to 85% taxable above <strong>$44,000</strong>.
           </p>
         </div>
       </div>
     </div>
+    <!-- END: Quick Answer Callout -->
 
-    <div class="mt-12">
-        <h2 class="text-2xl font-semibold text-slate-800 mb-6">Frequently Asked Questions (FAQs)</h2>
-        <div class="space-y-6">
-            <div>
-                <h3 class="text-base font-semibold text-slate-800 mb-2">1. Do I have to pay taxes on Social Security if it's my only income?</h3>
-                <p class="text-sm md:text-base text-slate-600 pl-1">In most cases, no. If your only source of income is your Social Security benefit, your "Combined Income" will typically fall well below the IRS base amount ($25,000 for singles, $32,000 for married couples). Therefore, your benefits will remain 100% tax-free.</p>
-            </div>
-            <div>
-                <h3 class="text-base font-semibold text-slate-800 mb-2">2. What counts as Combined Income for Social Security taxation?</h3>
-                <p class="text-sm md:text-base text-slate-600 pl-1">The IRS uses a specific formula to calculate your Combined Income (also known as provisional income). It includes your Adjusted Gross Income (AGI), plus any nontaxable interest you earned, plus exactly one-half (50%) of your total Social Security benefits.</p>
-            </div>
-            <div>
-                <h3 class="text-base font-semibold text-slate-800 mb-2">3. Can I reduce the tax I pay on my Social Security benefits?</h3>
-                <p class="text-sm md:text-base text-slate-600 pl-1">Yes, through strategic tax planning. Since taxation is based on your Combined Income, managing your other income streams is key. For example, relying on tax-free Roth IRA withdrawals instead of traditional 401(k) distributions keeps your AGI lower. Additionally, the $6,000 senior deduction available in 2026 can help lower your AGI significantly.</p>
-            </div>
-            <div>
-                <h3 class="text-base font-semibold text-slate-800 mb-2">4. Is Social Security taxed differently in each state?</h3>
-                <p class="text-sm md:text-base text-slate-600 pl-1">Absolutely. While this calculator estimates your federal tax liability, your state tax burden depends entirely on where you live. Fortunately, in 2026, the vast majority of US states (now including West Virginia) do not tax Social Security benefits at the state level.</p>
-            </div>
-            <div>
-                <h3 class="text-base font-semibold text-slate-800 mb-2">5. What is the maximum percentage of Social Security that can be taxed?</h3>
-                <p class="text-sm md:text-base text-slate-600 pl-1">Under current federal law, the absolute maximum amount of your Social Security benefits that can be subject to federal income tax is 85%. You will never be taxed on 100% of your benefits, no matter how high your external income is.</p>
-            </div>
-            <div>
-                <h3 class="text-base font-semibold text-slate-800 mb-2">6. How much Social Security income is tax-free in 2026?</h3>
-                <p class="text-sm md:text-base text-slate-600 pl-1">For a single filer, if your Combined Income is under $25,000, your benefits are entirely tax-free. For married couples filing jointly, a Combined Income under $32,000 keeps your benefits tax-free. If you cross these thresholds, up to 50% or 85% of your benefits become subject to standard income taxes.</p>
-            </div>
+    <!-- BEGIN: Visual Guide / Chart -->
+    <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-sm" data-purpose="tax-thresholds-chart">
+      <div class="mb-6">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-5 bg-blue-600 rounded-full inline-block"></span>
+          <h2 class="text-xl font-bold text-slate-900">2026 IRS Taxability Thresholds — Visual Guide</h2>
         </div>
+        <p class="text-sm text-slate-500 mt-1">How your combined income determines the taxable percentage of your Social Security benefits.</p>
+      </div>
+      <!-- Chart Display Area -->
+      <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/40">
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center justify-end gap-5 text-xs font-medium text-slate-600 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded bg-emerald-500"></span>
+            <span>0% Tax-Free</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded bg-amber-500"></span>
+            <span>Up to 50% Taxable</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded bg-rose-500"></span>
+            <span>Up to 85% Taxable</span>
+          </div>
+        </div>
+        <!-- Custom Responsive Bar Chart -->
+        <div class="relative h-64 flex items-end justify-between gap-2 sm:gap-6 pt-6 pb-2 border-b border-l border-slate-300">
+          <!-- Y Axis Labels -->
+          <div class="absolute -left-10 inset-y-0 flex flex-col justify-between text-[11px] font-semibold text-slate-400 pointer-events-none text-right">
+            <span>100%</span>
+            <span>85%</span>
+            <span>50%</span>
+            <span>20%</span>
+            <span>0%</span>
+          </div>
+          <!-- Bar 1: Under $25k (Single) -->
+          <div class="flex-1 flex flex-col items-center h-full justify-end group">
+            <div class="text-[11px] font-bold text-emerald-600 mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity">0%</div>
+            <div class="w-full max-w-[64px] h-[6px] bg-emerald-500 rounded-t-md transition-all"></div>
+            <div class="mt-3 text-center">
+              <span class="block text-[11px] sm:text-xs font-bold text-slate-700">&lt; $25k</span>
+              <span class="block text-[10px] text-slate-400">Single</span>
+            </div>
+          </div>
+          <!-- Bar 2: $25k-$34k (Single) -->
+          <div class="flex-1 flex flex-col items-center h-full justify-end group">
+            <div class="text-[11px] font-bold text-amber-600 mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity">50%</div>
+            <div class="w-full max-w-[64px] h-[50%] bg-amber-500 rounded-t-md shadow-sm transition-all"></div>
+            <div class="mt-3 text-center">
+              <span class="block text-[11px] sm:text-xs font-bold text-slate-700">$25k-$34k</span>
+              <span class="block text-[10px] text-slate-400">Single</span>
+            </div>
+          </div>
+          <!-- Bar 3: Over $34k (Single) -->
+          <div class="flex-1 flex flex-col items-center h-full justify-end group">
+            <div class="text-[11px] font-bold text-rose-600 mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity">85%</div>
+            <div class="w-full max-w-[64px] h-[85%] bg-rose-500 rounded-t-md shadow-sm transition-all"></div>
+            <div class="mt-3 text-center">
+              <span class="block text-[11px] sm:text-xs font-bold text-slate-700">&gt; $34k</span>
+              <span class="block text-[10px] text-slate-400">Single</span>
+            </div>
+          </div>
+          <!-- Divider Gap -->
+          <div class="w-px h-full bg-slate-200 hidden sm:block"></div>
+          <!-- Bar 4: Under $32k (Married) -->
+          <div class="flex-1 flex flex-col items-center h-full justify-end group">
+            <div class="text-[11px] font-bold text-emerald-600 mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity">0%</div>
+            <div class="w-full max-w-[64px] h-[6px] bg-emerald-500 rounded-t-md transition-all"></div>
+            <div class="mt-3 text-center">
+              <span class="block text-[11px] sm:text-xs font-bold text-slate-700">&lt; $32k</span>
+              <span class="block text-[10px] text-slate-400">Married</span>
+            </div>
+          </div>
+          <!-- Bar 5: $32k-$44k (Married) -->
+          <div class="flex-1 flex flex-col items-center h-full justify-end group">
+            <div class="text-[11px] font-bold text-amber-600 mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity">50%</div>
+            <div class="w-full max-w-[64px] h-[50%] bg-amber-500 rounded-t-md shadow-sm transition-all"></div>
+            <div class="mt-3 text-center">
+              <span class="block text-[11px] sm:text-xs font-bold text-slate-700">$32k-$44k</span>
+              <span class="block text-[10px] text-slate-400">Married</span>
+            </div>
+          </div>
+          <!-- Bar 6: Over $44k (Married) -->
+          <div class="flex-1 flex flex-col items-center h-full justify-end group">
+            <div class="text-[11px] font-bold text-rose-600 mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity">85%</div>
+            <div class="w-full max-w-[64px] h-[85%] bg-rose-500 rounded-t-md shadow-sm transition-all"></div>
+            <div class="mt-3 text-center">
+              <span class="block text-[11px] sm:text-xs font-bold text-slate-700">&gt; $44k</span>
+              <span class="block text-[10px] text-slate-400">Married</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 mt-4 text-center sm:text-left italic">
+          *Combined Income = AGI + Non-taxable Interest + 50% of Social Security Benefits.
+        </p>
+      </div>
+    </section>
+    <!-- END: Visual Guide / Chart -->
+
+    <!-- BEGIN: State Rules & Search Section -->
+    <section class="space-y-6" data-purpose="state-tax-rules" id="state-explorer">
+      <!-- 2026 State Overview Banner -->
+      <div class="bg-blue-50/80 border border-blue-100 rounded-2xl p-5 flex items-center gap-4">
+        <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 font-bold">
+          ℹ
+        </div>
+        <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <strong>2026 STATE TAXABILITY OVERVIEW:</strong> In 2026, <strong>42 states and Washington, D.C. do NOT tax Social Security benefits</strong> at the state level (including West Virginia, which completed its full tax phaseout). Only <strong>8 states</strong> levy state taxes on benefits, each offering distinct income, age, or credit exemptions.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-5 bg-blue-600 rounded-full inline-block"></span>
+            <h2 class="text-xl font-bold text-slate-900">Find Your State's Social Security Tax Rule</h2>
+          </div>
+          <p class="text-sm text-slate-500 mt-1">Explore exact exemption thresholds and statutory deduction rules for 2026.</p>
+        </div>
+        <span class="inline-flex items-center self-start sm:self-auto px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700">
+          8 Taxing States
+        </span>
+      </div>
+      <!-- State Filter/Search Bar -->
+      <div class="relative">
+        <input class="w-full h-13 pl-11 pr-4 bg-white border border-slate-200 rounded-xl text-sm placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm transition" id="stateSearchInput" placeholder="Search one of the 8 taxing states (e.g., Colorado, Minnesota, Utah, Connecticut)..." type="text"/>
+        <svg class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
+      <!-- State Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="stateCardsGrid">
+        <!-- Colorado Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-blue-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Colorado</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-rose-50 text-rose-600 rounded-full border border-rose-100">4.40% top rate</span>
+          </div>
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Age-Based Exemption</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            100% tax-exempt at age 65+ (no cap). Ages 55–64 exempt if AGI is ≤ $75k ($95k joint), with a max $20,000 deduction above that.
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 group-hover:text-blue-700" href="/social-security-calculator/colorado/">
+            View Colorado 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+        <!-- Minnesota Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-blue-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Minnesota</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-rose-50 text-rose-600 rounded-full border border-rose-100">9.85% top rate</span>
+          </div>
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Gradual Phaseout Subtraction</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            Full exemption up to $84,490 ($108,320 joint). Exemption phases out 10% per $4,000 of income over the threshold.
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 group-hover:text-blue-700" href="/social-security-calculator/minnesota/">
+            View Minnesota 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+        <!-- Connecticut Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-blue-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Connecticut</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-rose-50 text-rose-600 rounded-full border border-rose-100">6.99% top rate</span>
+          </div>
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">AGI Exemption Cutoff</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            100% tax-free if AGI is ≤ $75,000 ($100,000 joint). Above that, no more than 25% of taxable benefits are taxed.
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 group-hover:text-blue-700" href="/social-security-calculator/connecticut/">
+            View Connecticut 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+        <!-- Utah Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-blue-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Utah</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-full border border-amber-100">4.55% flat rate</span>
+          </div>
+          <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Retirement Tax Credit</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            Nonrefundable credit phases out above $54,000 MAGI ($90,000 joint), reducing or eliminating state tax owed.
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 group-hover:text-blue-700" href="/social-security-calculator/utah/">
+            View Utah 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+      </div>
+      <!-- Collapsible for remaining 4 states -->
+      <details class="group bg-white rounded-2xl border border-slate-200/80 p-5 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-sm text-slate-800 list-none">
+          <span>Browse all 8 taxing states (Full list &amp; comparisons: MT, NM, RI, VT)</span>
+          <span class="transition group-open:rotate-180">
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </span>
+        </summary>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 pt-4 border-t border-slate-100 text-xs text-slate-600">
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">Montana</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-rose-50 text-rose-600 rounded-full">5.90% top rate</span>
+            </div>
+            <div class="text-[10px] font-semibold text-blue-600 uppercase tracking-wide mb-1">Federal-Method Deduction</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">Taxes federal taxable portion; filers age 65+ deduct up to $5,500 (single) or $11,000 (joint).</p>
+            <a class="text-blue-600 font-bold hover:underline" href="/social-security-calculator/montana/">View Montana 2026 Rules →</a>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">New Mexico</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-rose-50 text-rose-600 rounded-full">5.90% top rate</span>
+            </div>
+            <div class="text-[10px] font-semibold text-blue-600 uppercase tracking-wide mb-1">High-Cap Exemption</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">100% exempt for AGI ≤ $100,000 ($150,000 joint). Most retirees pay zero state tax on Social Security.</p>
+            <a class="text-blue-600 font-bold hover:underline" href="/social-security-calculator/new-mexico/">View New Mexico 2026 Rules →</a>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">Rhode Island</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-rose-50 text-rose-600 rounded-full">5.99% top rate</span>
+            </div>
+            <div class="text-[10px] font-semibold text-blue-600 uppercase tracking-wide mb-1">FRA + Income Threshold</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">100% exempt at Full Retirement Age (FRA) with AGI ≤ $107,000 ($133,750 joint).</p>
+            <a class="text-blue-600 font-bold hover:underline" href="/social-security-calculator/rhode-island/">View Rhode Island 2026 Rules →</a>
+          </div>
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">Vermont</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-rose-50 text-rose-600 rounded-full">8.75% top rate</span>
+            </div>
+            <div class="text-[10px] font-semibold text-blue-600 uppercase tracking-wide mb-1">Threshold + Phaseout</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">100% exempt for AGI ≤ $50,000 ($65,000 joint); a partial exemption phases out at higher incomes — consult a tax professional for your exact threshold.</p>
+            <a class="text-blue-600 font-bold hover:underline" href="/social-security-calculator/vermont/">View Vermont 2026 Rules →</a>
+          </div>
+        </div>
+      </details>
+    </section>
+    <!-- END: State Rules & Search Section -->
+
+    <!-- BEGIN: How Calculation Works -->
+    <section class="space-y-6" data-purpose="how-it-works">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-5 bg-blue-600 rounded-full inline-block"></span>
+        <h2 class="text-xl font-bold text-slate-900">How This Calculation Works</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Feature 1 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h4 class="text-sm font-bold text-slate-900 mb-1">Combined Income Formula</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Combined Income = AGI + Nontaxable Interest + 50% of Social Security Benefits. This IRS metric determines benefit taxability.
+          </p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h4 class="text-sm font-bold text-slate-900 mb-1">The 85% Maximum Rule</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            The IRS can tax at most 85% of your benefits. At least 15% is always 100% tax-free regardless of your income level.
+          </p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h4 class="text-sm font-bold text-slate-900 mb-1">State Tax Rules</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            42 states + D.C. charge 0% state tax on Social Security. Only 8 states tax benefits, each offering distinct income, age, or credit exemptions.
+          </p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </div>
+          <h4 class="text-sm font-bold text-slate-900 mb-1">Private by Design</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            All calculations run locally in your browser. No personal financial data is ever sent, stored, or tracked on any server.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- END: How Calculation Works -->
+
+    <!-- BEGIN: FAQ Accordion -->
+    <section class="space-y-4" data-purpose="faq-section">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2 h-5 bg-blue-600 rounded-full inline-block"></span>
+        <h2 class="text-xl font-bold text-slate-900">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-3">
+        <!-- FAQ 1 -->
+        <details class="group bg-white rounded-xl border border-slate-200/80 p-4 transition-all">
+          <summary class="flex justify-between items-center font-bold text-sm text-slate-800 cursor-pointer list-none">
+            <span>1. Do I have to pay taxes on Social Security if it's my only income?</span>
+            <span class="transition group-open:rotate-180">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            In most cases, no. If your only source of income is your Social Security benefit, your Combined Income will typically fall well below the IRS base amount ($25,000 for singles, $32,000 for married couples). Therefore, your benefits will remain 100% tax-free at both federal and state levels.
+          </p>
+        </details>
+        <!-- FAQ 2 -->
+        <details class="group bg-white rounded-xl border border-slate-200/80 p-4 transition-all">
+          <summary class="flex justify-between items-center font-bold text-sm text-slate-800 cursor-pointer list-none">
+            <span>2. What counts as Combined Income for Social Security taxation?</span>
+            <span class="transition group-open:rotate-180">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            The IRS uses a specific formula to calculate your Combined Income (also known as provisional income). It includes your Adjusted Gross Income (AGI), plus any nontaxable interest (such as municipal bond distributions), plus exactly one-half (50%) of your total Social Security benefits.
+          </p>
+        </details>
+        <!-- FAQ 3 -->
+        <details class="group bg-white rounded-xl border border-slate-200/80 p-4 transition-all">
+          <summary class="flex justify-between items-center font-bold text-sm text-slate-800 cursor-pointer list-none">
+            <span>3. Can I reduce the tax I pay on my Social Security benefits?</span>
+            <span class="transition group-open:rotate-180">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes. Common strategies include managing withdrawals from traditional IRAs/401(k)s, utilizing Roth IRA conversions prior to retirement, taking Qualified Charitable Distributions (QCDs) after age 70½, and timing capital gains to stay below the $25k/$32k base thresholds.
+          </p>
+        </details>
+        <!-- FAQ 4 -->
+        <details class="group bg-white rounded-xl border border-slate-200/80 p-4 transition-all">
+          <summary class="flex justify-between items-center font-bold text-sm text-slate-800 cursor-pointer list-none">
+            <span>4. Is Social Security taxed differently in each state?</span>
+            <span class="transition group-open:rotate-180">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Absolutely. While this calculator estimates your federal tax liability, your state tax burden depends entirely on where you live. In 2026, 42 states and Washington D.C. (including West Virginia) do not tax Social Security benefits at all.
+          </p>
+        </details>
+        <!-- FAQ 5 -->
+        <details class="group bg-white rounded-xl border border-slate-200/80 p-4 transition-all">
+          <summary class="flex justify-between items-center font-bold text-sm text-slate-800 cursor-pointer list-none">
+            <span>5. What is the maximum percentage of Social Security that can be taxed?</span>
+            <span class="transition group-open:rotate-180">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Under federal law, the absolute maximum amount of your Social Security benefits that can be subject to federal income tax is 85%. You will never be taxed on 100% of your benefits, no matter how high your external income is.
+          </p>
+        </details>
+      </div>
+    </section>
+    <!-- END: FAQ Accordion -->
+
+    <!-- BEGIN: Signature Blue/Gold CTA Banner -->
+    <section class="bg-[#0b192f] rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden" data-purpose="bottom-cta-banner">
+      <!-- Glow effect -->
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="max-w-xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-400/20">
+            ⚡ Smart Financial Intelligence
+          </div>
+          <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+            Calculate. Plan. <span class="text-amber-400">Save More.</span>
+          </h3>
+          <p class="text-slate-300 text-sm sm:text-base mt-2">
+            Ready to maximize your retirement paycheck or forecast your 2026 state taxes? Access all 50 state tax calculators, salary deductions, and mortgage tools for free.
+          </p>
+        </div>
+        <div class="text-center shrink-0">
+          <a class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all shadow-lg shadow-amber-400/20 hover:scale-105" href="/salary-calculator/">
+            Calculate My Take-Home Pay →
+          </a>
+          <span class="block text-[11px] text-slate-400 mt-2 font-medium">Free, Instant &amp; Accurate 2026 Estimates</span>
+        </div>
+      </div>
+    </section>
+    <!-- END: Signature Blue/Gold CTA Banner -->
+  </main>
+
+  <!-- BEGIN: Site Footer -->
+  <footer class="bg-[#070e18] text-slate-400 text-xs border-t border-slate-800" data-purpose="main-footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <!-- Brand column -->
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-baseline font-extrabold text-2xl tracking-tight text-white">
+            <span class="text-blue-500">USCalc</span>
+            <span>Hub</span>
+            <span class="text-xs font-semibold text-slate-500 ml-1">.com</span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            Your trusted destination for fast, transparent, and accurate financial tools, salary calculators, and IRS tax guides in the USA.
+          </p>
+          <div class="flex items-center gap-4 pt-2 text-slate-400">
+            <a class="hover:text-white transition" href="https://www.pinterest.com/uscalch" target="_blank" rel="noopener noreferrer">Pinterest</a>
+            <a class="hover:text-white transition" href="https://www.facebook.com/uscalchub" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a class="hover:text-white transition" href="https://www.instagram.com/uscalchub" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="hover:text-white transition" href="https://www.linkedin.com/in/uscalc-hub-a5a01b411/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="hover:text-white transition" href="https://x.com/uscalchub" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          </div>
+        </div>
+        <!-- Links column -->
+        <div>
+          <h5 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">Quick Links</h5>
+          <ul class="space-y-2 text-xs">
+            <li><a class="hover:text-white transition" href="/privacy-policy/">Privacy Policy</a></li>
+            <li><a class="hover:text-white transition" href="/terms/">Terms of Service</a></li>
+            <li><a class="hover:text-white transition" href="/contact/">Contact Us</a></li>
+            <li><a class="hover:text-white transition" href="/blog/">Blog</a></li>
+            <li><a class="hover:text-white transition" href="/about/">About Us</a></li>
+          </ul>
+        </div>
+        <!-- Support column -->
+        <div>
+          <h5 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">Support</h5>
+          <p class="text-xs text-slate-400 mb-2">Questions or feedback? Email us at:</p>
+          <a class="text-blue-400 hover:underline" href="mailto:support@uscalchub.com">support@uscalchub.com</a>
+        </div>
+      </div>
+      <!-- Legal Disclaimer -->
+      <div class="pt-8 border-t border-slate-800 text-[11px] text-slate-500 text-center leading-relaxed">
+        <p class="max-w-4xl mx-auto">
+          <strong>Disclaimer:</strong> All figures on this site are estimates for informational and educational purposes only, based on publicly available 2026 tax data believed to be accurate at the time of publication. Tax laws, rates, and thresholds change frequently and may vary by individual circumstance. This content does not constitute financial, tax, or legal advice — consult a qualified CPA or tax professional before making financial decisions. USCalcHub and its owners assume no liability for errors, omissions, or outcomes resulting from use of this site.
+        </p>
+        <p class="mt-3 text-slate-600">© 2026 USCalcHub.com. All rights reserved.</p>
+      </div>
     </div>
-</div>
+  </footer>
+  <!-- END: Site Footer -->
 
-    <script>
-        function calculateSSTax() {
-            const status = document.getElementById('status').value;
-            const ssBenefits = parseFloat(document.getElementById('ssBenefits').value) || 0;
-            const agi = parseFloat(document.getElementById('agi').value) || 0;
-            const nonTaxInterest = parseFloat(document.getElementById('nonTaxInterest').value) || 0;
-            
-            const combinedIncome = agi + nonTaxInterest + (0.5 * ssBenefits);
-            let taxableAmount = 0;
-            
-            if (status === 'single') {
-                if (combinedIncome > 34000) {
-                    const tier1 = Math.min(0.5 * ssBenefits, 0.5 * (34000 - 25000));
-                    const tier2 = 0.85 * (combinedIncome - 34000);
-                    taxableAmount = Math.min(0.85 * ssBenefits, tier1 + tier2);
-                } else if (combinedIncome > 25000) {
-                    taxableAmount = Math.min(0.5 * ssBenefits, 0.5 * (combinedIncome - 25000));
-                }
-            } else {
-                // married
-                if (combinedIncome > 44000) {
-                    const tier1 = Math.min(0.5 * ssBenefits, 0.5 * (44000 - 32000));
-                    const tier2 = 0.85 * (combinedIncome - 44000);
-                    taxableAmount = Math.min(0.85 * ssBenefits, tier1 + tier2);
-                } else if (combinedIncome > 32000) {
-                    taxableAmount = Math.min(0.5 * ssBenefits, 0.5 * (combinedIncome - 32000));
-                }
-            }
-            
-            document.getElementById('combinedIncome').textContent = '$' + combinedIncome.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
-            document.getElementById('taxableAmount').textContent = '$' + taxableAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
-            
-            let taxPercent = ssBenefits > 0 ? (taxableAmount / ssBenefits) * 100 : 0;
-            document.getElementById('taxPercent').textContent = taxPercent.toFixed(1) + '%';
+  <!-- BEGIN: Real-Time Calculator Logic -->
+  <script data-purpose="tax-calculation-engine">
+    // Social Security IRS Tax Calculation Engine
+    function calculateSocialSecurityTax() {
+      const filingStatus = document.getElementById('filingStatus').value;
+      const annualSS = parseFloat(document.getElementById('annualSS').value) || 0;
+      const otherIncome = parseFloat(document.getElementById('otherIncome').value) || 0;
+      const nontaxableInterest = parseFloat(document.getElementById('nontaxableInterest').value) || 0;
+
+      // Formula: Combined Income = AGI + Nontaxable Interest + (50% of SS)
+      const combinedIncome = otherIncome + nontaxableInterest + (annualSS * 0.5);
+
+      let taxableAmount = 0;
+
+      if (filingStatus === 'single') {
+        // Single Thresholds: $25k and $34k
+        if (combinedIncome <= 25000) {
+          taxableAmount = 0;
+        } else if (combinedIncome <= 34000) {
+          taxableAmount = Math.min(0.5 * (combinedIncome - 25000), 0.5 * annualSS);
+        } else {
+          // Tier 1 + Tier 2
+          const tier1 = Math.min(0.5 * (34000 - 25000), 0.5 * annualSS);
+          const tier2 = 0.85 * (combinedIncome - 34000);
+          taxableAmount = Math.min(tier1 + tier2, 0.85 * annualSS);
         }
-        
-        document.getElementById('status').addEventListener('change', calculateSSTax);
-        document.getElementById('ssBenefits').addEventListener('input', calculateSSTax);
-        document.getElementById('agi').addEventListener('input', calculateSSTax);
-        document.getElementById('nonTaxInterest').addEventListener('input', calculateSSTax);
-        window.addEventListener('load', calculateSSTax);
-    </script>
-
-<div class="max-w-3xl mx-auto mt-10 pt-6 pb-6 border-t border-slate-200 px-4">
-  <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Official References</p>
-  <div class="flex flex-wrap gap-3">
-    <a href="https://www.ssa.gov/benefits/retirement/planner/taxes.html" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">SSA: Are My Benefits Taxable? ↗</a>
-    <a href="https://www.irs.gov/pub/irs-pdf/p915.pdf" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">IRS Publication 915 — Social Security ↗</a>
-    <a href="https://www.irs.gov/taxtopics/tc423" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:underline">IRS Topic 423 — SS Benefits ↗</a>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script>
-const ctx = document.getElementById('ssChart').getContext('2d');
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: [
-      'Under $25k\n(Single)', '$25k-$34k\n(Single)',
-      'Over $34k\n(Single)', 'Under $32k\n(Married)',
-      '$32k-$44k\n(Married)', 'Over $44k\n(Married)'
-    ],
-    datasets: [{
-      label: '% of SS Benefits Taxable',
-      data: [0, 50, 85, 0, 50, 85],
-      backgroundColor: [
-        '#16a34a','#f59e0b','#ef4444',
-        '#16a34a','#f59e0b','#ef4444'
-      ],
-      borderRadius: 6,
-      borderSkipped: false
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {display: false},
-      tooltip: {
-        callbacks: {
-          label: (c) => c.parsed.y + '% of SS benefits taxable'
+      } else if (filingStatus === 'married') {
+        // Married Thresholds: $32k and $44k
+        if (combinedIncome <= 32000) {
+          taxableAmount = 0;
+        } else if (combinedIncome <= 44000) {
+          taxableAmount = Math.min(0.5 * (combinedIncome - 32000), 0.5 * annualSS);
+        } else {
+          const tier1 = Math.min(0.5 * (44000 - 32000), 0.5 * annualSS);
+          const tier2 = 0.85 * (combinedIncome - 44000);
+          taxableAmount = Math.min(tier1 + tier2, 0.85 * annualSS);
         }
+      } else if (filingStatus === 'separate') {
+        // Married Filing Separately & living together has 0 base threshold
+        taxableAmount = Math.min(0.85 * combinedIncome, 0.85 * annualSS);
       }
-    },
-    scales: {
-      y: {
-        max: 100,
-        ticks: {callback: (v) => v + '%'},
-        grid: {color: '#f1f5f9'}
-      },
-      x: {
-        grid: {display: false},
-        ticks: {font: {size: 11}}
-      }
+
+      // Max is always capped at 85% of total benefits
+      taxableAmount = Math.max(0, Math.min(taxableAmount, 0.85 * annualSS));
+
+      // Calculate percentage of benefits taxed
+      const percentageTaxed = annualSS > 0 ? ((taxableAmount / annualSS) * 100).toFixed(1) : "0.0";
+
+      // Update DOM
+      document.getElementById('resultTaxableAmount').textContent = "$" + taxableAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('resultCombinedIncome').textContent = "$" + combinedIncome.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('resultTaxablePercentage').textContent = percentageTaxed + "% of Benefits";
     }
-  }
-});
-</script>
 
+    // Attach real-time event listeners
+    const inputs = ['filingStatus', 'annualSS', 'otherIncome', 'nontaxableInterest'];
+    inputs.forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('input', calculateSocialSecurityTax);
+      el.addEventListener('change', calculateSocialSecurityTax);
+    });
 
-    <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white font-bold mb-4">USCalcHub.com</h3>
-                <p class="text-sm mb-4">Your trusted destination for fast and accurate financial tools in the USA.</p>
-                <div class="flex space-x-4 mt-6">
-                    <!-- Pinterest -->
-                    <a href="https://www.pinterest.com/uscalch" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.17 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/></svg>
-                    </a>
-                    <!-- Twitter/X -->
-                    <a href="https://x.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
-                    </a>
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
-                    </a>
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/uscalc-hub-a5a01b411/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="/terms/" class="hover:text-white transition">Terms of Service</a></li>
-                    <li><a href="/contact/" class="hover:text-white transition">Contact Us</a></li>
-                    <li><a href="https://uscalchub.com/blog/" class="hover:text-white transition">Blog</a></li>
-                    <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Support</h4>
-                <p class="text-sm">Questions? Email us at:<br>support@uscalchub.com</p>
-            </div>
-        </div>
-            <!-- Global Legal Disclaimer -->
-        <div class="max-w-6xl mx-auto px-4 mt-12 border-t border-slate-800 pt-6 text-center">
-            <p class="text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto">
-                <strong>Disclaimer:</strong> All figures on this site are estimates for informational and educational purposes only, based on publicly available 2026 tax data believed to be accurate at the time of publication. Tax laws, rates, and thresholds change frequently and may vary by individual circumstance. This content does not constitute financial, tax, or legal advice — consult a qualified CPA or tax professional before making financial decisions. USCalcHub and its owners assume no liability for errors, omissions, or outcomes resulting from use of this site.
-            </p>
-        </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var btn = document.getElementById('menu-btn');
-            var menu = document.getElementById('mobile-menu');
-            if (btn && menu) {
-                btn.addEventListener('click', function () {
-                    menu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
+    // Initial calculation run
+    calculateSocialSecurityTax();
+  </script>
+  <!-- END: Real-Time Calculator Logic -->
 
-    
+  <!-- BEGIN: State Search Filter -->
+  <script data-purpose="state-filter-logic">
+    const stateSearchInput = document.getElementById('stateSearchInput');
+    const stateCards = document.querySelectorAll('#stateCardsGrid article');
 
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var script = document.createElement('script');
-                script.async = true;
-                script.src = "https://www.googletagmanager.com/gtag/js?id=AW-846154653";
-                document.head.appendChild(script);
-
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-ELW6PST2ZX');
-                gtag('config', 'AW-846154653');
-            }, 3500);
-        });
-    </script>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-700 text-slate-300 p-4 z-50 transform translate-y-full transition-transform duration-300 hidden">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-center md:text-left">
-                We use cookies to ensure you get the best experience on our website. By continuing to use this site, you consent to our use of cookies in accordance with our 
-                <a href="/privacy-policy/" class="text-blue-400 hover:text-blue-300 underline font-medium">Privacy Policy</a>.
-            </p>
-            <div class="flex gap-3 flex-shrink-0">
-                <button id="accept-cookies" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-bold transition">Accept All</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (!localStorage.getItem("cookiesAccepted")) {
-                const banner = document.getElementById("cookie-consent-banner");
-                banner.classList.remove("hidden");
-                // Small delay to allow CSS transition to work after removing hidden
-                setTimeout(() => {
-                    banner.classList.remove("translate-y-full");
-                }, 50);
-            }
-            
-            document.getElementById("accept-cookies")?.addEventListener("click", function() {
-                localStorage.setItem("cookiesAccepted", "true");
-                const banner = document.getElementById("cookie-consent-banner");
-                banner.classList.add("translate-y-full");
-                setTimeout(() => {
-                    banner.classList.add("hidden");
-                }, 300);
-            });
-        });
-    </script>
+    stateSearchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      stateCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <!-- END: State Search Filter -->
 </body>
-
 </html>

@@ -20,6 +20,11 @@ export default function Document() {
           .btn-hover:active { transform: scale(0.98); }
           .card-icon { transition: transform 0.3s ease; }
           .card-hover:hover .card-icon { transform: scale(1.1) rotate(-3deg); }
+          .bg-dot-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#cbd5e1 1.1px, transparent 1.1px);
+            background-size: 24px 24px;
+          }
         `}</style>
       </Head>
       <body className="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen">

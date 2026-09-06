@@ -1,442 +1,638 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html class="scroll-smooth" lang="en">
 <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>USCalcHub - Fast, Trusted &amp; Accurate Online Tools for US Finances</title>
+    <meta content="Calculate take-home pay, 2026 taxes, overtime deductions, social security, and real estate commissions with free instant financial tools." name="description"/>
+    
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
+    <meta property="og:image" content="https://uscalchub.com/logo.png" />
+    <meta name="twitter:image" content="https://uscalchub.com/logo.png" />
 
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USCalcHub.com - Online Tools for US Finances & Life</title>
-    <meta name="description" content="Your trusted hub for fast and accurate online calculators for US taxes, real estate, and finance.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        html {
-            scroll-behavior: smooth;
+    <!-- Tailwind CSS with Forms & Container Queries plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                body: ['Inter', 'sans-serif'],
+              },
+              colors: {
+                brand: {
+                  50: '#eff6ff',
+                  100: '#dbeafe',
+                  200: '#bfdbfe',
+                  500: '#3b82f6',
+                  600: '#2563eb',
+                  700: '#1d4ed8',
+                  800: '#1e40af',
+                  900: '#1e3a8a',
+                },
+                navy: {
+                  900: '#0b132b',
+                  950: '#070c1d',
+                }
+              }
+            }
+          }
         }
-
-        /* Smooth micro-animations for interactive elements */
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    </script>
+    
+    <!-- Custom Styles: Grid Pattern & Subtle Micro-interactions -->
+    <style data-purpose="background-patterns">
+        .hero-dot-pattern {
+          background-image: radial-gradient(#cbd5e1 1.25px, transparent 1.25px);
+          background-size: 24px 24px;
         }
-
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        .card-transition {
+          transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .btn-hover {
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-
-        .btn-hover:hover {
-            background-color: #1e40af;
-            /* blue-800 */
-        }
-
-        .btn-hover:active {
-            transform: scale(0.98);
-        }
-
-        /* Subtle icon animation on card hover */
-        .card-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .card-hover:hover .card-icon {
-            transform: scale(1.1) rotate(-3deg);
+        .card-transition:hover {
+          transform: translateY(-3px);
         }
     </style>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
-<meta property="og:image" content="https://uscalchub.com/logo.png" /><meta name="twitter:image" content="https://uscalchub.com/logo.png" /></head>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-blue-600 selection:text-white">
 
-<body class="bg-white text-slateText font-sans antialiased flex flex-col min-h-screen">
-    
-    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm transition-all duration-300"
-        id="main-header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                
-                <a href="/" class="flex-shrink-0 flex items-center cursor-pointer group">
-                    <span
-                        class="font-bold text-2xl tracking-tight text-gray-900 group-hover:opacity-90 transition-opacity">
-                        <span class="text-primary">US</span>CalcHub
-                    </span>
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-shadow" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a aria-label="USCalcHub Home" class="flex items-baseline gap-0.5 group focus:outline-none" href="/">
+                <span class="text-2xl font-extrabold tracking-tight text-slate-900 group-hover:text-slate-800">US</span>
+                <span class="text-2xl font-extrabold tracking-tight text-blue-600">Calc</span>
+                <span class="text-2xl font-extrabold tracking-tight text-slate-900 group-hover:text-slate-800">Hub</span>
+                <span class="text-xs font-semibold text-slate-400 ml-1">.com</span>
+            </a>
+            
+            <!-- Primary Desktop Navigation Links -->
+            <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a class="relative text-blue-600 font-semibold py-1 flex items-center gap-1.5 focus:outline-none" href="/">
+                    <span>Home</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
                 </a>
-
-                <nav class="hidden md:flex gap-6 items-center">
-                    <a href="/" class="text-slate-600 hover:text-blue-600 font-medium">Home</a>
-                    <a href="#tools-section" class="text-slate-600 hover:text-blue-600 font-medium">Finance Tools</a>
-                    <a href="/contact/" class="text-slate-600 hover:text-blue-600 font-medium">Contact</a>
-                    <a href="https://uscalchub.com/blog/" class="text-slate-600 hover:text-blue-600 font-medium">Blog</a>
-                    <a href="/about/" class="text-slate-600 hover:text-blue-600 font-medium">About Us</a>
-                </nav>
-
-                <div class="md:hidden flex items-center">
-                    <button type="button" id="menu-btn"
-                        class="text-gray-500 hover:text-primary focus:outline-none p-2 rounded-md transition-colors"
-                        aria-label="Toggle menu">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+                <a class="hover:text-blue-600 transition-colors py-1" href="#popular-tools">Finance Tools</a>
+                <a class="hover:text-blue-600 transition-colors py-1" href="https://uscalchub.com/blog/">Blog</a>
+                <a class="hover:text-blue-600 transition-colors py-1" href="/about/">About Us</a>
+                <a class="hover:text-blue-600 transition-colors py-1" href="/contact/">Contact</a>
+            </nav>
+            
+            <!-- Action Pill Button -->
+            <div class="flex items-center gap-3">
+                <a class="hidden sm:inline-flex items-center justify-center bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-blue-700 shadow-sm transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" href="/salary-calculator/">
+                    <span>2026 Tax Tools</span>
+                    <svg aria-hidden="true" class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </a>
+                <!-- Mobile Navigation Hamburger -->
+                <button aria-label="Toggle navigation menu" id="menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none" type="button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
             </div>
         </div>
 
-        <div id="mobile-menu"
-            class="md:hidden hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full">
-            <a href="/"
-                class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors">Home</a>
-            <a href="#tools-section"
-                class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors">Finance Tools</a>
-            <a href="/contact/"
-                class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors">Contact</a>
-            <a href="https://uscalchub.com/blog/"
-                class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors">Blog</a>
-            <a href="/about/"
-                class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-primary transition-colors">About Us</a>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-5 space-y-2 shadow-xl">
+            <a href="/" class="block px-3 py-2 rounded-lg text-base font-semibold text-blue-600 bg-blue-50/70">Home</a>
+            <a href="#popular-tools" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600">Finance Tools</a>
+            <a href="https://uscalchub.com/blog/" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600">Blog</a>
+            <a href="/about/" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600">About Us</a>
+            <a href="/contact/" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600">Contact</a>
+            <div class="pt-2">
+                <a href="/salary-calculator/" class="w-full inline-flex items-center justify-center bg-blue-600 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm">
+                    2026 Tax Tools →
+                </a>
+            </div>
         </div>
     </header>
+    <!-- END: MainHeader -->
 
     <main class="flex-grow">
-
-        <section class="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-white">
+        <!-- BEGIN: HeroSection -->
+        <section class="relative hero-dot-pattern bg-white border-b border-slate-200/80 pt-16 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
+            <!-- Ambient Glow Effects -->
+            <div aria-hidden="true" class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[340px] bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
             
-            <div class="absolute inset-0 opacity-[0.4] pointer-events-none" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 24px 24px;"></div>
-                    
-            <div
-                class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-50 opacity-60 blur-3xl pointer-events-none">
-            </div>
-            <div
-                class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-gray-50 opacity-80 blur-3xl pointer-events-none">
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
-                    Welcome to <span class="text-primary">USCalcHub.com</span>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Authority Pill Badge -->
+                <div class="inline-flex items-center gap-2 bg-blue-50/90 text-blue-700 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-blue-200/70 mb-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                    <span class="text-blue-600 font-bold">✦</span>
+                    <span>FAST, TRUSTED &amp; 2026 UPDATED IRS UTILITY</span>
+                </div>
+                
+                <!-- Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-5">
+                    Welcome to <span class="text-blue-600 underline decoration-blue-300 decoration-wavy underline-offset-8 font-extrabold">USCalcHub.com</span>
                 </h1>
-                <p class="mt-4 max-w-2xl text-lg md:text-xl text-slateText mx-auto leading-relaxed">
-                    Your Fast, Trusted & Accurate Online Tools for US Finances & Life.
+                
+                <!-- Subheading -->
+                <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed mb-9">
+                    Your Fast, Trusted &amp; Accurate Online Tools for US Finances, Taxes &amp; Life. Calibrated for 2026 IRS Rules &amp; State Brackets.
                 </p>
-                <div class="mt-10 flex justify-center gap-4">
-                    <a href="#tools-section"
-                        class="inline-flex items-center px-8 py-3.5 border border-transparent text-base font-semibold rounded-full shadow-md text-white bg-primary btn-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                        Explore Tools
-                        <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                
+                <!-- Search Bar Component -->
+                <div class="max-w-2xl mx-auto mb-7">
+                    <div class="relative flex items-center shadow-lg shadow-slate-200/50 rounded-2xl border border-slate-200 bg-white p-1.5 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-100 transition-all">
+                        <div class="pl-3.5 pr-2 text-slate-400">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <input id="tool-search-input" aria-label="Search financial calculators" class="w-full bg-transparent border-0 text-slate-900 placeholder:text-slate-400 text-sm sm:text-base focus:ring-0 focus:outline-none py-2" placeholder="Search 50+ tax, salary, mortgage &amp; financial calculators..." type="text"/>
+                        <button id="tool-search-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition-all flex items-center gap-1.5 shrink-0 shadow-sm" type="button">
+                            <span>Search</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Quick Filter Pills -->
+                <div class="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto mb-10 text-xs" id="category-filters">
+                    <button data-cat="all" class="filter-pill px-3.5 py-1.5 rounded-full bg-slate-900 text-white font-medium transition-colors shadow-sm cursor-pointer">All Tools</button>
+                    <button data-cat="tax" class="filter-pill px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-pointer">Tax &amp; Salary</button>
+                    <button data-cat="retirement" class="filter-pill px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-pointer">Retirement &amp; Social Security</button>
+                    <button data-cat="realestate" class="filter-pill px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-pointer">Real Estate &amp; NAR</button>
+                    <button data-cat="debt" class="filter-pill px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-pointer">Debt &amp; Bill Splitting</button>
+                </div>
+                
+                <!-- Main Call to Action Button -->
+                <div class="flex justify-center">
+                    <a class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-7 py-3 rounded-full shadow-md hover:shadow-lg transition-all focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" href="#popular-tools">
+                        <span>Explore All Tools</span>
+                        <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
+        <!-- END: HeroSection -->
 
-        <section id="tools-section" class="py-20 md:py-24 bg-white relative border-t border-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-                <div class="mb-14 text-center md:text-left">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">Popular Tools</h2>
-                    <div class="w-20 h-1.5 bg-primary mt-4 rounded-full mx-auto md:mx-0 opacity-80"></div>
+        <!-- BEGIN: PopularToolsSection -->
+        <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="popular-tools">
+            <!-- Section Title Header with Blue Accent Bar -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-slate-200/80">
+                <div>
+                    <div class="flex items-center mb-1.5">
+                        <span class="w-1.5 h-6 bg-blue-600 rounded-full inline-block mr-3"></span>
+                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Popular Tools</h2>
+                    </div>
+                    <p class="text-slate-600 text-sm sm:text-base ml-4.5 pl-0.5">Accurate, free, and updated for 2026 IRS tax brackets and calculations.</p>
                 </div>
+                <div class="mt-4 sm:mt-0">
+                    <span id="tools-counter-badge" class="text-xs font-semibold text-slate-500 uppercase tracking-wider bg-slate-100 px-3 py-1.5 rounded-lg">
+                        Showing 6 of 50+ Tools
+                    </span>
+                </div>
+            </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-
-                    <div
-                        class="bg-lightGray rounded-2xl p-8 border border-gray-100 card-hover flex flex-col h-full group cursor-pointer relative overflow-hidden">
-                        
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity">
+            <!-- Tools Grid (3 cols x 2 rows) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7" id="tools-grid">
+                <!-- Card 1: US Salary After Tax -->
+                <article data-cats="tax" class="tool-card bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between card-transition hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                                2026 IRS Updated
+                            </span>
                         </div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">US Salary After Tax</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Calculate your exact take-home pay after federal, state &amp; FICA deductions across all 50 states.
+                        </p>
+                    </div>
+                    <a class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-150" href="/salary-calculator/">
+                        <span>Open Tool</span>
+                        <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </a>
+                </article>
 
-                        <div
-                            class="w-14 h-14 inline-flex items-center justify-center rounded-xl bg-white shadow-sm text-primary mb-6 card-icon border border-gray-100">
-                            
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                </path>
+                <!-- Card 2: Tip & Bill Splitter -->
+                <article data-cats="debt" class="tool-card bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between card-transition hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200/60">
+                                Fast Utility
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Tip &amp; Bill Splitter</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Quickly calculate custom tip percentages, local sales tax, and split dinner bills fairly with friends.
+                        </p>
+                    </div>
+                    <a class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-150" href="/tip-calculator/">
+                        <span>Open Tool</span>
+                        <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Card 3: Credit Card Payoff -->
+                <article data-cats="debt" class="tool-card bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between card-transition hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200/60">
+                                Debt Free
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Credit Card Payoff</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Plan your fastest path to becoming debt-free with custom monthly payment schedules and APR savings.
+                        </p>
+                    </div>
+                    <a class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-150" href="/credit-card-payoff/">
+                        <span>Open Tool</span>
+                        <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Card 4: Real Estate Commission -->
+                <article data-cats="realestate" class="tool-card bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between card-transition hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200/60">
+                                NAR Compliant
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Real Estate Commission</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Estimate post-NAR settlement agent fees, buyer/seller broker splits, and net closing proceeds instantly.
+                        </p>
+                    </div>
+                    <a class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-150" href="/real-estate-calculator/">
+                        <span>Open Tool</span>
+                        <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Card 5: Overtime Tax Refund -->
+                <article data-cats="tax" class="tool-card bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between card-transition hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200/60">
+                                New 2026 Provision
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Overtime Tax Refund</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Estimate your 2026 tax-free overtime deductions and calculate your higher effective hourly paycheck.
+                        </p>
+                    </div>
+                    <a class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-150" href="/overtime-calculator/">
+                        <span>Open Tool</span>
+                        <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Card 6: Social Security Tax -->
+                <article data-cats="tax retirement" class="tool-card bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between card-transition hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/5 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                                IRS Rule Tested
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">Social Security Tax</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Calculate the taxable portion of your Social Security benefits based on 2026 combined provisional income rules.
+                        </p>
+                    </div>
+                    <a class="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-150" href="/social-security-calculator/">
+                        <span>Open Tool</span>
+                        <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </a>
+                </article>
+            </div>
+            
+            <!-- No results message -->
+            <div id="no-tools-found" class="hidden text-center py-12 bg-white rounded-2xl border border-slate-200 text-slate-500 text-sm">
+                No tools found matching your search. Try another keyword like "salary", "tax", "social security", or "tip".
+            </div>
+        </section>
+        <!-- END: PopularToolsSection -->
+
+        <!-- BEGIN: ValuePropositionSection -->
+        <section class="py-16 bg-white border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Built for Accuracy &amp; High Financial Trust</h2>
+                    <p class="mt-2 text-slate-600 text-sm sm:text-base">Why everyday Americans, accountants, and freelancers rely on USCalcHub calculations.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Value Feature 1 -->
+                    <div class="flex flex-col items-start text-left p-5 rounded-xl bg-slate-50/70 border border-slate-200/70">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">US
-                            Salary After Tax</h3>
-                        <p class="text-slateText text-sm leading-relaxed mb-8 flex-grow">
-                            Calculate your take-home pay across all 50 states.
-                        </p>
-                        <a href="salary-calculator/"
-                            class="mt-auto w-full inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-primary bg-white shadow-sm hover:bg-blue-50 hover:border-blue-100 transition-all">
-                            Open Tool
-                        </a>
+                        <h3 class="font-bold text-slate-900 text-base mb-1.5">100% Free &amp; No Sign-Up</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Instant, ad-light calculations without forced paywalls, gated emails, or personal data collection.</p>
                     </div>
-
-                    <div
-                        class="bg-lightGray rounded-2xl p-8 border border-gray-100 card-hover flex flex-col h-full group cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-
-                        <div
-                            class="w-14 h-14 inline-flex items-center justify-center rounded-xl bg-white shadow-sm text-primary mb-6 card-icon border border-gray-100">
-                            
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                                </path>
+                    <!-- Value Feature 2 -->
+                    <div class="flex flex-col items-start text-left p-5 rounded-xl bg-slate-50/70 border border-slate-200/70">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Tip
-                            & Bill Splitter</h3>
-                        <p class="text-slateText text-sm leading-relaxed mb-8 flex-grow">
-                            Quickly calculate tip and split bills with friends.
-                        </p>
-                        <a href="tip-calculator"
-                            class="mt-auto w-full inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-primary bg-white shadow-sm hover:bg-blue-50 hover:border-blue-100 transition-all">
-                            Open Tool
-                        </a>
+                        <h3 class="font-bold text-slate-900 text-base mb-1.5">2026 IRS Calibrated</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Updated continuously with the latest IRS inflation adjustments, standard deductions, and tax legislation.</p>
                     </div>
-
-                    <div
-                        class="bg-lightGray rounded-2xl p-8 border border-gray-100 card-hover flex flex-col h-full group cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-
-                        <div
-                            class="w-14 h-14 inline-flex items-center justify-center rounded-xl bg-white shadow-sm text-primary mb-6 card-icon border border-gray-100">
-                            
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
-                                </path>
+                    <!-- Value Feature 3 -->
+                    <div class="flex flex-col items-start text-left p-5 rounded-xl bg-slate-50/70 border border-slate-200/70">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
-                            Credit Card Payoff</h3>
-                        <p class="text-slateText text-sm leading-relaxed mb-8 flex-grow">
-                            Plan your path to becoming debt-free.
-                        </p>
-                        <a href="credit-card-payoff/"
-                            class="mt-auto w-full inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-primary bg-white shadow-sm hover:bg-blue-50 hover:border-blue-100 transition-all">
-                            Open Tool
-                        </a>
+                        <h3 class="font-bold text-slate-900 text-base mb-1.5">Private by Design</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">All computations execute locally inside your browser session. Your salary, assets, and debts remain strictly confidential.</p>
                     </div>
-
-                    <div
-                        class="bg-lightGray rounded-2xl p-8 border border-gray-100 card-hover flex flex-col h-full group cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-
-                        <div
-                            class="w-14 h-14 inline-flex items-center justify-center rounded-xl bg-white shadow-sm text-primary mb-6 card-icon border border-gray-100">
-                            
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                                </path>
+                    <!-- Value Feature 4 -->
+                    <div class="flex flex-col items-start text-left p-5 rounded-xl bg-slate-50/70 border border-slate-200/70">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Real
-                            Estate Commission</h3>
-                        <p class="text-slateText text-sm leading-relaxed mb-8 flex-grow">
-                            Estimate agent fees and closing costs instantly.
-                        </p>
-                        <a href="real-estate-calculator/"
-                            class="mt-auto w-full inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-primary bg-white shadow-sm hover:bg-blue-50 hover:border-blue-100 transition-all">
-                            Open Tool
-                        </a>
+                        <h3 class="font-bold text-slate-900 text-base mb-1.5">50-State Precision</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">From zero-income-tax states like Texas and Florida to complex multi-bracket structures like California and New York.</p>
                     </div>
-
-                    <div
-                        class="bg-lightGray rounded-2xl p-8 border border-gray-100 card-hover flex flex-col h-full group cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-
-                        <div
-                            class="w-14 h-14 inline-flex items-center justify-center rounded-xl bg-white shadow-sm text-primary mb-6 card-icon border border-gray-100">
-                            
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Overtime Tax Refund</h3>
-                        <p class="text-slateText text-sm leading-relaxed mb-8 flex-grow">
-                            Estimate your 2026 tax-free overtime deduction.
-                        </p>
-                        <a href="overtime-calculator/"
-                            class="mt-auto w-full inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-primary bg-white shadow-sm hover:bg-blue-50 hover:border-blue-100 transition-all">
-                            Open Tool
-                        </a>
-                    </div>
-
-                    <div
-                        class="bg-lightGray rounded-2xl p-8 border border-gray-100 card-hover flex flex-col h-full group cursor-pointer relative overflow-hidden">
-                        <div
-                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-
-                        <div
-                            class="w-14 h-14 inline-flex items-center justify-center rounded-xl bg-white shadow-sm text-primary mb-6 card-icon border border-gray-100">
-                            
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Social Security Tax</h3>
-                        <p class="text-slateText text-sm leading-relaxed mb-8 flex-grow">
-                            Calculate taxable portion of your SS benefits.
-                        </p>
-                        <a href="social-security-calculator/"
-                            class="mt-auto w-full inline-flex justify-center items-center px-4 py-3 border border-transparent text-sm font-semibold rounded-lg text-primary bg-white shadow-sm hover:bg-blue-50 hover:border-blue-100 transition-all">
-                            Open Tool
-                        </a>
-                    </div>
-
                 </div>
             </div>
         </section>
+        <!-- END: ValuePropositionSection -->
 
-        <div class="w-full bg-gradient-to-r from-slate-950 via-slate-900 to-blue-950 border-y border-slate-800 py-16 px-6 relative overflow-hidden not-prose">
-            <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-            <div class="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 gap-8">
-                <div class="max-w-2xl text-left">
-                    <span class="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-amber-500/20 mb-4">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m14.071-4.071l-.707.707M6.343 17.657l-.707.707M17.657 17.657l.707-.707M6.343 6.343l.707-.707M12 7a5 5 0 100 10 5 5 0 000-10z"></path></svg>
-                        Smart Solar Intelligence
-                    </span>
-                    <h2 class="text-3xl md:text-4xl font-black text-white leading-tight tracking-tight">
-                        Calculate. Plan. <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Go Solar.</span>
+        <!-- BEGIN: SmartFinancialIntelligenceBanner -->
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="smart-financial-intelligence-banner">
+            <div class="relative bg-gradient-to-r from-[#0b132b] via-[#0f172a] to-[#070c1d] rounded-2xl border border-slate-800 shadow-2xl px-6 py-8 sm:px-10 sm:py-10 flex flex-col lg:flex-row items-center justify-between gap-8 overflow-hidden">
+                <!-- Ambient decorative corner glow -->
+                <div aria-hidden="true" class="absolute -top-24 -left-24 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div aria-hidden="true" class="absolute -bottom-24 -right-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <!-- Left Column: Copy & Tag -->
+                <div class="relative z-10 max-w-2xl text-left">
+                    <!-- Tag Pill -->
+                    <div class="inline-flex items-center gap-1.5 bg-[#25221b] border border-amber-500/30 text-amber-400 text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-md mb-4 shadow-sm">
+                        <span>⚡</span>
+                        <span>SMART FINANCIAL INTELLIGENCE</span>
+                    </div>
+                    <!-- Headline -->
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                        Calculate. Plan. <span class="text-amber-400">Save More.</span>
                     </h2>
-                    <p class="text-slate-400 mt-3 text-base md:text-lg max-w-xl leading-relaxed">
-                        Ready to crush your electricity bills? Instantly calculate your home energy load, get a customized system design, and receive a branded solar quote in under 3 minutes.
+                    <!-- Subtext -->
+                    <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Ready to maximize your paycheck or forecast your 2026 state taxes? Access all 50 state tax calculators, salary deductions, and mortgage tools for free.
                     </p>
                 </div>
-
-                <div class="flex-shrink-0 w-full md:w-auto text-center">
-                    <a href="https://technokraft.online/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-lg py-4 px-10 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 hover:shadow-amber-500/20 transform hover:-translate-y-1 w-full md:w-auto">
-                        Calculate My Solar Load
-                        <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                
+                <!-- Right Column: Action Button & Caption -->
+                <div class="relative z-10 flex flex-col items-center lg:items-end shrink-0 w-full lg:w-auto">
+                    <a class="w-full sm:w-auto inline-flex items-center justify-center bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-base px-6 py-3.5 rounded-xl shadow-lg hover:shadow-amber-400/20 transition-all group" href="/salary-calculator/">
+                        <span>Calculate My Take-Home Pay</span>
+                        <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                     </a>
-                    <span class="block text-xs text-slate-500 mt-2 tracking-wide">Free, Instant &amp; Accurate Estimates</span>
+                    <span class="text-xs text-slate-400 mt-2.5 font-medium tracking-wide">
+                        Free, Instant &amp; Accurate 2026 Estimates
+                    </span>
                 </div>
             </div>
-        </div>
-
+        </section>
+        <!-- END: SmartFinancialIntelligenceBanner -->
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-12">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-white font-bold mb-4">USCalcHub.com</h3>
-                <p class="text-sm mb-4">Your trusted destination for fast and accurate financial tools in the USA.</p>
-                <div class="flex space-x-4 mt-6">
-                    <!-- Pinterest -->
-                    <a href="https://www.pinterest.com/uscalch" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.17 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.592 0 12.017 0z"/></svg>
+    <!-- BEGIN: MainFooter -->
+    <footer class="bg-[#0b132b] text-slate-300 border-t border-slate-800/80 pt-16 pb-12" data-purpose="global-footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Footer Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+                <!-- Column 1: Brand & Bio (5 cols) -->
+                <div class="md:col-span-5 space-y-4">
+                    <a href="/" class="flex items-baseline gap-0.5">
+                        <span class="text-2xl font-bold tracking-tight text-white">US</span>
+                        <span class="text-2xl font-bold tracking-tight text-blue-500">Calc</span>
+                        <span class="text-2xl font-bold tracking-tight text-white">Hub</span>
+                        <span class="text-xs font-normal text-slate-500 ml-1">.com</span>
                     </a>
-                    <!-- Twitter/X -->
-                    <a href="https://x.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    </a>
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/></svg>
-                    </a>
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/uscalchub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/></svg>
-                    </a>
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/uscalc-hub-a5a01b411/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
-                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Your trusted destination for fast and accurate financial tools in the USA. Designed for wage earners, independent contractors, and retirees.
+                    </p>
+                    <!-- Social Media Links -->
+                    <div class="flex items-center space-x-3 pt-2 text-slate-400">
+                        <!-- Pinterest -->
+                        <a aria-label="Pinterest" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors" href="https://www.pinterest.com/uscalch" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"></path>
+                            </svg>
+                        </a>
+                        <!-- X / Twitter -->
+                        <a aria-label="X (formerly Twitter)" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors" href="https://x.com/uscalchub" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
+                        <!-- Facebook -->
+                        <a aria-label="Facebook" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors" href="https://www.facebook.com/uscalchub" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a aria-label="Instagram" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors" href="https://www.instagram.com/uscalchub" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a aria-label="LinkedIn" class="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-slate-700 transition-colors" href="https://www.linkedin.com/in/uscalc-hub-a5a01b411/" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Column 2: Quick Links (3 cols) -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a class="hover:text-blue-400 transition-colors" href="/privacy-policy/">Privacy Policy</a></li>
+                        <li><a class="hover:text-blue-400 transition-colors" href="/terms/">Terms of Service</a></li>
+                        <li><a class="hover:text-blue-400 transition-colors" href="/contact/">Contact Us</a></li>
+                        <li><a class="hover:text-blue-400 transition-colors" href="https://uscalchub.com/blog/">Blog &amp; Tax Guides</a></li>
+                        <li><a class="hover:text-blue-400 transition-colors" href="/about/">About Us</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Support Info (4 cols) -->
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-white">Support</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Need help with a calculator or spotted an IRS bracket update for your state?
+                    </p>
+                    <div class="pt-1">
+                        <span class="text-xs text-slate-500 block">Questions? Email us at:</span>
+                        <a class="text-sm font-semibold text-blue-400 hover:text-blue-300 underline underline-offset-4 transition-colors" href="mailto:support@uscalchub.com">
+                            support@uscalchub.com
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="/terms/" class="hover:text-white transition">Terms of Service</a></li>
-                    <li><a href="/contact/" class="hover:text-white transition">Contact Us</a></li>
-                    <li><a href="https://uscalchub.com/blog/" class="hover:text-white transition">Blog</a></li>
-                    <li><a href="/about/" class="hover:text-white transition">About Us</a></li>
-                </ul>
+            <!-- Legal Disclaimer & Copyright -->
+            <div class="pt-8 text-center max-w-4xl mx-auto space-y-3">
+                <p class="text-xs leading-relaxed text-slate-500">
+                    <strong>Disclaimer:</strong> All figures on this site are estimates for informational and educational purposes only, based on publicly available 2026 tax data believed to be accurate at the time of publication. Tax laws, rates, deductions, and thresholds change frequently and may vary by individual circumstance. This content does not constitute financial, tax, or legal advice — consult a qualified CPA or tax professional before making financial decisions. USCalcHub and its owners assume no liability for errors, omissions, or outcomes resulting from use of this site.
+                </p>
+                <p class="text-xs text-slate-600">
+                    © 2026 USCalcHub.com. All rights reserved.
+                </p>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">Support</h4>
-                <p class="text-sm">Questions? Email us at:<br>support@uscalchub.com</p>
-            </div>
-        </div>
-            <!-- Global Legal Disclaimer -->
-        <div class="max-w-6xl mx-auto px-4 mt-12 border-t border-slate-800 pt-6 text-center">
-            <p class="text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto">
-                <strong>Disclaimer:</strong> All figures on this site are estimates for informational and educational purposes only, based on publicly available 2026 tax data believed to be accurate at the time of publication. Tax laws, rates, and thresholds change frequently and may vary by individual circumstance. This content does not constitute financial, tax, or legal advice — consult a qualified CPA or tax professional before making financial decisions. USCalcHub and its owners assume no liability for errors, omissions, or outcomes resulting from use of this site.
-            </p>
         </div>
     </footer>
+    <!-- END: MainFooter -->
 
+    <!-- Interactive Scripts: Search, Category Filter, Mobile Menu -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Mobile Menu Toggle
             const mobileMenuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+            // Interactive Search and Filtering
+            const searchInput = document.getElementById('tool-search-input');
+            const searchBtn = document.getElementById('tool-search-btn');
+            const filterPills = document.querySelectorAll('.filter-pill');
+            const toolCards = document.querySelectorAll('.tool-card');
+            const noToolsFound = document.getElementById('no-tools-found');
+            const counterBadge = document.getElementById('tools-counter-badge');
+
+            let currentCategory = 'all';
+
+            function filterTools() {
+                const query = (searchInput.value || '').toLowerCase().trim();
+                let visibleCount = 0;
+
+                toolCards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    const cardCats = card.getAttribute('data-cats') || '';
+                    
+                    const matchesSearch = !query || text.includes(query);
+                    const matchesCat = currentCategory === 'all' || cardCats.includes(currentCategory);
+
+                    if (matchesSearch && matchesCat) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (noToolsFound) {
+                    noToolsFound.classList.toggle('hidden', visibleCount > 0);
                 }
-            });
 
-            // Simple header scroll effect
-            const header = document.getElementById('main-header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 10) {
-                    header.classList.add('shadow-md');
-                    header.classList.remove('shadow-sm');
-                } else {
-                    header.classList.add('shadow-sm');
-                    header.classList.remove('shadow-md');
+                if (counterBadge) {
+                    counterBadge.textContent = `Showing ${visibleCount} of 50+ Tools`;
                 }
-            });
+            }
 
-            // Button click handlers (prevent card default click if needed)
-            const openToolButtons = document.querySelectorAll('button:contains("Open Tool"), button');
-            openToolButtons.forEach(btn => {
-                if (btn.id !== 'mobile-menu-btn') {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation(); // Prevents the card click from firing if wrapped in an anchor
-                        // In a real app, route to the tool page
-                        console.log('Navigating to tool...');
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    filterTools();
+                });
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        filterTools();
+                        document.getElementById('popular-tools')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    filterTools();
+                    document.getElementById('popular-tools')?.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            filterPills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    currentCategory = pill.getAttribute('data-cat') || 'all';
+                    
+                    // Update pill styling
+                    filterPills.forEach(p => {
+                        p.className = "filter-pill px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 font-medium hover:border-blue-300 hover:text-blue-600 transition-colors cursor-pointer";
                     });
-                }
+                    pill.className = "filter-pill px-3.5 py-1.5 rounded-full bg-slate-900 text-white font-medium transition-colors shadow-sm cursor-pointer";
+
+                    filterTools();
+                });
             });
         });
     </script>
 
-    
-
+    <!-- Google Analytics (Delayed load for speed) -->
     <script>
         window.addEventListener('load', function() {
             setTimeout(function() {
@@ -470,23 +666,25 @@
         document.addEventListener("DOMContentLoaded", function() {
             if (!localStorage.getItem("cookiesAccepted")) {
                 const banner = document.getElementById("cookie-consent-banner");
-                banner.classList.remove("hidden");
-                // Small delay to allow CSS transition to work after removing hidden
-                setTimeout(() => {
-                    banner.classList.remove("translate-y-full");
-                }, 50);
+                if (banner) {
+                    banner.classList.remove("hidden");
+                    setTimeout(() => {
+                        banner.classList.remove("translate-y-full");
+                    }, 50);
+                }
             }
             
             document.getElementById("accept-cookies")?.addEventListener("click", function() {
                 localStorage.setItem("cookiesAccepted", "true");
                 const banner = document.getElementById("cookie-consent-banner");
-                banner.classList.add("translate-y-full");
-                setTimeout(() => {
-                    banner.classList.add("hidden");
-                }, 300);
+                if (banner) {
+                    banner.classList.add("translate-y-full");
+                    setTimeout(() => {
+                        banner.classList.add("hidden");
+                    }, 300);
+                }
             });
         });
     </script>
 </body>
-
 </html>
