@@ -44,7 +44,7 @@ export default function Footer() {
       {/* Global Legal Disclaimer */}
       <div className="max-w-6xl mx-auto px-4 mt-12 border-t border-slate-800 pt-6 text-center">
         <p className="text-[11px] text-slate-500 leading-relaxed max-w-4xl mx-auto">
-          <strong>Disclaimer:</strong> All calculations are estimates based on 2026 data for educational purposes only; actual figures may vary, and USCalcHub assumes no financial or legal liability.
+          <strong>Disclaimer:</strong> All figures on this site are estimates for informational and educational purposes only, based on publicly available 2026 tax data believed to be accurate at the time of publication. Tax laws, rates, and thresholds change frequently and may vary by individual circumstance. This content does not constitute financial, tax, or legal advice — consult a qualified CPA or tax professional before making financial decisions. USCalcHub and its owners assume no liability for errors, omissions, or outcomes resulting from use of this site.
         </p>
       </div>
     </footer>
