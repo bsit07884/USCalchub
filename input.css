@@ -9,3 +9,5 @@
 
 @source "./**/*.html";
 @source "./index.html";
+@source "./pseo-builder/pages/**/*.{js,jsx}";
+@source "./pseo-builder/components/**/*.{js,jsx}";

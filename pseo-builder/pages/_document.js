@@ -9,9 +9,38 @@ export default function Document() {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-        <link rel="stylesheet" href="/styles.css?v=20260730_1" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          tailwind.config = {
+            theme: {
+              extend: {
+                fontFamily: {
+                  sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                  body: ['Inter', 'sans-serif'],
+                },
+                colors: {
+                  brand: {
+                    50: '#eff6ff',
+                    100: '#dbeafe',
+                    200: '#bfdbfe',
+                    500: '#3b82f6',
+                    600: '#2563eb',
+                    700: '#1d4ed8',
+                    800: '#1e40af',
+                    900: '#1e3a8a',
+                  },
+                  navy: {
+                    900: '#0b132b',
+                    950: '#070c1d',
+                  }
+                }
+              }
+            }
+          }
+        `}} />
+        <link rel="stylesheet" href="/styles.css?v=20260730_2" />
         <style>{`
           .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
           .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
@@ -27,7 +56,7 @@ export default function Document() {
           }
         `}</style>
       </Head>
-      <body className="bg-white text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+      <body className="bg-white text-slate-800 font-sans antialiased">
         <Main />
         <NextScript />
       </body>
