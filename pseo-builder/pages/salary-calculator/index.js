@@ -170,8 +170,25 @@ export default function SalaryCalculatorHub() {
             <Link className="hover:text-blue-600 transition-colors" href="/contact/">Contact</Link>
             <Link className="hover:text-blue-600 transition-colors" href="/about/">About Us</Link>
           </nav>
-          {/* Right Action Button */}
-          <div className="flex items-center gap-3">
+          {/* Right Action Button & Search Trigger */}
+          <div className="flex items-center gap-2.5">
+            <button
+              type="button"
+              data-open-search
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.openUSCalcHubSearch) {
+                  window.openUSCalcHubSearch();
+                }
+              }}
+              className="inline-flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200/80 text-slate-600 hover:text-slate-900 text-xs font-semibold px-3 py-2 rounded-full border border-slate-200 transition-all focus:outline-none cursor-pointer"
+              title="Search calculators & articles (⌘K)"
+            >
+              <svg className="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span className="hidden sm:inline">Search</span>
+              <kbd className="hidden sm:inline-block text-[9px] bg-white border border-slate-200 px-1 rounded text-slate-400 font-mono">⌘K</kbd>
+            </button>
             <a className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" href="#calculator">
               <svg className="w-4 h-4 text-blue-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>

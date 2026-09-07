@@ -15,7 +15,26 @@ export default function Navbar() {
         </Link>
 
         {/* Right side: Links & CTA */}
-        <div className="flex gap-[18px] items-center">
+        <div className="flex gap-[14px] items-center">
+          {/* Unified Site-Wide Search Trigger */}
+          <button
+            type="button"
+            data-open-search
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.openUSCalcHubSearch) {
+                window.openUSCalcHubSearch();
+              }
+            }}
+            className="flex items-center gap-1.5 bg-slate-100 hover:bg-slate-200/80 text-slate-500 hover:text-slate-900 text-[12px] font-medium px-2.5 py-1 rounded-full border border-slate-200 transition-all focus:outline-none cursor-pointer"
+            title="Search 80+ calculators, tools & articles (⌘K)"
+          >
+            <svg className="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span className="hidden sm:inline">Search</span>
+            <kbd className="hidden sm:inline text-[9px] bg-white border border-slate-200 px-1 rounded text-slate-400 font-mono">⌘K</kbd>
+          </button>
+
           <Link href="/" className="text-[12px] text-slate-500 hover:text-blue-600 transition-colors">
             Home
           </Link>
@@ -35,7 +54,7 @@ export default function Navbar() {
           <Link href="/about/" className="text-[12px] text-slate-500 hover:text-blue-600 transition-colors hidden sm:block">
             About Us
           </Link>
-          <Link href="/#tools-section" className="bg-blue-600 text-white text-[12px] font-medium px-[14px] py-[5px] rounded-full hover:bg-blue-700 transition-colors border-none ml-2">
+          <Link href="/#tools-section" className="bg-blue-600 text-white text-[12px] font-medium px-[14px] py-[5px] rounded-full hover:bg-blue-700 transition-colors border-none ml-1">
             Free Tools
           </Link>
         </div>

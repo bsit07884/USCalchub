@@ -1,0 +1,882 @@
+[
+  {
+    "id": "salary-arizona-50k",
+    "title": "Arizona $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Arizona (50k) for 2026 with federal and Arizona state income tax.",
+    "url": "/salary-calculator/arizona/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "arizona az 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-arizona-75k",
+    "title": "Arizona $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Arizona (75k) for 2026 with federal and Arizona state income tax.",
+    "url": "/salary-calculator/arizona/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "arizona az 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-arizona-85k",
+    "title": "Arizona $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Arizona (85k) for 2026 with federal and Arizona state income tax.",
+    "url": "/salary-calculator/arizona/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "arizona az 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-california-60k",
+    "title": "California $60,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $60,000 annual salary in California (60k) for 2026 with federal and California state income tax.",
+    "url": "/salary-calculator/california/60k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "california ca 60k 60000 $60,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-california-75k",
+    "title": "California $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in California (75k) for 2026 with federal and California state income tax.",
+    "url": "/salary-calculator/california/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "california ca 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-california-100k",
+    "title": "California $100,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $100,000 annual salary in California (100k) for 2026 with federal and California state income tax.",
+    "url": "/salary-calculator/california/100k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "california ca 100k 100000 $100,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-florida-60k",
+    "title": "Florida $60,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $60,000 annual salary in Florida (60k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/florida/60k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "florida fl 60k 60000 $60,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-florida-75k",
+    "title": "Florida $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Florida (75k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/florida/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "florida fl 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-florida-100k",
+    "title": "Florida $100,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $100,000 annual salary in Florida (100k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/florida/100k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "florida fl 100k 100000 $100,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-georgia-50k",
+    "title": "Georgia $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Georgia (50k) for 2026 with federal and Georgia state income tax.",
+    "url": "/salary-calculator/georgia/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "georgia ga 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-georgia-75k",
+    "title": "Georgia $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Georgia (75k) for 2026 with federal and Georgia state income tax.",
+    "url": "/salary-calculator/georgia/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "georgia ga 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-georgia-85k",
+    "title": "Georgia $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Georgia (85k) for 2026 with federal and Georgia state income tax.",
+    "url": "/salary-calculator/georgia/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "georgia ga 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-idaho-50k",
+    "title": "Idaho $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Idaho (50k) for 2026 with federal and Idaho state income tax.",
+    "url": "/salary-calculator/idaho/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "idaho id 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-idaho-75k",
+    "title": "Idaho $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Idaho (75k) for 2026 with federal and Idaho state income tax.",
+    "url": "/salary-calculator/idaho/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "idaho id 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-idaho-85k",
+    "title": "Idaho $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Idaho (85k) for 2026 with federal and Idaho state income tax.",
+    "url": "/salary-calculator/idaho/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "idaho id 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-montana-50k",
+    "title": "Montana $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Montana (50k) for 2026 with federal and Montana state income tax.",
+    "url": "/salary-calculator/montana/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "montana mt 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-montana-75k",
+    "title": "Montana $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Montana (75k) for 2026 with federal and Montana state income tax.",
+    "url": "/salary-calculator/montana/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "montana mt 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-montana-85k",
+    "title": "Montana $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Montana (85k) for 2026 with federal and Montana state income tax.",
+    "url": "/salary-calculator/montana/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "montana mt 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-nevada-50k",
+    "title": "Nevada $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Nevada (50k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/nevada/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "nevada nv 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-nevada-75k",
+    "title": "Nevada $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Nevada (75k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/nevada/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "nevada nv 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-nevada-85k",
+    "title": "Nevada $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Nevada (85k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/nevada/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "nevada nv 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-new-york-60k",
+    "title": "New York $60,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $60,000 annual salary in New York (60k) for 2026 with federal and New York state income tax.",
+    "url": "/salary-calculator/new-york/60k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "new york ny 60k 60000 $60,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-new-york-75k",
+    "title": "New York $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in New York (75k) for 2026 with federal and New York state income tax.",
+    "url": "/salary-calculator/new-york/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "new york ny 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-new-york-100k",
+    "title": "New York $100,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $100,000 annual salary in New York (100k) for 2026 with federal and New York state income tax.",
+    "url": "/salary-calculator/new-york/100k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "new york ny 100k 100000 $100,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-north-carolina-50k",
+    "title": "North Carolina $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in North Carolina (50k) for 2026 with federal and North Carolina state income tax.",
+    "url": "/salary-calculator/north-carolina/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "north carolina nc 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-north-carolina-75k",
+    "title": "North Carolina $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in North Carolina (75k) for 2026 with federal and North Carolina state income tax.",
+    "url": "/salary-calculator/north-carolina/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "north carolina nc 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-north-carolina-85k",
+    "title": "North Carolina $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in North Carolina (85k) for 2026 with federal and North Carolina state income tax.",
+    "url": "/salary-calculator/north-carolina/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "north carolina nc 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-oregon-50k",
+    "title": "Oregon $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Oregon (50k) for 2026 with federal and Oregon state income tax.",
+    "url": "/salary-calculator/oregon/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "oregon or 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-oregon-75k",
+    "title": "Oregon $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Oregon (75k) for 2026 with federal and Oregon state income tax.",
+    "url": "/salary-calculator/oregon/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "oregon or 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-oregon-85k",
+    "title": "Oregon $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Oregon (85k) for 2026 with federal and Oregon state income tax.",
+    "url": "/salary-calculator/oregon/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "oregon or 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-south-carolina-50k",
+    "title": "South Carolina $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in South Carolina (50k) for 2026 with federal and South Carolina state income tax.",
+    "url": "/salary-calculator/south-carolina/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "south carolina sc 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-south-carolina-75k",
+    "title": "South Carolina $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in South Carolina (75k) for 2026 with federal and South Carolina state income tax.",
+    "url": "/salary-calculator/south-carolina/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "south carolina sc 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-south-carolina-85k",
+    "title": "South Carolina $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in South Carolina (85k) for 2026 with federal and South Carolina state income tax.",
+    "url": "/salary-calculator/south-carolina/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "south carolina sc 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-tennessee-50k",
+    "title": "Tennessee $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Tennessee (50k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/tennessee/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "tennessee tn 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-tennessee-75k",
+    "title": "Tennessee $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Tennessee (75k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/tennessee/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "tennessee tn 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-tennessee-85k",
+    "title": "Tennessee $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Tennessee (85k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/tennessee/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "tennessee tn 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-texas-60k",
+    "title": "Texas $60,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $60,000 annual salary in Texas (60k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/texas/60k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "texas tx 60k 60000 $60,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-texas-75k",
+    "title": "Texas $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Texas (75k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/texas/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "texas tx 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-texas-100k",
+    "title": "Texas $100,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $100,000 annual salary in Texas (100k) for 2026 with federal and 0% state income tax.",
+    "url": "/salary-calculator/texas/100k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "texas tx 100k 100000 $100,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-utah-50k",
+    "title": "Utah $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Utah (50k) for 2026 with federal and Utah state income tax.",
+    "url": "/salary-calculator/utah/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "utah ut 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-utah-75k",
+    "title": "Utah $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Utah (75k) for 2026 with federal and Utah state income tax.",
+    "url": "/salary-calculator/utah/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "utah ut 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-utah-85k",
+    "title": "Utah $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Utah (85k) for 2026 with federal and Utah state income tax.",
+    "url": "/salary-calculator/utah/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "utah ut 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "ss-colorado",
+    "title": "Is Social Security Taxed in Colorado? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in Colorado: Fully exempt at age 65+. Ages 55-64 fully exempt if AGI is at or below the threshold; above it, only a partial deduction applies. Under 55, no special SS exemption.",
+    "url": "/social-security-calculator/colorado/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "colorado co social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "ss-connecticut",
+    "title": "Is Social Security Taxed in Connecticut? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in Connecticut: Fully exempt if AGI is at or below the threshold. Above it, no more than 25% of federally taxable benefits become subject to Connecticut tax.",
+    "url": "/social-security-calculator/connecticut/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "connecticut ct social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "ss-minnesota",
+    "title": "Is Social Security Taxed in Minnesota? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in Minnesota: Fully exempt below the threshold; the exemption phases out gradually (10% reduction per $4,000 of income above the threshold) rather than disappearing all at once.",
+    "url": "/social-security-calculator/minnesota/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "minnesota mn social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "ss-montana",
+    "title": "Is Social Security Taxed in Montana? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in Montana: Does not use a simple income cutoff like the other seven states. Montana starts from the federally taxable portion of Social Security, then allows a $5,500 (single) / $11,000 (joint) deduction for filers 65+. Most Montana retirees owe some state tax on their benefits.",
+    "url": "/social-security-calculator/montana/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "montana mt social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "ss-new-mexico",
+    "title": "Is Social Security Taxed in New Mexico? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in New Mexico: Fully exempt if AGI is at or below the threshold — the most generous flat cutoff of the eight states, so most retirees pay nothing.",
+    "url": "/social-security-calculator/new-mexico/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "new mexico nm social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "ss-rhode-island",
+    "title": "Is Social Security Taxed in Rhode Island? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in Rhode Island: Fully exempt only if the filer has reached full retirement age AND AGI is at or below the threshold. Filers below full retirement age do not qualify for the exemption regardless of income.",
+    "url": "/social-security-calculator/rhode-island/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "rhode island ri social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "ss-utah",
+    "title": "Is Social Security Taxed in Utah? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in Utah: Utah does not exempt Social Security outright — instead it offers a nonrefundable tax credit that offsets the tax owed. Below the income limit, the credit effectively zeroes out SS tax; above it, the credit phases out.",
+    "url": "/social-security-calculator/utah/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "utah ut social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "ss-vermont",
+    "title": "Is Social Security Taxed in Vermont? (2026 Rules)",
+    "description": "2026 statutory rules for Social Security in Vermont: Fully exempt below the threshold; a partial exemption phases out at higher incomes rather than disappearing all at once.",
+    "url": "/social-security-calculator/vermont/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "vermont vt social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
+  },
+  {
+    "id": "tool-salary",
+    "title": "US Salary After Tax Calculator",
+    "description": "Calculate your exact take-home paycheck after federal, state & FICA tax deductions across all 50 states.",
+    "url": "/salary-calculator/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "salary paycheck take home pay income tax federal fica state brackets 2026 earnings wage"
+  },
+  {
+    "id": "tool-social-security",
+    "title": "Social Security Tax Calculator",
+    "description": "Determine if your Social Security retirement benefits are subject to federal and state income tax in 2026.",
+    "url": "/social-security-calculator/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "social security retirement benefits tax combined income irs threshold agi 2026 8 taxing states"
+  },
+  {
+    "id": "tool-tip",
+    "title": "Tip & Bill Splitter Calculator",
+    "description": "Quickly calculate custom tip percentages, local sales tax, and split restaurant bills fairly among friends.",
+    "url": "/tip-calculator/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "tip bill splitter dinner restaurant gratuity split shared tab check tax dining"
+  },
+  {
+    "id": "tool-credit-card",
+    "title": "Credit Card Payoff & Debt Planner",
+    "description": "Plan your fastest path to becoming debt-free with custom monthly payment schedules and APR interest savings.",
+    "url": "/credit-card-payoff/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "credit card payoff debt interest apr payoff balance amortization payment planner debt free"
+  },
+  {
+    "id": "tool-real-estate",
+    "title": "Real Estate Commission Calculator",
+    "description": "Estimate post-NAR settlement realtor commissions, buyer/seller broker splits, and net closing proceeds.",
+    "url": "/real-estate-calculator/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "real estate commission nar settlement realtor broker agent fee closing proceeds seller buyer home sale"
+  },
+  {
+    "id": "tool-overtime",
+    "title": "Overtime Tax Refund & Paycheck Calculator",
+    "description": "Estimate your 2026 tax-free overtime deductions, time-and-a-half earnings, and higher effective paycheck.",
+    "url": "/overtime-calculator/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "overtime tax refund time and a half 1.5x hourly wage overtime pay tax exemption deductions 2026"
+  },
+  {
+    "id": "page-about",
+    "title": "About USCalcHub",
+    "description": "Learn about our mission, methodology, and commitment to fast, accurate, and privacy-first financial tools.",
+    "url": "/about/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "about uscalchub mission methodology financial calculator accuracy team"
+  },
+  {
+    "id": "page-contact",
+    "title": "Contact Support & Feedback",
+    "description": "Get in touch with the USCalcHub financial and editorial development team.",
+    "url": "/contact/",
+    "type": "tool",
+    "badge": "Tool",
+    "priority": 2,
+    "keywords": "contact support feedback help email customer service question"
+  },
+  {
+    "id": "post-289",
+    "title": "Michigan to Florida Salary Calculator 2026 — How Much You'll Actually Save",
+    "description": "Financial Planning • August 2026 Michigan to Florida Salary Calculator 2026 — How Much You'll Actually Save ✓ Reviewed by Muzaffar Ali, Financial Content Tea...",
+    "url": "/blog/michigan-to-florida-salary-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "michigan to florida salary calculator 2026 — how much you'll actually save michigan to florida salary calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-281",
+    "title": "Illinois to Nevada Salary Comparison: Ultimate 2026 Tax Savings",
+    "description": "Relocation & Financial Planning • July 2026 Illinois to Nevada Salary Comparison: Ultimate 2026 Tax Savings The great migration from the Midwest to the Sun B...",
+    "url": "/blog/illinois-to-nevada-salary-comparison/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "illinois to nevada salary comparison: ultimate 2026 tax savings illinois to nevada salary comparison blog article guide"
+  },
+  {
+    "id": "post-274",
+    "title": "New Jersey to Florida Taxes: 2026 Salary Calculator & Savings",
+    "description": "Financial Planning • July 2026 New Jersey to Florida Taxes: 2026 Salary Calculator & Savings The financial migration down the East Coast is accelerating, and...",
+    "url": "/blog/new-jersey-to-florida-taxes/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "new jersey to florida taxes: 2026 salary calculator & savings new jersey to florida taxes blog article guide"
+  },
+  {
+    "id": "post-260",
+    "title": "Cost of Living Comparison by City 2026: Which US Cities Are Actually Affordable? [Free Calculator Guide]",
+    "description": "Relocation & Finance • June 2026 Cost of Living Comparison by City 2026: Which US Cities Are Actually Affordable? Imagine packing up your life in a high-cost...",
+    "url": "/blog/cost-of-living-comparison-city-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "cost of living comparison by city 2026: which us cities are actually affordable? [free calculator guide] cost of living comparison city calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-224",
+    "title": "$60,000 Salary After Tax by State 2026 — Monthly, Weekly & Hourly",
+    "description": "Income & Relocation • June 2026 $60,000 Salary After Tax by State 2026 — Monthly, Weekly & Hourly Take-Home Earning a $60,000 salary is a major benchmark, pa...",
+    "url": "/blog/60000-salary-after-tax-by-state-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "$60,000 salary after tax by state 2026 — monthly, weekly & hourly 60000 salary after tax by state 2026 blog article guide"
+  },
+  {
+    "id": "post-221",
+    "title": "Overtime Pay Calculator 2026 – Hourly Workers: See Take-Home After No-Tax Deduction",
+    "description": "Workplace & Finance • June 2026 Overtime Pay Calculator 2026 — Hourly Workers: See Take-Home After No-Tax Deduction For decades, picking up an extra shift wa...",
+    "url": "/blog/overtime-pay-calculator-hourly-workers-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "overtime pay calculator 2026 – hourly workers: see take-home after no-tax deduction overtime pay calculator hourly workers 2026 blog article guide"
+  },
+  {
+    "id": "post-218",
+    "title": "How to Split a Bill Fairly with Friends in 2026 — Free Calculator + 5 Methods",
+    "description": "Lifestyle & Finance • June 2026 How to Split a Bill Fairly with Friends in 2026 — Free Calculator + 5 Methods We have all been there: the dinner is fantastic...",
+    "url": "/blog/how-to-split-bill-with-friends-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "how to split a bill fairly with friends in 2026 — free calculator + 5 methods how to split bill with friends calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-213",
+    "title": "Realtor Commission Calculator 2026: How Much Will You Pay After the NAR Settlement?",
+    "description": "Real Estate & Wealth • June 2026 Realtor Commission Calculator 2026: How Much Will You Pay After the NAR Settlement? For decades, selling a home meant automa...",
+    "url": "/blog/realtor-commission-calculator-2026-nar-settlement/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "realtor commission calculator 2026: how much will you pay after the nar settlement? realtor commission calculator 2026 nar settlement blog article guide"
+  },
+  {
+    "id": "post-210",
+    "title": "$75,000 Salary After Tax by State 2026 – Compare All 50",
+    "description": "Income & Relocation • June 2026 $75,000 Salary After Tax by State 2026 — See Your Real Take-Home Pay Reaching a $75,000 salary is a pivotal moment in your ca...",
+    "url": "/blog/75000-salary-after-tax-by-state-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "$75,000 salary after tax by state 2026 – compare all 50 75000 salary after tax by state 2026 blog article guide"
+  },
+  {
+    "id": "post-205",
+    "title": "How Much Social Security is Taxable in 2026? IRS Rules + Free Calculator",
+    "description": "Retirement Planning • June 2026 How Much Social Security is Taxable in 2026? IRS Rules & Thresholds Millions of retirees enter 2026 with a massive financial ...",
+    "url": "/blog/how-much-social-security-is-taxable-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "how much social security is taxable in 2026? irs rules + free calculator how much social security is taxable 2026 blog article guide"
+  },
+  {
+    "id": "post-197",
+    "title": "How Long to Pay Off a Credit Card in 2026? Calculator + Avalanche vs Snowball",
+    "description": "Debt Management • June 2026 How Long Does It Take to Pay Off a Credit Card in 2026? Carrying a balance on your credit cards can often feel like an endless cy...",
+    "url": "/blog/how-long-to-pay-off-credit-card-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "how long to pay off a credit card in 2026? calculator + avalanche vs snowball how long to pay off credit card calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-191",
+    "title": "Social Security Tax Calculator 2026 – See Exactly What You Owe",
+    "description": "Retirement Tools • June 2026 Social Security Tax Calculator 2026: See Exactly What You Owe Millions of retirees search the internet every single month trying...",
+    "url": "/blog/social-security-tax-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "social security tax calculator 2026 – see exactly what you owe social security tax calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-170",
+    "title": "Moving from New York to North Carolina Taxes: 2026 Savings Guide",
+    "description": "Financial Planning • May 2026 Moving from New York to North Carolina Taxes: 2026 Savings Guide Leaving behind the taxing environment of New York for the thri...",
+    "url": "/blog/moving-from-new-york-to-north-carolina-taxes/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "moving from new york to north carolina taxes: 2026 savings guide moving from new york to north carolina taxes blog article guide"
+  },
+  {
+    "id": "post-177",
+    "title": "No Tax on Tips Calculator 2026: See Your Exact Savings Under the One Big Beautiful Bill",
+    "description": "Financial Planning • May 2026 No Tax on Tips Calculator 2026: See Your Exact Savings Under the One Big Beautiful Bill For millions of hardworking Americans i...",
+    "url": "/blog/no-tax-on-tips-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "no tax on tips calculator 2026: see your exact savings under the one big beautiful bill no tax on tips calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-168",
+    "title": "California to Nevada Taxes & Salary Calculator 2026: Real Take-Home Pay Comparison",
+    "description": "Financial Planning • June 2026 California to Nevada Taxes & Salary Calculator 2026: Real Take-Home Pay Comparison Escaping the Golden State for the Silver St...",
+    "url": "/blog/california-to-nevada-salary-equivalent/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "california to nevada taxes & salary calculator 2026: real take-home pay comparison california to nevada salary equivalent blog article guide"
+  },
+  {
+    "id": "post-160",
+    "title": "Illinois to Florida Tax Calculator 2026 — See Exact Take-Home Pay Difference",
+    "description": "Financial Planning • May 2026 Illinois to Florida Tax Calculator 2026 — See Exact Take-Home Pay Difference The mass exodus from the Land of Lincoln to the Su...",
+    "url": "/blog/illinois-to-florida-tax-calculator/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "illinois to florida tax calculator 2026 — see exact take-home pay difference illinois to florida tax calculator blog article guide"
+  },
+  {
+    "id": "post-139",
+    "title": "Are \"No Income Tax\" States Actually Cheaper? The 2026 Hidden Cost Guide",
+    "description": "Financial Planning • May 2026 Are \"No Income Tax\" States Actually Cheaper? The 2026 Hidden Cost Guide Imagine packing up your life, moving across the country...",
+    "url": "/blog/hidden-costs-states-no-income-tax-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "are \"no income tax\" states actually cheaper? the 2026 hidden cost guide hidden costs states no income tax 2026 blog article guide"
+  },
+  {
+    "id": "post-122",
+    "title": "Moving from Illinois to Texas: Take-Home Pay Calculator & Real Savings 2026",
+    "description": "Financial Planning • May 2026 Moving from Illinois to Texas: Take-Home Pay Calculator & Real Savings 2026 The great migration down south is accelerating, and...",
+    "url": "/blog/moving-from-illinois-to-texas-salary-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "moving from illinois to texas: take-home pay calculator & real savings 2026 moving from illinois to texas salary calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-120",
+    "title": "Illinois to Florida Salary Tax Calculator 2026: Relocation Guide",
+    "description": "Financial Planning • May 2026 Illinois to Florida Salary Tax Calculator 2026: Relocation Guide & Cost Comparison It is no secret that the great migration dow...",
+    "url": "/blog/illinois-to-florida-salary-tax-calculator/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "illinois to florida salary tax calculator 2026: relocation guide illinois to florida salary tax calculator blog article guide"
+  },
+  {
+    "id": "post-99",
+    "title": "Credit Card Payoff Calculator with Extra Payments: Escape Debt Faster in 2026",
+    "description": "Financial Planning • May 2026 Credit Card Payoff Calculator with Extra Payments: Escape Debt Faster in 2026 There is a unique kind of suffocating anxiety tha...",
+    "url": "/blog/credit-card-payoff-calculator-extra-payments/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "credit card payoff calculator with extra payments: escape debt faster in 2026 credit card payoff calculator extra payments blog article guide"
+  },
+  {
+    "id": "post-96",
+    "title": "Sales Tax Calculator 2026: Find Your Rate by State & Zip Code",
+    "description": "Financial Planning • May 2026 Sales Tax Calculator 2026: Find Your Rate by State & Zip Code When you are trying to budget for a major purchase, assuming that...",
+    "url": "/blog/sales-tax-calculator-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "sales tax calculator 2026: find your rate by state & zip code sales tax calculator 2026 blog article guide"
+  },
+  {
+    "id": "post-93",
+    "title": "Georgia Surplus Tax Refund 2026: Amounts, Schedule & Where's My Refund",
+    "description": "Financial Planning • May 2026 Georgia Surplus Tax Refund 2026: Amounts, Schedule & Where's My Refund Millions of Georgia taxpayers are officially receiving a...",
+    "url": "/blog/georgia-surplus-tax-refund-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "georgia surplus tax refund 2026: amounts, schedule & where's my refund georgia surplus tax refund 2026 blog article guide"
+  },
+  {
+    "id": "post-89",
+    "title": "No Tax on Overtime Refund Calculator 2026: Estimate Your Payout",
+    "description": "Financial Planning • May 2026 No Tax on Overtime Calculator 2026: Estimate Your Refund Under New Law The No Tax on Overtime deduction is now official law. Pr...",
+    "url": "/blog/2026-tax-refund-calculator-no-tax-overtime/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "no tax on overtime refund calculator 2026: estimate your payout 2026 tax refund calculator no tax overtime blog article guide"
+  },
+  {
+    "id": "post-80",
+    "title": "Cost of Living Comparison City Calculator (Free 2026 Tool)",
+    "description": "Financial Planning • May 2026 Cost of Living Comparison by City: Your 2026 Relocation Calculator Planning a cross-country move in 2026? Whether you are chasi...",
+    "url": "/blog/cost-of-living-comparison-city-calculator/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "cost of living comparison city calculator (free 2026 tool) cost of living comparison city calculator blog article guide"
+  },
+  {
+    "id": "post-78",
+    "title": "Finance Calculator Land: Estimate Your Property Loan Costs in 2026",
+    "description": "Financial Planning • May 2026 Finance Calculator Land: Estimate Your Property Loan Costs in 2026 Buying raw land or a vacant lot is an exciting first step to...",
+    "url": "/blog/finance-calculator-land/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "finance calculator land: estimate your property loan costs in 2026 finance calculator land blog article guide"
+  },
+  {
+    "id": "post-76",
+    "title": "How to Use a Financial Calculator for Loan Comparisons in 2026",
+    "description": "Financial Planning • May 2026 How to Use a Financial Calculator for Loan Comparisons in 2026 Taking out a loan is one of the biggest financial commitments yo...",
+    "url": "/blog/financial-calculator-for-loan/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "how to use a financial calculator for loan comparisons in 2026 financial calculator for loan blog article guide"
+  },
+  {
+    "id": "post-74",
+    "title": "7 Best Free Online Financial Calculators for Loans & Retirement (2026)",
+    "description": "Financial Planning • May 2026 7 Best Free Online Financial Calculators for Loans & Retirement (2026) Managing your wealth in 2026 requires the right tools. W...",
+    "url": "/blog/best-free-online-financial-calculators/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "7 best free online financial calculators for loans & retirement (2026) best free online financial calculators blog article guide"
+  },
+  {
+    "id": "post-68",
+    "title": "Top 9 States with No Income Tax 2026 — Official List",
+    "description": "Financial Planning • August 2026 Top 9 States with No Income Tax 2026 — Official List & Hidden Costs Are you searching for the complete and official list of ...",
+    "url": "/blog/top-9-states-with-no-income-tax-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "top 9 states with no income tax 2026 — official list top 9 states with no income tax 2026 blog article guide"
+  },
+  {
+    "id": "post-58",
+    "title": "New York to Florida Salary Calculator 2026 — See Exact Tax Savings",
+    "description": "Financial Planning • May 2026 New York to Florida Salary Calculator 2026 — See Exact Tax Savings The migration from the Empire State to the Sunshine State is...",
+    "url": "/blog/new-york-to-florida-salary-tax-calculator/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "new york to florida salary calculator 2026 — see exact tax savings new york to florida salary tax calculator blog article guide"
+  },
+  {
+    "id": "post-54",
+    "title": "California vs Texas Tax Calculator 2026 — See Your Real Take-Home Pay",
+    "description": "Tax Planning & Relocation • Updated May 2026 California vs Texas Tax Calculator 2026 — See Your Real Take-Home Pay The great migration from the West Coast to...",
+    "url": "/blog/california-vs-texas-salary-tax-calculator/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "california vs texas tax calculator 2026 — see your real take-home pay california vs texas salary tax calculator blog article guide"
+  }
+]

@@ -41,6 +41,7 @@ export default function Document() {
           }
         `}} />
         <link rel="stylesheet" href="/styles.css?v=20260730_2" />
+        <link rel="stylesheet" href="/site-search.css" />
         <style>{`
           .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
           .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
@@ -59,6 +60,7 @@ export default function Document() {
       <body className="bg-white text-slate-800 font-sans antialiased">
         <Main />
         <NextScript />
+        <script src="/site-search.js" defer></script>
       </body>
     </Html>
   );
