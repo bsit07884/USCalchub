@@ -11,7 +11,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { STATES, SALARY_CONFIG, isLiveScope } from '../lib/taxData.js';
-import { SS_TAXING_STATES } from '../lib/ssData.js';
+import { SS_TAXING_STATES, SS_NON_TAXING_STATES } from '../lib/ssData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -170,6 +170,21 @@ async function generateSearchIndex() {
       badge: 'Calculator',
       priority: 1,
       keywords: `${s.name.toLowerCase()} ${s.abbr.toLowerCase()} social security retirement benefits tax exempt agi threshold taxing state 2026 rules`
+    });
+  }
+
+  // C. Social Security Child Pages (10 Non-Taxing States Phase 2)
+  for (const s of SS_NON_TAXING_STATES) {
+    ssChildCount++;
+    searchIndex.push({
+      id: `ss-${s.slug}`,
+      title: `Is Social Security Taxed in ${s.name}? (2026 Rules)`,
+      description: `2026 retirement tax profile for ${s.name}: ${cleanText(s.summary)}`,
+      url: `/social-security-calculator/${s.slug}/`,
+      type: 'calculator',
+      badge: 'Calculator',
+      priority: 1,
+      keywords: `${s.name.toLowerCase()} ${s.abbr.toLowerCase()} social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k`
     });
   }
 

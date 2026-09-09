@@ -500,6 +500,106 @@
     "keywords": "vermont vt social security retirement benefits tax exempt agi threshold taxing state 2026 rules"
   },
   {
+    "id": "ss-florida",
+    "title": "Is Social Security Taxed in Florida? (2026 Rules)",
+    "description": "2026 retirement tax profile for Florida: Florida does not tax Social Security benefits at the state level. In fact, Florida has no personal income tax at all under Article VII, Section 5 of the Florida Constitution. Retirement income from all sources—including traditional 401(k) and IRA withdrawals, private pensions, government pensions, and investment earnings—is completely free from state income tax. Homeowners face a moderate effective property tax rate of 0.78%, and permanent residents can shield up to $50,000 of home value through Florida's Homestead Exemption.",
+    "url": "/social-security-calculator/florida/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "florida fl social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-texas",
+    "title": "Is Social Security Taxed in Texas? (2026 Rules)",
+    "description": "2026 retirement tax profile for Texas: Texas does not tax Social Security benefits at the state level. Under the Texas Constitution (Article VIII, Section 24-a), the state bans personal income tax, meaning Social Security, pensions, 401(k) distributions, and IRAs are 100% state income tax-free. However, Texas funds public services largely through property taxes, resulting in an effective rate of 1.40%—among the higher rates in the US. Texas offers significant property tax relief for seniors, including an over-65 school tax ceiling (freeze) and additional residence homestead exemptions.",
+    "url": "/social-security-calculator/texas/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "texas tx social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-california",
+    "title": "Is Social Security Taxed in California? (2026 Rules)",
+    "description": "2026 retirement tax profile for California: California does not tax Social Security benefits at the state level—benefits are fully deductible on California Form 540 (Schedule CA 540). However, California maintains the highest top marginal income tax rate in the country (up to 13.3%, or 14.4% including Mental Health Services tax on income over $1M) on OTHER retirement income. Traditional 401(k) distributions, traditional IRA withdrawals, corporate pensions, and capital gains are fully taxed as ordinary income at progressive state rates. On the real estate front, Proposition 13 limits base property tax increases to 2% annually, keeping the statewide effective property tax rate at 0.70%.",
+    "url": "/social-security-calculator/california/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "california ca social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-new-york",
+    "title": "Is Social Security Taxed in New York? (2026 Rules)",
+    "description": "2026 retirement tax profile for New York: New York State completely exempts Social Security benefits from state and local income tax (deducted on Form IT-201). However, other retirement income is subject to New York's progressive tax brackets ranging from 4% to 10.9% (plus up to 3.876% in New York City local tax). Under official New York Tax Law § 612(c)(3-a) and Dept. of Taxation and Finance Publication 36, qualifying filers aged 59½ and older can exclude up to $20,000 per year of pension and annuity distributions from traditional retirement plans. New York property taxes average an effective 1.30%, though the School Tax Relief (STAR) program provides partial school property tax relief.",
+    "url": "/social-security-calculator/new-york/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "new york ny social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-pennsylvania",
+    "title": "Is Social Security Taxed in Pennsylvania? (2026 Rules)",
+    "description": "2026 retirement tax profile for Pennsylvania: Pennsylvania is one of the most tax-lenient states for retirees. Pennsylvania does not tax Social Security benefits. Furthermore, under official Pennsylvania Department of Revenue guidance (Brochure REV-612 and 72 P.S. § 7301(d)(iii)), payments from eligible retirement benefit plans—including employer pensions, 401(k)s, and traditional IRAs—are 100% exempt from state income tax when received after reaching retirement age (age 60 or older). If a retiree continues to earn W-2 wages, Pennsylvania taxes that earned income at a flat 3.07%. Working retirees in Philadelphia should also account for the city's local wage tax (~3.75%). Property tax averages 1.26% statewide.",
+    "url": "/social-security-calculator/pennsylvania/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "pennsylvania pa social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-ohio",
+    "title": "Is Social Security Taxed in Ohio? (2026 Rules)",
+    "description": "2026 retirement tax profile for Ohio: Ohio does not tax Social Security benefits at the state level (deducted on Ohio Schedule of Adjustments). Beginning in 2026, Ohio simplified its income tax structure to a flat 2.75% rate on taxable income exceeding $26,050, with a 0% rate on income below that threshold. Ohio offers qualifying retirees a Retirement Income Credit of up to $200 (for modified AGI under $100,000) and a $50 Senior Citizen Credit. However, retirees should note that many Ohio municipalities and school districts levy local income taxes (averaging ~1.2%), and property taxes average 1.36% statewide.",
+    "url": "/social-security-calculator/ohio/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "ohio oh social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-illinois",
+    "title": "Is Social Security Taxed in Illinois? (2026 Rules)",
+    "description": "2026 retirement tax profile for Illinois: Illinois does not tax Social Security benefits at the state level. Under Illinois Compiled Statutes (35 ILCS 5/203), Illinois exempts almost all qualified retirement income—including Social Security, traditional pensions, 401(k) distributions, and IRAs—from its flat 4.95% individual income tax. However, Illinois homeowners face the highest property tax burden of any state in this group: an effective property tax rate of 1.88%, ranking second-highest nationally behind New Jersey. While your retirement checks are shielded from state income tax, substantial residential property taxes make Illinois a high-tax state for retiree homeowners overall.",
+    "url": "/social-security-calculator/illinois/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "illinois il social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-georgia",
+    "title": "Is Social Security Taxed in Georgia? (2026 Rules)",
+    "description": "2026 retirement tax profile for Georgia: Georgia completely exempts Social Security benefits from state income tax. For other retirement income (pensions, annuities, 401(k) withdrawals, interest, and dividends), Georgia applies a flat 5.19% income tax rate. However, under official Georgia Department of Revenue guidance (Form 500 Schedule 1 and O.C.G.A. § 48-7-27(a)(5)), Georgia provides an exceptionally generous retirement income exclusion: filers aged 62 to 64 can exclude up to $35,000 of retirement income, while filers aged 65 and older can exclude up to $65,000 per person ($130,000 for a married couple filing jointly). Homeowners benefit from a moderate 0.79% effective property tax rate and senior homestead tax exemptions.",
+    "url": "/social-security-calculator/georgia/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "georgia ga social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-north-carolina",
+    "title": "Is Social Security Taxed in North Carolina? (2026 Rules)",
+    "description": "2026 retirement tax profile for North Carolina: North Carolina does not tax Social Security benefits at the state level (deducted on Form D-400 Schedule S). As of 2026, North Carolina enacted a simplified flat personal income tax rate of 3.99% across all taxable income, down from prior years. While North Carolina taxes private pensions, 401(k) distributions, and IRAs at this 3.99% flat rate, the state offsets this with a very low effective property tax rate of 0.66%—one of the lowest in the eastern United States. Qualifying low-income seniors aged 65+ can also claim the Elderly or Disabled Property Tax Homestead Exclusion.",
+    "url": "/social-security-calculator/north-carolina/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "north carolina nc social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
+    "id": "ss-arizona",
+    "title": "Is Social Security Taxed in Arizona? (2026 Rules)",
+    "description": "2026 retirement tax profile for Arizona: Arizona is widely recognized as one of the most retirement-tax-friendly states in the United States. Arizona completely exempts Social Security benefits from state income tax (subtracted on Arizona Form 140). For other retirement income (pensions, 401(k)s, and traditional IRAs), Arizona levies a flat 2.50% tax rate—tied for the lowest individual income tax rate in the country among states that levy one. In addition, Arizona allows up to a $2,500 exclusion for military and federal/civil service pensions. Arizona also boasts the lowest effective property tax rate of this entire group at just 0.48%, keeping fixed living costs exceptionally low for retiree homeowners.",
+    "url": "/social-security-calculator/arizona/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "arizona az social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
+  },
+  {
     "id": "tool-salary",
     "title": "US Salary After Tax Calculator",
     "description": "Calculate your exact take-home paycheck after federal, state & FICA tax deductions across all 50 states.",

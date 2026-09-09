@@ -522,6 +522,166 @@
     </section>
     <!-- END: State Rules & Search Section -->
 
+    <!-- BEGIN: 10 Non-Taxing States Section (Phase 2) -->
+    <section class="space-y-6 pt-6 border-t border-slate-200/80" data-purpose="non-taxing-state-rules" id="non-taxing-state-explorer">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-5 bg-emerald-600 rounded-full inline-block"></span>
+            <h2 class="text-xl font-bold text-slate-900">10 States That Don't Tax Social Security</h2>
+          </div>
+          <p class="text-sm text-slate-500 mt-1">Compare overall retirement tax burdens (income tax, pensions, and property rates) across top non-taxing destinations.</p>
+        </div>
+        <span class="inline-flex items-center self-start sm:self-auto px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+          10 Non-Taxing States (Phase 2)
+        </span>
+      </div>
+
+      <!-- Non-Taxing State Search Input -->
+      <div class="relative">
+        <input class="w-full h-13 pl-11 pr-4 bg-white border border-slate-200 rounded-xl text-sm placeholder-slate-400 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 shadow-sm transition" id="nonTaxingStateSearchInput" placeholder="Search non-taxing states (e.g., Florida, Texas, Arizona, California)..." type="text"/>
+        <svg class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
+
+      <!-- Popular 4 Cards Grid: Florida, Texas, Arizona, California -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="nonTaxingCardsGrid">
+        <!-- Florida Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-emerald-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Florida</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% State Tax</span>
+          </div>
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">No State Personal Income Tax</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            Zero state tax on Social Security, pensions, 401(k)s, or IRA distributions. Effective property tax rate of 0.78% with up to $50k Homestead Exemption.
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-600 group-hover:text-emerald-700" href="/social-security-calculator/florida/">
+            View Florida 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+
+        <!-- Texas Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-emerald-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Texas</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% State Tax</span>
+          </div>
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">Constitutional Income Tax Ban</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            Zero state tax on Social Security and retirement withdrawals, but property tax averages 1.40% (mitigated by an over-65 school tax ceiling freeze).
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-600 group-hover:text-emerald-700" href="/social-security-calculator/texas/">
+            View Texas 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+
+        <!-- Arizona Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-emerald-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Arizona</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+          </div>
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">Flat 2.50% · 0.48% Property Tax</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            Social Security is 100% exempt. Other retirement income is taxed at a low flat 2.50%, paired with the lowest property tax in this group at just 0.48%.
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-600 group-hover:text-emerald-700" href="/social-security-calculator/arizona/">
+            View Arizona 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+
+        <!-- California Card -->
+        <article class="bg-white rounded-2xl border border-slate-200/80 p-6 hover:shadow-lg hover:border-emerald-300 transition-all group">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">California</h3>
+            <span class="text-xs font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+          </div>
+          <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2">SS Exempt · Up to 13.3% on Other Income</div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
+            Social Security is completely tax-free, but California taxes pensions and 401(k) withdrawals progressively up to 13.3%. Property tax averages 0.70% under Prop 13.
+          </p>
+          <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-600 group-hover:text-emerald-700" href="/social-security-calculator/california/">
+            View California 2026 Rules <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </article>
+      </div>
+
+      <!-- Collapsible for remaining 6 states (New York, Pennsylvania, Ohio, Illinois, Georgia, North Carolina) -->
+      <details class="group bg-white rounded-2xl border border-slate-200/80 p-5 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-sm text-slate-800 list-none">
+          <span>Browse remaining 6 non-taxing states (Full comparisons: NY, PA, OH, IL, GA, NC)</span>
+          <span class="transition group-open:rotate-180">
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+          </span>
+        </summary>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 pt-4 border-t border-slate-100 text-xs text-slate-600">
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">New York</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide mb-1">SS Exempt · $20k Pension Exclusion</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">SS is 100% exempt. Progressive tax up to 10.9% on other retirement income with $20k pension exclusion for 59½+. Property tax: 1.30%.</p>
+            <a class="text-emerald-700 font-bold hover:underline" href="/social-security-calculator/new-york/">View New York 2026 Rules →</a>
+          </div>
+
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">Pennsylvania</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide mb-1">SS &amp; Pensions 100% Exempt (Age 60+)</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">Exempts SS and qualifying 401(k)/pensions for retirees 60+. Flat 3.07% on earned wages. Property tax: 1.26%.</p>
+            <a class="text-emerald-700 font-bold hover:underline" href="/social-security-calculator/pennsylvania/">View Pennsylvania 2026 Rules →</a>
+          </div>
+
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">Ohio</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide mb-1">SS Exempt · Flat 2.75% Other Income</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">SS is tax-free. Flat 2.75% rate on income above $26,050 with senior tax credits. Property tax averages 1.36% plus local municipal add-ons.</p>
+            <a class="text-emerald-700 font-bold hover:underline" href="/social-security-calculator/ohio/">View Ohio 2026 Rules →</a>
+          </div>
+
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">Illinois</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide mb-1">SS &amp; Pensions Exempt · 1.88% Property Tax</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">SS and qualified retirement income are 100% exempt, but Illinois levies the highest property tax of this group at 1.88% (2nd highest in US).</p>
+            <a class="text-emerald-700 font-bold hover:underline" href="/social-security-calculator/illinois/">View Illinois 2026 Rules →</a>
+          </div>
+
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">Georgia</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide mb-1">SS Exempt · $65k Retirement Exclusion</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">SS is exempt. Flat 5.19% on other income, with a $35k (ages 62–64) or $65k (age 65+) exclusion per person. Property tax: 0.79%.</p>
+            <a class="text-emerald-700 font-bold hover:underline" href="/social-security-calculator/georgia/">View Georgia 2026 Rules →</a>
+          </div>
+
+          <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="flex items-center justify-between mb-1">
+              <strong class="text-slate-900 text-sm font-bold">North Carolina</strong>
+              <span class="text-[11px] font-bold px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">0% SS Tax</span>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide mb-1">SS Exempt · Flat 3.99% · 0.66% Property Tax</div>
+            <p class="mb-2 text-slate-600 leading-relaxed">SS is 100% tax-free. Flat 3.99% on pensions/401(k)s, paired with a very low 0.66% effective property tax rate.</p>
+            <a class="text-emerald-700 font-bold hover:underline" href="/social-security-calculator/north-carolina/">View North Carolina 2026 Rules →</a>
+          </div>
+        </div>
+      </details>
+    </section>
+    <!-- END: 10 Non-Taxing States Section -->
+
+
     <!-- BEGIN: How Calculation Works -->
     <section class="space-y-6" data-purpose="how-it-works">
       <div class="flex items-center gap-2">
@@ -765,20 +925,41 @@
 
   <!-- BEGIN: State Search Filter -->
   <script data-purpose="state-filter-logic">
+    // Taxing States Search Filter
     const stateSearchInput = document.getElementById('stateSearchInput');
     const stateCards = document.querySelectorAll('#stateCardsGrid article');
 
-    stateSearchInput.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase().trim();
-      stateCards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (text.includes(query)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+    if (stateSearchInput) {
+      stateSearchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        stateCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
-    });
+    }
+
+    // Non-Taxing States Search Filter
+    const nonTaxingInput = document.getElementById('nonTaxingStateSearchInput');
+    const nonTaxingCards = document.querySelectorAll('#nonTaxingCardsGrid article');
+
+    if (nonTaxingInput) {
+      nonTaxingInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        nonTaxingCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
   </script>
   <!-- END: State Search Filter -->
     <script src="/site-search.js" defer></script>

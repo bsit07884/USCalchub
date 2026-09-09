@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getAllChildPagePaths } from './lib/taxData.js';
-import { SS_TAXING_STATES } from './lib/ssData.js';
+import { SS_TAXING_STATES, SS_NON_TAXING_STATES } from './lib/ssData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,6 +24,7 @@ const STATIC_URLS = [
 
 async function generateSitemap() {
   const dynamicPaths = getAllChildPagePaths();
+  const allSSStates = [...SS_TAXING_STATES, ...SS_NON_TAXING_STATES];
   
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
@@ -46,8 +47,8 @@ async function generateSitemap() {
     xml += `  </url>\n`;
   }
 
-  // Add dynamic Social Security taxing state URLs
-  for (const s of SS_TAXING_STATES) {
+  // Add dynamic Social Security state URLs (both taxing and non-taxing)
+  for (const s of allSSStates) {
     xml += `  <url>\n`;
     xml += `    <loc>https://uscalchub.com/social-security-calculator/${s.slug}/</loc>\n`;
     xml += `    <priority>0.8</priority>\n`;
@@ -60,7 +61,7 @@ async function generateSitemap() {
   const rootSitemapPath = path.join(__dirname, '..', 'sitemap.xml');
   fs.writeFileSync(rootSitemapPath, xml);
   
-  console.log(`Generated sitemap with ${STATIC_URLS.length + dynamicPaths.length + SS_TAXING_STATES.length} URLs at ${rootSitemapPath}`);
+  console.log(`Generated sitemap with ${STATIC_URLS.length + dynamicPaths.length + allSSStates.length} URLs at ${rootSitemapPath}`);
 }
 
 generateSitemap();
