@@ -651,13 +651,13 @@
   },
   {
     "id": "tool-overtime",
-    "title": "Overtime Tax Refund & Paycheck Calculator",
-    "description": "Estimate your 2026 tax-free overtime deductions, time-and-a-half earnings, and higher effective paycheck.",
+    "title": "Overtime Tax Deduction Calculator",
+    "description": "Calculate your 2026 overtime premium and estimate your tax-free deduction (up to $12,500) under new overtime exemption rules.",
     "url": "/overtime-calculator/",
     "type": "tool",
     "badge": "Tool",
     "priority": 2,
-    "keywords": "overtime tax refund time and a half 1.5x hourly wage overtime pay tax exemption deductions 2026"
+    "keywords": "overtime tax deduction calculator no tax on overtime time and a half 1.5x hourly wage overtime pay tax exemption deductions 2026 obbba"
   },
   {
     "id": "page-about",
