@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Freal-estate-calculator","\u002Freal-estate-calculator\u002F[price]","\u002Fsalary-calculator\u002F[state]\u002F[amount]","\u002Fsocial-security-calculator\u002F[state]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

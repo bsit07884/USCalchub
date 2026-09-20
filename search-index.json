@@ -600,6 +600,46 @@
     "keywords": "arizona az social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
   },
   {
+    "id": "re-300k",
+    "title": "Realtor Commission on $300,000 House (2026 Calculator)",
+    "description": "How much commission on a $300k home sale? At 5-6%, expect $15,000-$18,000 in agent fees with $282,000-$285,000 net proceeds. Calculate your exact payout.",
+    "url": "/real-estate-calculator/300k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 300k 300000 $300,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
+    "id": "re-500k",
+    "title": "Realtor Commission on $500,000 House (2026 Calculator)",
+    "description": "How much commission on a $500,000 home sale? At 5-6%, agent fees total $25,000-$30,000, leaving $470,000-$475,000 net. Calculate post-NAR settlement savings.",
+    "url": "/real-estate-calculator/500k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 500k 500000 $500,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
+    "id": "re-750k",
+    "title": "Realtor Commission on $750,000 House (2026 Calculator)",
+    "description": "Selling a $750k home? At 5-6% commission, agent fees reach $37,500-$45,000. Calculate net proceeds, dual-agent splits, and post-NAR negotiation savings.",
+    "url": "/real-estate-calculator/750k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 750k 750000 $750,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
+    "id": "re-1m",
+    "title": "Realtor Commission on $1,000,000 House (2026 Calculator)",
+    "description": "How much commission on a $1M home sale? At 4.5-5.5%, fees equal $45,000-$55,000. Calculate luxury negotiation savings, capped rates, and net proceeds.",
+    "url": "/real-estate-calculator/1m/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 1m 1000000 $1,000,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
     "id": "tool-salary",
     "title": "US Salary After Tax Calculator",
     "description": "Calculate your exact take-home paycheck after federal, state & FICA tax deductions across all 50 states.",

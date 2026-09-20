@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://uscalchub.com/404/</loc>
-    <priority>0.8</priority>
+    <priority>0.1</priority>
   </url>
   <url>
     <loc>https://uscalchub.com/credit-card-payoff/</loc>
@@ -21,6 +21,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://uscalchub.com/salary-calculator/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/tip-calculator/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/blog/texas-vs-florida-salary/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/about/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/contact/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/privacy-policy/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/terms/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://uscalchub.com/salary-calculator/arizona/50k/</loc>
     <priority>0.8</priority>
   </url>
@@ -33,10 +65,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/salary-calculator/california/100k/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://uscalchub.com/salary-calculator/california/60k/</loc>
     <priority>0.8</priority>
   </url>
@@ -45,7 +73,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/salary-calculator/florida/100k/</loc>
+    <loc>https://uscalchub.com/salary-calculator/california/100k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -54,6 +82,10 @@
   </url>
   <url>
     <loc>https://uscalchub.com/salary-calculator/florida/75k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/salary-calculator/florida/100k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -81,10 +113,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/salary-calculator/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://uscalchub.com/salary-calculator/montana/50k/</loc>
     <priority>0.8</priority>
   </url>
@@ -109,15 +137,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/salary-calculator/new-york/100k/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://uscalchub.com/salary-calculator/new-york/60k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uscalchub.com/salary-calculator/new-york/75k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/salary-calculator/new-york/100k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -169,15 +197,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/salary-calculator/texas/100k/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://uscalchub.com/salary-calculator/texas/60k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uscalchub.com/salary-calculator/texas/75k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/salary-calculator/texas/100k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -193,35 +221,11 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/social-security-calculator/arizona/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/california/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://uscalchub.com/social-security-calculator/colorado/</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uscalchub.com/social-security-calculator/connecticut/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/florida/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/georgia/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/illinois/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -237,27 +241,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/social-security-calculator/new-york/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/north-carolina/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/ohio/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/pennsylvania/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://uscalchub.com/social-security-calculator/rhode-island/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://uscalchub.com/social-security-calculator/texas/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -269,27 +253,59 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/tip-calculator/</loc>
+    <loc>https://uscalchub.com/social-security-calculator/florida/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/blog/texas-vs-florida-salary/</loc>
-    <priority>0.7</priority>
+    <loc>https://uscalchub.com/social-security-calculator/texas/</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/about/</loc>
-    <priority>0.5</priority>
+    <loc>https://uscalchub.com/social-security-calculator/california/</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/contact/</loc>
-    <priority>0.5</priority>
+    <loc>https://uscalchub.com/social-security-calculator/new-york/</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/privacy-policy/</loc>
-    <priority>0.5</priority>
+    <loc>https://uscalchub.com/social-security-calculator/pennsylvania/</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://uscalchub.com/terms/</loc>
-    <priority>0.5</priority>
+    <loc>https://uscalchub.com/social-security-calculator/ohio/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/illinois/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/georgia/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/north-carolina/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/social-security-calculator/arizona/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/real-estate-calculator/300k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/real-estate-calculator/500k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/real-estate-calculator/750k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/real-estate-calculator/1m/</loc>
+    <priority>0.8</priority>
   </url>
 </urlset>

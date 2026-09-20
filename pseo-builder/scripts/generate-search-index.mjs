@@ -12,6 +12,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { STATES, SALARY_CONFIG, isLiveScope } from '../lib/taxData.js';
 import { SS_TAXING_STATES, SS_NON_TAXING_STATES } from '../lib/ssData.js';
+import { REAL_ESTATE_PRICES } from '../lib/realEstateData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -188,6 +189,22 @@ async function generateSearchIndex() {
     });
   }
 
+  // D. Real Estate Child Pages (Phase 1: 4 Price Points)
+  let reChildCount = 0;
+  for (const p of REAL_ESTATE_PRICES) {
+    reChildCount++;
+    searchIndex.push({
+      id: `re-${p.slug}`,
+      title: `Realtor Commission on ${p.displayPrice} House (2026 Calculator)`,
+      description: p.metaDescription,
+      url: `/real-estate-calculator/${p.slug}/`,
+      type: 'calculator',
+      badge: 'Calculator',
+      priority: 1,
+      keywords: `real estate commission realtor agent fee ${p.slug} ${p.price} ${p.displayPrice.toLowerCase()} home sale listing broker buyer agent net proceeds nar settlement 2026`
+    });
+  }
+
   // 2. PRIORITY 2: Core Tools & Hubs
   searchIndex.push(...CORE_TOOLS);
 
@@ -236,7 +253,7 @@ async function generateSearchIndex() {
   }
 
   console.log('Search Index Summary:');
-  console.log(`- Priority 1 (Calculators): ${salaryChildCount} salary + ${ssChildCount} SS = ${salaryChildCount + ssChildCount} items`);
+  console.log(`- Priority 1 (Calculators): ${salaryChildCount} salary + ${ssChildCount} SS + ${reChildCount} Real Estate = ${salaryChildCount + ssChildCount + reChildCount} items`);
   console.log(`- Priority 2 (Core Tools & Hubs): ${CORE_TOOLS.length} items`);
   console.log(`- Priority 3 (Blog Articles): ${posts.length} items`);
   console.log(`- Total indexed items: ${searchIndex.length}`);
