@@ -1,0 +1,42 @@
+# USCalcHub (uscalchub.com)
+
+> Fast, authoritative, and privacy-first financial calculators for American taxpayers, workers, homebuyers, and retirees. Calibrated for 2026 IRS tax brackets, state income tax structures, and post-NAR real estate rules.
+
+## Core Financial Calculators
+
+### 1. US Salary After Tax Calculator
+- **URL**: https://uscalchub.com/salary-calculator/
+- **Description**: Computes take-home pay, federal income tax brackets (10% to 37%), FICA (Social Security 6.2% up to $176,100 wage cap, Medicare 1.45% plus 0.9% Additional Medicare Tax), and state/local income taxes across all 50 US states and DC.
+- **Key Coverage**: Progressive state tax states (California, New York, New Jersey), flat tax states (Pennsylvania, Illinois, North Carolina, Colorado), and zero income tax states (Texas, Florida, Washington, Nevada, Tennessee, Wyoming, South Dakota, Alaska, New Hampshire).
+- **Sub-pages**: State-specific salary tiers (e.g. $50k, $60k, $75k, $85k, $100k) with direct take-home breakdowns.
+
+### 2. Social Security Tax Calculator
+- **URL**: https://uscalchub.com/social-security-calculator/
+- **Description**: Determines the federal and state taxability of Social Security retirement benefits based on IRS provisional income (Modified Adjusted Gross Income + 50% of annual benefits).
+- **Federal Thresholds**:
+  - Single: Up to 50% taxable above $25,000; up to 85% taxable above $34,000.
+  - Married Filing Jointly: Up to 50% taxable above $32,000; up to 85% taxable above $44,000.
+- **State Tax Nuances**: Full state-level guide covering the remaining taxing states (Colorado, Connecticut, Minnesota, Montana, New Mexico, Rhode Island, Utah, Vermont) and all fully exempt states (Florida, Texas, California, New York, Pennsylvania, Ohio, Illinois, Georgia, North Carolina, Arizona).
+
+### 3. Real Estate Commission Calculator
+- **URL**: https://uscalchub.com/real-estate-calculator/
+- **Description**: Interactive home seller closing calculator built for post-2024 NAR settlement rules where buyer-broker commissions are decoupled from MLS listings and negotiated independently.
+- **Benchmarks**: National average benchmark of 5.50% (typical 5.0% - 6.0% range) with interactive 3.0% to 8.0% commission slider, dual-split, listing-only, and custom split modes.
+- **Price Tiers**: Dedicated guides for $300,000 (starter homes), $500,000 (national median single-family), $750,000 (move-up suburban), and $1,000,000 (luxury bracket) home sales.
+
+### 4. Overtime Tax Deduction & Pay Calculator
+- **URL**: https://uscalchub.com/overtime-calculator/
+- **Description**: Calculates FLSA 1.5x time-and-a-half overtime wages, effective hourly take-home pay, and federal/state tax deductions on overtime hours.
+
+### 5. Credit Card Payoff Calculator
+- **URL**: https://uscalchub.com/credit-card-payoff/
+- **Description**: Amortizes revolving credit card debt, calculates total interest paid vs. principal, and simulates accelerated monthly payments to establish debt-free milestone dates.
+
+### 6. Tip & Bill Splitter
+- **URL**: https://uscalchub.com/tip-calculator/
+- **Description**: Dining and service gratuity calculator with customizable tip percentages, pre-tax vs. post-tax calculations, and equal multi-guest bill splitting.
+
+## Architectural Principles
+- **Client-Side Execution**: All mathematical calculations execute locally within the client browser. No financial data, income figures, or addresses are transmitted to or stored on remote servers.
+- **Statutory Accuracy**: Formulas and brackets reflect current statutory thresholds and annual inflation indexing published by the Internal Revenue Service (IRS), Social Security Administration (SSA), and National Association of Realtors (NAR).
+- **Transparent Guidance**: All figures are strictly informational estimates and do not constitute formal CPA or legal advice.

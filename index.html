@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>USCalcHub - Fast, Trusted &amp; Accurate Online Tools for US Finances</title>
+    <title>USCalcHub — Accurate Financial Calculators &amp; US Tax Tools</title>
     <meta content="Calculate take-home pay, 2026 taxes, overtime deductions, social security, and real estate commissions with free instant financial tools." name="description"/>
     <link rel="canonical" href="https://uscalchub.com/">
     
@@ -13,6 +13,51 @@
     <meta name="p:domain_verify" content="b7f7817685a0fa71251d2be14cf9758e"/>
     <meta property="og:image" content="https://uscalchub.com/logo.png" />
     <meta name="twitter:image" content="https://uscalchub.com/logo.png" />
+
+    <!-- Structured Data: Organization & WebSite Schemas (No aggregateRating) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://uscalchub.com/#organization",
+          "name": "USCalcHub",
+          "url": "https://uscalchub.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://uscalchub.com/logo.png",
+            "caption": "USCalcHub Logo"
+          },
+          "sameAs": [
+            "https://www.facebook.com/uscalchub",
+            "https://x.com/uscalchub",
+            "https://www.instagram.com/uscalchub",
+            "https://www.linkedin.com/in/uscalc-hub-a5a01b411/",
+            "https://www.pinterest.com/uscalch"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://uscalchub.com/#website",
+          "url": "https://uscalchub.com/",
+          "name": "USCalcHub",
+          "description": "Fast, accurate, and privacy-focused financial calculators and 2026 tax tools for American taxpayers, homeowners, and workers.",
+          "publisher": {
+            "@id": "https://uscalchub.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://uscalchub.com/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -382,6 +427,166 @@
             </div>
         </section>
         <!-- END: PopularToolsSection -->
+
+        <!-- BEGIN: HowItWorksAndEcosystemSection -->
+        <section class="py-16 sm:py-20 bg-slate-100/70 border-t border-slate-200" id="how-it-works">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="max-w-3xl mb-12">
+                    <div class="flex items-center mb-2">
+                        <span class="w-1.5 h-6 bg-blue-600 rounded-full inline-block mr-3"></span>
+                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">How USCalcHub Works</h2>
+                    </div>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed pl-4.5">
+                        USCalcHub provides fast, authoritative, and completely private financial calculators tailored specifically to current United States federal and state tax codes. Whether you are reviewing a job offer, estimating retirement income, or evaluating closing costs on a home sale, our tools deliver instant, transparent numbers with zero paywalls.
+                    </p>
+                </div>
+
+                <!-- 3 Steps Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs relative">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-sm">
+                            1
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">Select Your Financial Decision</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Navigate directly to one of our six dedicated financial tools below. Each calculator handles a specific personal finance milestone—from gross-to-net salary paychecks and overtime hours to Social Security taxation and revolving credit debt.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs relative">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-sm">
+                            2
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">Local Browser-Based Computation</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Unlike traditional financial websites that harvest your inputs, all calculations execute in real time directly inside your web browser. Formulas incorporate verified 2026 IRS tax brackets, standard deduction thresholds, and official state revenue codes.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs relative">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-sm">
+                            3
+                        </div>
+                        <h3 class="text-base font-bold text-slate-900 mb-2">Detailed Line-by-Line Breakdown</h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Receive a comprehensive breakdown showing federal withholding, FICA contributions (Social Security &amp; Medicare), state income taxes, agent commission splits, and true net take-home pay with actionable comparison benchmarks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Core Calculator Hubs Overview -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+                    <div class="border-b border-slate-200/80 pb-5 mb-8">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Explore Our Core Financial Calculator Verticals</h3>
+                        <p class="text-slate-600 text-sm mt-1">Deep-dive into comprehensive state-specific data, bracket comparisons, and programmatic calculators.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Hub 1: Salary Calculator -->
+                        <div class="flex flex-col justify-between p-5 rounded-xl bg-slate-50 border border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Tax &amp; Income Hub</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-100 text-blue-800">50 States</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">
+                                    <a href="/salary-calculator/" class="hover:text-blue-600 transition-colors">US Salary Tax Calculator Hub</a>
+                                </h4>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                                    Model take-home pay across single and married filing statuses. Compares progressive tax states against zero-income-tax states with detailed salary brackets from entry-level to high-earning incomes.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-200">
+                                <span class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Popular State Guides:</span>
+                                <ul class="text-xs space-y-1.5 text-slate-700">
+                                    <li><a href="/salary-calculator/texas/100k/" class="text-blue-600 hover:underline">Texas $100k Salary (0% State Tax) →</a></li>
+                                    <li><a href="/salary-calculator/florida/75k/" class="text-blue-600 hover:underline">Florida $75k Salary Take-Home Pay →</a></li>
+                                    <li><a href="/salary-calculator/california/100k/" class="text-blue-600 hover:underline">California $100k Bracket Breakdown →</a></li>
+                                    <li><a href="/salary-calculator/new-york/75k/" class="text-blue-600 hover:underline">New York $75k Paycheck Taxes →</a></li>
+                                </ul>
+                                <a href="/salary-calculator/" class="mt-4 inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-800">
+                                    Open Full Salary Calculator Hub →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hub 2: Social Security Calculator -->
+                        <div class="flex flex-col justify-between p-5 rounded-xl bg-slate-50 border border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Retirement Hub</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 text-emerald-800">IRS Provisional Rules</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">
+                                    <a href="/social-security-calculator/" class="hover:text-emerald-700 transition-colors">Social Security Tax Calculator Hub</a>
+                                </h4>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                                    Determine how much of your Social Security retirement benefit is subject to federal taxation using IRS provisional income tiers ($25,000/$34,000 for singles, $32,000/$44,000 for joint filers) and state exemptions.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-200">
+                                <span class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">State Taxability Guides:</span>
+                                <ul class="text-xs space-y-1.5 text-slate-700">
+                                    <li><a href="/social-security-calculator/colorado/" class="text-blue-600 hover:underline">Colorado Social Security Tax Rules →</a></li>
+                                    <li><a href="/social-security-calculator/minnesota/" class="text-blue-600 hover:underline">Minnesota Retirement Exemption Tiers →</a></li>
+                                    <li><a href="/social-security-calculator/texas/" class="text-blue-600 hover:underline">Texas 100% Tax-Free Social Security →</a></li>
+                                    <li><a href="/social-security-calculator/florida/" class="text-blue-600 hover:underline">Florida Social Security Tax Exemption →</a></li>
+                                </ul>
+                                <a href="/social-security-calculator/" class="mt-4 inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-800">
+                                    Open Full Social Security Hub →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hub 3: Real Estate Commission Calculator -->
+                        <div class="flex flex-col justify-between p-5 rounded-xl bg-slate-50 border border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Real Estate Hub</span>
+                                    <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-indigo-100 text-indigo-800">Post-NAR Compliant</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">
+                                    <a href="/real-estate-calculator/" class="hover:text-indigo-700 transition-colors">Real Estate Commission Hub</a>
+                                </h4>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                                    Built for post-NAR settlement transparency. Calculate decoupled agent fees, negotiate listing vs. buyer agent broker splits, and discover exact net seller proceeds before closing.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-200">
+                                <span class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Benchmark Sale Tiers:</span>
+                                <ul class="text-xs space-y-1.5 text-slate-700">
+                                    <li><a href="/real-estate-calculator/300k/" class="text-blue-600 hover:underline">Realtor Commission on $300k Home ($15k–$18k) →</a></li>
+                                    <li><a href="/real-estate-calculator/500k/" class="text-blue-600 hover:underline">Realtor Commission on $500k Home ($25k–$30k) →</a></li>
+                                    <li><a href="/real-estate-calculator/750k/" class="text-blue-600 hover:underline">Realtor Commission on $750k Home ($37.5k–$45k) →</a></li>
+                                    <li><a href="/real-estate-calculator/1m/" class="text-blue-600 hover:underline">Realtor Commission on $1 Million Home →</a></li>
+                                </ul>
+                                <a href="/real-estate-calculator/" class="mt-4 inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-800">
+                                    Open Full Real Estate Hub →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links Bar for Remaining Tools -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-600">
+                        <span class="font-semibold text-slate-900">Additional Daily Financial Utilities:</span>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <a href="/overtime-calculator/" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">
+                                Overtime Pay &amp; Tax Calculator →
+                            </a>
+                            <a href="/credit-card-payoff/" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">
+                                Credit Card Payoff Calculator →
+                            </a>
+                            <a href="/tip-calculator/" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-50 hover:text-blue-600 font-medium transition-colors">
+                                Tip &amp; Bill Splitter →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: HowItWorksAndEcosystemSection -->
 
         <!-- BEGIN: ValuePropositionSection -->
         <section class="py-16 bg-white border-y border-slate-200">
