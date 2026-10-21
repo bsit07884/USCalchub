@@ -8,6 +8,12 @@ export const COMMISSION_SLIDER_BOUNDS = {
   defaultRate: 5.5
 };
 
+export function getCommissionRangeText(price) {
+  const x = Math.round(price * 0.05).toLocaleString('en-US');
+  const y = Math.round(price * 0.06).toLocaleString('en-US');
+  return `$${x}–$${y}`;
+}
+
 export const REAL_ESTATE_PRICES = [
   {
     slug: "300k",
@@ -18,7 +24,7 @@ export const REAL_ESTATE_PRICES = [
     defaultRate: 5.5,
     typicalRangeMin: 5.0,
     typicalRangeMax: 6.0,
-    title: "Realtor Commission on $300k House (2026 Calculator)",
+    title: `Realtor Commission on $300k House: ${getCommissionRangeText(300000)} (2026)`,
     metaDescription: "How much commission on a $300k home sale? At 5-6%, expect $15,000-$18,000 in agent fees with $282,000-$285,000 net proceeds. Calculate your exact payout.",
     h1: "Realtor Commission on a $300,000 Home Sale",
     aeoDirectAnswer: "How much commission on a $300,000 home sale? At a typical 5% to 6% total rate, that comes to $15,000 to $18,000 in total agent fees, leaving the seller with estimated net proceeds of $282,000 to $285,000. In a typical 50/50 split, the listing agent and buyer's agent each receive $7,500 to $9,000.",
@@ -57,7 +63,7 @@ export const REAL_ESTATE_PRICES = [
     defaultRate: 5.5,
     typicalRangeMin: 5.0,
     typicalRangeMax: 6.0,
-    title: "Realtor Commission on $500k House (2026 Calculator)",
+    title: `Realtor Commission on $500k House: ${getCommissionRangeText(500000)} (2026)`,
     metaDescription: "How much commission on a $500,000 home sale? At 5-6%, agent fees total $25,000-$30,000, leaving $470,000-$475,000 net. Calculate post-NAR settlement savings.",
     h1: "Realtor Commission on a $500,000 Home Sale",
     aeoDirectAnswer: "How much commission on a $500,000 home sale? At a typical 5% to 6% total rate, that comes to $25,000 to $30,000 in total agent fees, leaving the seller with estimated net proceeds of $470,000 to $475,000. In a typical 50/50 split, the listing agent and buyer's agent each receive $12,500 to $15,000.",
@@ -96,7 +102,7 @@ export const REAL_ESTATE_PRICES = [
     defaultRate: 5.5,
     typicalRangeMin: 5.0,
     typicalRangeMax: 6.0,
-    title: "Realtor Commission on $750k House (2026 Calculator)",
+    title: `Realtor Commission on $750k House: ${getCommissionRangeText(750000)} (2026)`,
     metaDescription: "Selling a $750k home? At 5-6% commission, agent fees reach $37,500-$45,000. Calculate net proceeds, dual-agent splits, and post-NAR negotiation savings.",
     h1: "Realtor Commission on a $750,000 Home Sale",
     aeoDirectAnswer: "How much commission on a $750,000 home sale? At a typical 5% to 6% total rate, that comes to $37,500 to $45,000 in total agent fees, leaving the seller with estimated net proceeds of $705,000 to $712,500. In a typical 50/50 split, the listing agent and buyer's agent each receive $18,750 to $22,500.",

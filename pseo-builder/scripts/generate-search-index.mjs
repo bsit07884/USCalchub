@@ -69,13 +69,13 @@ const CORE_TOOLS = [
   },
   {
     id: 'tool-tip',
-    title: 'Tip & Bill Splitter Calculator',
-    description: 'Quickly calculate custom tip percentages, local sales tax, and split restaurant bills fairly among friends.',
+    title: 'Tip Calculator & Bill Splitter (Free) | USCalcHub',
+    description: 'Instantly calculate the tip and split the bill with friends. Standard US tip percentages, no sign-up, works on any phone or computer.',
     url: '/tip-calculator/',
     type: 'tool',
     badge: 'Tool',
     priority: 2,
-    keywords: 'tip bill splitter dinner restaurant gratuity split shared tab check tax dining'
+    keywords: 'tip bill splitter dinner restaurant gratuity split shared tab check tax dining free'
   },
   {
     id: 'tool-credit-card',
@@ -195,7 +195,7 @@ async function generateSearchIndex() {
     reChildCount++;
     searchIndex.push({
       id: `re-${p.slug}`,
-      title: `Realtor Commission on ${p.displayPrice} House (2026 Calculator)`,
+      title: p.title,
       description: p.metaDescription,
       url: `/real-estate-calculator/${p.slug}/`,
       type: 'calculator',

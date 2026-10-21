@@ -93,7 +93,9 @@ export default function RealEstatePricePage({ priceData, otherPrices, seo }) {
               "@graph": [
                 {
                   "@type": "SoftwareApplication",
-                  "name": `${priceData.displayPrice} Real Estate Commission Calculator 2026`,
+                  "name": priceData.slug === '1m'
+                    ? `${priceData.displayPrice} Real Estate Commission Calculator 2026`
+                    : priceData.title,
                   "applicationCategory": "FinanceApplication",
                   "operatingSystem": "Web Browser",
                   "url": seo.canonical,

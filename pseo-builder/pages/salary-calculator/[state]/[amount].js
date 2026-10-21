@@ -4,6 +4,26 @@ import Head from 'next/head';
 import { SALARY_CONFIG, calculateTakeHome, getStateComparison, getAllChildPagePaths, getStateBySlug } from '../../../lib/taxData';
 import SalaryCalculatorPage from '../../../components/SalaryCalculatorPage';
 
+// Whitelist of 16 salary pages for number-first CTR title test cohort
+const SALARY_CTR_WHITELIST = [
+  'north-carolina/85k',
+  'utah/85k',
+  'tennessee/85k',
+  'arizona/85k',
+  'florida/100k',
+  'north-carolina/75k',
+  'georgia/85k',
+  'idaho/85k',
+  'south-carolina/50k',
+  'south-carolina/85k',
+  'south-carolina/75k',
+  'tennessee/50k',
+  'nevada/75k',
+  'oregon/85k',
+  'nevada/85k',
+  'idaho/50k'
+];
+
 export async function getStaticPaths() {
   const paths = getAllChildPagePaths();
 
@@ -26,7 +46,12 @@ export async function getStaticProps({ params }) {
   const calculation = calculateTakeHome(salaryConfig.amount, state);
   const comparisonData = getStateComparison(salaryConfig.amount);
 
-  const pageTitle = `${salaryConfig.display} Salary in ${stateData.name} (2026 After Tax)`;
+  const urlKey = `${state}/${amount}`;
+  const isWhitelisted = SALARY_CTR_WHITELIST.includes(urlKey);
+
+  const pageTitle = isWhitelisted
+    ? `$${amount} Salary in ${stateData.name}: $${calculation.annualTakeHome.toLocaleString('en-US')} Take-Home (2026)`
+    : `${salaryConfig.display} Salary in ${stateData.name} (2026 After Tax)`;
   const metaDescription = stateData.incomeTax.type === "none"
     ? `${salaryConfig.display} salary in ${stateData.name}? With zero state tax, your 2026 take-home pay is ~$${calculation.annualTakeHome.toLocaleString()}/yr. See full federal and FICA breakdown.`
     : `${salaryConfig.display} salary in ${stateData.name}? Your 2026 take-home pay is ~$${calculation.annualTakeHome.toLocaleString()}/yr after federal & ${calculation.effectiveStateRate}% state tax. See full breakdown.`;

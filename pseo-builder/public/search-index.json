@@ -601,7 +601,7 @@
   },
   {
     "id": "re-300k",
-    "title": "Realtor Commission on $300,000 House (2026 Calculator)",
+    "title": "Realtor Commission on $300k House: $15,000–$18,000 (2026)",
     "description": "How much commission on a $300k home sale? At 5-6%, expect $15,000-$18,000 in agent fees with $282,000-$285,000 net proceeds. Calculate your exact payout.",
     "url": "/real-estate-calculator/300k/",
     "type": "calculator",
@@ -611,7 +611,7 @@
   },
   {
     "id": "re-500k",
-    "title": "Realtor Commission on $500,000 House (2026 Calculator)",
+    "title": "Realtor Commission on $500k House: $25,000–$30,000 (2026)",
     "description": "How much commission on a $500,000 home sale? At 5-6%, agent fees total $25,000-$30,000, leaving $470,000-$475,000 net. Calculate post-NAR settlement savings.",
     "url": "/real-estate-calculator/500k/",
     "type": "calculator",
@@ -621,7 +621,7 @@
   },
   {
     "id": "re-750k",
-    "title": "Realtor Commission on $750,000 House (2026 Calculator)",
+    "title": "Realtor Commission on $750k House: $37,500–$45,000 (2026)",
     "description": "Selling a $750k home? At 5-6% commission, agent fees reach $37,500-$45,000. Calculate net proceeds, dual-agent splits, and post-NAR negotiation savings.",
     "url": "/real-estate-calculator/750k/",
     "type": "calculator",
@@ -631,7 +631,7 @@
   },
   {
     "id": "re-1m",
-    "title": "Realtor Commission on $1,000,000 House (2026 Calculator)",
+    "title": "Realtor Commission on $1 Million House (2026 Calculator)",
     "description": "How much commission on a $1M home sale? At 4.5-5.5%, fees equal $45,000-$55,000. Calculate luxury negotiation savings, capped rates, and net proceeds.",
     "url": "/real-estate-calculator/1m/",
     "type": "calculator",
@@ -661,13 +661,13 @@
   },
   {
     "id": "tool-tip",
-    "title": "Tip & Bill Splitter Calculator",
-    "description": "Quickly calculate custom tip percentages, local sales tax, and split restaurant bills fairly among friends.",
+    "title": "Tip Calculator & Bill Splitter (Free) | USCalcHub",
+    "description": "Instantly calculate the tip and split the bill with friends. Standard US tip percentages, no sign-up, works on any phone or computer.",
     "url": "/tip-calculator/",
     "type": "tool",
     "badge": "Tool",
     "priority": 2,
-    "keywords": "tip bill splitter dinner restaurant gratuity split shared tab check tax dining"
+    "keywords": "tip bill splitter dinner restaurant gratuity split shared tab check tax dining free"
   },
   {
     "id": "tool-credit-card",
@@ -991,13 +991,13 @@
   },
   {
     "id": "post-68",
-    "title": "Top 9 States with No Income Tax 2026 — Official List",
-    "description": "Financial Planning • August 2026 Top 9 States with No Income Tax 2026 — Official List & Hidden Costs Are you searching for the complete and official list of ...",
+    "title": "Top 9 States With No Income Tax in 2026 (Official List)",
+    "description": "Financial Planning • August 2026 Top 9 States With No Income Tax in 2026 (Official List) Are you searching for the complete and official list of states with ...",
     "url": "/blog/top-9-states-with-no-income-tax-2026/",
     "type": "article",
     "badge": "Article",
     "priority": 3,
-    "keywords": "top 9 states with no income tax 2026 — official list top 9 states with no income tax 2026 blog article guide"
+    "keywords": "top 9 states with no income tax in 2026 (official list) top 9 states with no income tax 2026 blog article guide"
   },
   {
     "id": "post-58",
