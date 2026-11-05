@@ -232,6 +232,10 @@ async function generateSearchIndex() {
   }
 
   for (const post of posts) {
+    if (post.id === 168 || post.slug === 'california-to-nevada-salary-equivalent') {
+      post.title = { rendered: 'California to Nevada Salary Equivalent: What You Keep After Moving' };
+      post.excerpt = { rendered: '<p>See exactly how much more you keep by moving from California to Nevada. Side-by-side salary comparison with real 2026 tax figures.</p>' };
+    }
     const rawTitle = post.title?.rendered || '';
     const rawExcerpt = post.excerpt?.rendered || '';
     const title = cleanText(rawTitle);

@@ -59,13 +59,13 @@ export async function getStaticProps({ params }) {
   } else {
     // Non-Taxing States Phase 2
     if (stateData.slug === "florida") {
-      metaDescription = "Is Social Security taxed in Florida in 2026? No. Florida levies 0% state income tax on Social Security, pensions, and 401(k)s, with a 0.78% property tax rate. Learn more.";
+      metaDescription = "Estimate your Social Security benefits in Florida with zero state income tax. Enter your earnings history and see your 2026 monthly benefit instantly.";
     } else if (stateData.slug === "texas") {
       metaDescription = "Is Social Security taxed in Texas in 2026? No. Texas has zero state income tax on Social Security or retirement income, though property taxes average 1.40%. See 2026 rules.";
     } else if (stateData.slug === "california") {
       metaDescription = "Is Social Security taxed in California in 2026? No, SS is 100% exempt. However, California taxes other retirement income up to 13.3%. See 2026 tax rules & Prop 13.";
     } else if (stateData.slug === "new-york") {
-      metaDescription = "Is Social Security taxed in New York in 2026? No, SS is exempt. NY taxes other retirement income up to 10.9% with a $20k pension exclusion for 59½+. See NY guide.";
+      metaDescription = "Calculate your Social Security retirement benefits for New York. Includes 2026 federal benefit estimates — New York does not tax Social Security income.";
     } else if (stateData.slug === "pennsylvania") {
       metaDescription = "Is Social Security taxed in Pennsylvania in 2026? No. PA exempts SS and qualifying pensions/401(k)s for ages 60+, with flat 3.07% on earned wages. See guide.";
     } else if (stateData.slug === "ohio") {

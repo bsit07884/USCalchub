@@ -24,9 +24,9 @@ export const REAL_ESTATE_PRICES = [
     defaultRate: 5.5,
     typicalRangeMin: 5.0,
     typicalRangeMax: 6.0,
-    title: `Realtor Commission on $300k House: ${getCommissionRangeText(300000)} (2026)`,
-    metaDescription: "How much commission on a $300k home sale? At 5-6%, expect $15,000-$18,000 in agent fees with $282,000-$285,000 net proceeds. Calculate your exact payout.",
-    h1: "Realtor Commission on a $300,000 Home Sale",
+    title: "How Much Does a Realtor Make on a $300,000 Sale? — USCalcHub",
+    metaDescription: "A realtor earns $7,500–$9,000 on a $300,000 home sale. See the full commission breakdown by rate and broker split — calculated instantly.",
+    h1: "How Much Does a Realtor Make on a $300,000 Sale?",
     aeoDirectAnswer: "How much commission on a $300,000 home sale? At a typical 5% to 6% total rate, that comes to $15,000 to $18,000 in total agent fees, leaving the seller with estimated net proceeds of $282,000 to $285,000. In a typical 50/50 split, the listing agent and buyer's agent each receive $7,500 to $9,000.",
     narContext: "Following the landmark 2024 National Association of Realtors (NAR) settlement, sellers are no longer obligated to offer blanket compensation to buyer's agents on the Multiple Listing Service (MLS). On a $300,000 sale, you have full legal flexibility to negotiate your listing agent's fee (often 2.0% to 2.5%, or $6,000 to $7,500) and decide whether or not to offer a concession toward the buyer's broker fee.",
     secondaryAngleTitle: "First-Time Home Sellers & Starter Home Equity Protection",
@@ -41,16 +41,12 @@ export const REAL_ESTATE_PRICES = [
     ],
     faqs: [
       {
-        q: "How much does a realtor make on a $300,000 house sale?",
-        a: "At a standard 5% to 6% commission rate, the total commission on a $300,000 home sale is $15,000 to $18,000. If split equally between the listing agent and buyer's agent, each agent's brokerage receives between $7,500 and $9,000 before internal broker-agent splits."
+        q: "How much does a realtor make on a $300,000 sale?",
+        a: "On a $300,000 home sale, a realtor earns $7,500 at 2.5% or $9,000 at 3% commission. After a 50/50 broker split, the agent's net is $3,750 to $4,500."
       },
       {
-        q: "How much does the seller walk away with on a $300k house after commission?",
-        a: "After deducting a 5% to 6% commission ($15,000 to $18,000), the seller receives gross proceeds of $282,000 to $285,000. Your final net payout will also depend on your remaining mortgage payoff balance, transfer taxes, and routine closing fees (typically 1% to 2%)."
-      },
-      {
-        q: "Can I negotiate a lower commission rate on a $300,000 home?",
-        a: "Yes. Post-NAR settlement rules make all fees strictly negotiable. Negotiating your total commission down to 4.0% saves you $6,000 compared to a traditional 6.0% fee ($12,000 total commission vs. $18,000)."
+        q: "What percentage do realtors charge on a $300,000 home?",
+        a: "Standard realtor commission is 2.5% to 3% per side. Total commission on a $300,000 sale is typically $15,000–$18,000 split between both agents."
       }
     ]
   },
@@ -63,9 +59,9 @@ export const REAL_ESTATE_PRICES = [
     defaultRate: 5.5,
     typicalRangeMin: 5.0,
     typicalRangeMax: 6.0,
-    title: `Realtor Commission on $500k House: ${getCommissionRangeText(500000)} (2026)`,
-    metaDescription: "How much commission on a $500,000 home sale? At 5-6%, agent fees total $25,000-$30,000, leaving $470,000-$475,000 net. Calculate post-NAR settlement savings.",
-    h1: "Realtor Commission on a $500,000 Home Sale",
+    title: "How Much Does a Realtor Make on a $500,000 Sale? — USCalcHub",
+    metaDescription: "A realtor earns $12,500–$15,000 on a $500,000 home sale at standard 2.5–3% commission. Calculate exact net commission after broker splits instantly.",
+    h1: "How Much Does a Realtor Make on a $500,000 Sale?",
     aeoDirectAnswer: "How much commission on a $500,000 home sale? At a typical 5% to 6% total rate, that comes to $25,000 to $30,000 in total agent fees, leaving the seller with estimated net proceeds of $470,000 to $475,000. In a typical 50/50 split, the listing agent and buyer's agent each receive $12,500 to $15,000.",
     narContext: "The August 2024 NAR settlement removed mandatory buyer-broker compensation from MLS listing databases nationwide. On a $500,000 property—closely aligned with the national median price of single-family homes—sellers can unbundle representation costs, negotiating the listing side independently (e.g., 2.5% or $12,500) and evaluating buyer concessions on a per-offer basis.",
     secondaryAngleTitle: "Median US Single-Family Price & Step-by-Step Calculation",
@@ -80,16 +76,12 @@ export const REAL_ESTATE_PRICES = [
     ],
     faqs: [
       {
-        q: "How much does a realtor make on a $500,000 house sale?",
-        a: "At the typical 5% to 6% rate, total broker commissions equal $25,000 to $30,000. Split between both sides, the listing broker and buyer broker each receive $12,500 to $15,000. The individual agent then splits their portion with their sponsoring brokerage according to their split agreement (e.g., 70/30 or 80/20)."
+        q: "How much does a realtor make on a $500,000 sale?",
+        a: "On a $500,000 home sale, a realtor earns approximately $12,500 at a 2.5% commission rate, or $15,000 at 3%. After a typical 50/50 broker split, the agent takes home $6,250 to $7,500."
       },
       {
-        q: "What is 6 percent of 500 000 dollars in real estate?",
-        a: "Six percent (6%) of $500,000 is exactly $30,000. Under traditional 50/50 broker splits, this represents $15,000 paid to the seller's listing brokerage and $15,000 paid to the buyer's brokerage."
-      },
-      {
-        q: "How much can I save by negotiating commission on a $500k house?",
-        a: "Negotiating from 6.0% down to 4.5% saves you $7,500 ($22,500 total commission vs. $30,000). Negotiating to a 4.0% total fee saves a full $10,000, increasing your net proceeds from $470,000 to $480,000."
+        q: "What is the total commission on a $500,000 house?",
+        a: "Total commission on a $500,000 sale is typically $25,000–$30,000 (5–6%), split between buyer's and seller's agents."
       }
     ]
   },

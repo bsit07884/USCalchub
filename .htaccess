@@ -12,3 +12,10 @@ RewriteCond %{HTTP_HOST} ^www\.uscalchub\.com [NC]
 RewriteRule ^(.*)$ https://uscalchub.com/$1 [L,R=301]
 
 </IfModule>
+
+<IfModule mod_headers.c>
+# Cannibalization fix: Point canonical for Nevada relocation blog post to salary-calculator authority tool
+SetEnvIf Request_URI "^/blog/california-to-nevada-salary-equivalent/?$" CANONICAL_NEVADA
+Header set Link '<https://uscalchub.com/salary-calculator/>; rel="canonical"' env=CANONICAL_NEVADA
+</IfModule>
+
