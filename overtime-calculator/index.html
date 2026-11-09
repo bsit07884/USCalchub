@@ -354,7 +354,106 @@ otInputs.forEach(input => {
 });
 </script>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 mt-12">
+    
+<section class="hub-editorial-guide py-10 bg-slate-900 border-t border-slate-800 text-slate-200">
+  <div class="max-w-4xl mx-auto px-4">
+    
+    <div class="p-4 rounded-xl bg-slate-950 border border-blue-500/30 mb-8">
+      <div class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-1">Key Takeaway (AEO Direct Answer)</div>
+      <p class="text-sm text-slate-100">
+        Under the Fair Labor Standards Act (FLSA), covered non-exempt employees must receive 1.5 times their regular hourly rate for all hours worked in excess of 40 during a 7-day workweek. Overtime earnings are not taxed at special punitive rates; payroll software may withhold higher taxes initially based on annualized pay-period assumptions, but excess amounts are fully refunded upon annual tax filing.
+      </p>
+    </div>
+
+    <h2 class="text-2xl font-extrabold text-white mb-4">
+      Fair Labor Standards Act (FLSA) Overtime Rules & Net Pay Impact
+    </h2>
+
+    <p class="text-sm leading-relaxed mb-4">
+      Federal wage and hour compliance governs millions of hourly and salaried workers across commerce. Mandated under 29 U.S.C. § 207, statutory overtime ensures proper compensation for extended labor while establishing uniform baseline labor standards nationwide.
+    </p>
+
+    <h3 class="text-lg font-bold text-white mt-6 mb-2">The Standard 1.5x Overtime Formula</h3>
+    <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 font-mono text-xs text-amber-300 mb-4">
+      Overtime Pay = (Regular Hourly Rate &times; 1.5) &times; Hours Worked Beyond 40
+    </div>
+    <p class="text-sm text-slate-300 mb-4">
+      For an employee earning a base rate of $28.00 per hour working 50 hours in a single workweek:
+      <br>&bull; Regular Wages: 40 hrs &times; $28.00 = $1,120.00
+      <br>&bull; Overtime Wages: 10 hrs &times; ($28.00 &times; 1.5 = $42.00) = $420.00
+      <br>&bull; Total Gross Weekly Wages = <strong>$1,540.00</strong>
+    </p>
+
+    <h3 class="text-lg font-bold text-white mt-6 mb-2">Exemption Criteria: Executive, Administrative, and Professional (EAP)</h3>
+    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+      To be classified as exempt from overtime compensation, an employee must satisfy three concurrent statutory tests:
+    </p>
+    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-300 mb-6">
+      <li><strong>Salary Basis Test:</strong> The employee is paid a predetermined, fixed salary that cannot be reduced based on quality or quantity of work performed.</li>
+      <li><strong>Salary Level Threshold:</strong> The compensation must meet or exceed the official Department of Labor weekly earnings floor.</li>
+      <li><strong>Duties Test:</strong> The employee's primary job duties must involve executive management, specialized administrative decision-making, or learned professional knowledge requiring advanced degrees.</li>
+    </ul>
+
+    <h3 class="text-lg font-bold text-white mt-6 mb-2">Debunking the "Overtime Tax Penalty" Myth</h3>
+    <p class="text-sm text-slate-300 leading-relaxed mb-6">
+      A widespread workplace fallacy claims that working excessive overtime causes workers to "lose money" because the earnings push them into a higher tax bracket. Because federal income tax brackets are strictly marginal, entering a higher bracket only subjects the incremental dollars earned within that tier to the higher rate. You always retain the substantial majority of every overtime dollar worked.
+    </p>
+
+    <!-- Schema FAQ Section -->
+    <h3 class="text-lg font-bold text-white mt-8 mb-4">Frequently Asked Questions: Overtime Regulations</h3>
+    <div class="space-y-4 text-sm">
+      <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+        <h4 class="font-bold text-white mb-1">Does the FLSA require double-time pay on weekends or holidays?</h4>
+        <p class="text-slate-300">No. Federal law requires overtime pay only for hours worked exceeding 40 in a workweek. Double-time pay for weekends, nights, or legal holidays is governed by individual employment contracts or specific state statutes (such as California's daily overtime laws), not federal law.</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+        <h4 class="font-bold text-white mb-1">Can an employer average hours over two weeks to avoid overtime?</h4>
+        <p class="text-slate-300">No. The FLSA enforces a strict 7-day, 168-hour consecutive workweek standard. An employee working 50 hours in Week 1 and 30 hours in Week 2 must receive 10 hours of overtime for Week 1, even though the two-week average is 40 hours.</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+        <h4 class="font-bold text-white mb-1">Why did my paycheck withholding spike during an overtime pay period?</h4>
+        <p class="text-slate-300">Automated payroll withholding systems annualize your earnings for each pay period. When you receive a large overtime payout, the algorithm calculates withholding as if you earn that elevated amount all 52 weeks of the year. Any excess tax withheld is refunded when filing your annual return.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the FLSA require double-time pay on weekends or holidays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Federal law requires 1.5x pay solely for hours exceeding 40 per workweek. Weekend and holiday premiums depend on state law or employer contract terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an employer average hours over two weeks to avoid overtime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The FLSA mandates overtime calculations based strictly on an individual 7-day workweek; bi-weekly averaging is illegal under federal wage standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my paycheck withholding spike during an overtime pay period?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Payroll algorithms annualize each paycheck as if you earned that amount every period. Overwithheld amounts are fully reconciled and refunded on your annual tax return."
+      }
+    }
+  ]
+}
+</script>
+<footer class="bg-slate-900 text-slate-400 py-12 mt-12">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
                 <h3 class="text-white font-bold mb-4">USCalcHub.com</h3>
