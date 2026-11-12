@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { getAllChildPagePaths, getLiveStates } from './lib/taxData.js';
 import { SS_TAXING_STATES, SS_NON_TAXING_STATES } from './lib/ssData.js';
 import { REAL_ESTATE_PRICES } from './lib/realEstateData.js';
+import { getAllHourlySlugs } from './lib/hourlySalaryData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -74,13 +75,27 @@ async function generateSitemap() {
     xml += `  </url>\n`;
   }
 
+  // Add dynamic Hourly to Salary Hub and Tiers
+  xml += `  <url>\n`;
+  xml += `    <loc>https://uscalchub.com/hourly-to-salary/</loc>\n`;
+  xml += `    <priority>0.9</priority>\n`;
+  xml += `  </url>\n`;
+
+  const hourlySlugs = getAllHourlySlugs();
+  for (const slug of hourlySlugs) {
+    xml += `  <url>\n`;
+    xml += `    <loc>https://uscalchub.com/hourly-to-salary/${slug}/</loc>\n`;
+    xml += `    <priority>0.8</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
   xml += `</urlset>\n`;
 
   // Write to repository root
   const rootSitemapPath = path.join(__dirname, '..', 'sitemap.xml');
   fs.writeFileSync(rootSitemapPath, xml);
   
-  console.log(`Generated sitemap with ${STATIC_URLS.length + dynamicPaths.length + allSSStates.length + REAL_ESTATE_PRICES.length} URLs at ${rootSitemapPath}`);
+  console.log(`Generated sitemap with ${STATIC_URLS.length + liveStates.length + dynamicPaths.length + allSSStates.length + REAL_ESTATE_PRICES.length + 1 + hourlySlugs.length} URLs at ${rootSitemapPath}`);
 }
 
 generateSitemap();

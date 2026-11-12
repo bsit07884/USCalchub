@@ -13,6 +13,7 @@ import { fileURLToPath } from 'url';
 import { STATES, SALARY_CONFIG, isLiveScope } from '../lib/taxData.js';
 import { SS_TAXING_STATES, SS_NON_TAXING_STATES } from '../lib/ssData.js';
 import { REAL_ESTATE_PRICES } from '../lib/realEstateData.js';
+import { HOURLY_RATES, getHourlyData } from '../lib/hourlySalaryData.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -106,6 +107,16 @@ const CORE_TOOLS = [
     badge: 'Tool',
     priority: 2,
     keywords: 'overtime tax deduction calculator no tax on overtime time and a half 1.5x hourly wage overtime pay tax exemption deductions 2026 obbba'
+  },
+  {
+    id: 'tool-hourly-salary',
+    title: 'Hourly to Salary Calculator 2026',
+    description: 'Convert hourly wage to annual salary, monthly, biweekly, and weekly paychecks with 2026 after-tax take-home estimates.',
+    url: '/hourly-to-salary/',
+    type: 'tool',
+    badge: 'Tool',
+    priority: 2,
+    keywords: 'hourly to salary calculator wage conversion hourly rate annual salary biweekly paycheck take home pay 2,080 hours 2026'
   },
   {
     id: 'page-about',
@@ -205,6 +216,23 @@ async function generateSearchIndex() {
     });
   }
 
+  // E. Hourly-to-Salary Child Pages (20 Wage Tiers)
+  let hourlyChildCount = 0;
+  for (const rate of HOURLY_RATES) {
+    hourlyChildCount++;
+    const data = getHourlyData(rate);
+    searchIndex.push({
+      id: `hourly-${data.slug}`,
+      title: data.title,
+      description: data.metaDescription,
+      url: `/hourly-to-salary/${data.slug}/`,
+      type: 'calculator',
+      badge: 'Calculator',
+      priority: 1,
+      keywords: `${rate} an hour how much a year salary hourly rate wage paycheck biweekly 2026 take home pay`
+    });
+  }
+
   // 2. PRIORITY 2: Core Tools & Hubs
   searchIndex.push(...CORE_TOOLS);
 
@@ -257,7 +285,7 @@ async function generateSearchIndex() {
   }
 
   console.log('Search Index Summary:');
-  console.log(`- Priority 1 (Calculators): ${salaryChildCount} salary + ${ssChildCount} SS + ${reChildCount} Real Estate = ${salaryChildCount + ssChildCount + reChildCount} items`);
+  console.log(`- Priority 1 (Calculators): ${salaryChildCount} salary + ${ssChildCount} SS + ${reChildCount} Real Estate + ${hourlyChildCount} Hourly = ${salaryChildCount + ssChildCount + reChildCount + hourlyChildCount} items`);
   console.log(`- Priority 2 (Core Tools & Hubs): ${CORE_TOOLS.length} items`);
   console.log(`- Priority 3 (Blog Articles): ${posts.length} items`);
   console.log(`- Total indexed items: ${searchIndex.length}`);
