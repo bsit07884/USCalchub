@@ -601,8 +601,8 @@
   },
   {
     "id": "re-300k",
-    "title": "How Much Does a Realtor Make on a $300,000 Sale? — USCalcHub",
-    "description": "A realtor earns $7,500–$9,000 on a $300,000 home sale. See the full commission breakdown by rate and broker split — calculated instantly.",
+    "title": "How Much Does a Realtor Make on a $300,000 Sale? ($7,500–$15,000 in 2026)",
+    "description": "On a $300,000 home sale in 2026, realtors typically make $7,500 to $15,000 (2.5% to 5.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
     "url": "/real-estate-calculator/300k/",
     "type": "calculator",
     "badge": "Calculator",
@@ -611,8 +611,8 @@
   },
   {
     "id": "re-500k",
-    "title": "How Much Does a Realtor Make on a $500,000 Sale? — USCalcHub",
-    "description": "A realtor earns $12,500–$15,000 on a $500,000 home sale at standard 2.5–3% commission. Calculate exact net commission after broker splits instantly.",
+    "title": "How Much Does a Realtor Make on a $500,000 Sale? ($12,500–$25,000 in 2026)",
+    "description": "On a $500,000 home sale in 2026, realtors typically make $12,500 to $25,000 (2.5% to 5.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
     "url": "/real-estate-calculator/500k/",
     "type": "calculator",
     "badge": "Calculator",
@@ -718,6 +718,26 @@
     "badge": "Tool",
     "priority": 2,
     "keywords": "contact support feedback help email customer service question"
+  },
+  {
+    "id": "post-314",
+    "title": "Is Social Security Taxed in Your State? The 2026 50-State Retirement Tax Guide",
+    "description": "Retirement Planning • 2026 50-State Analysis Is Social Security Taxed in Your State? The 2026 50-State Retirement Tax Guide Key Takeaway (AEO Direct Answer) ...",
+    "url": "/blog/states-that-tax-social-security-benefits-2026/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "is social security taxed in your state? the 2026 50-state retirement tax guide states that tax social security benefits 2026 blog article guide"
+  },
+  {
+    "id": "post-310",
+    "title": "2026 Federal Tax Brackets & Standard Deduction Guide: What Changed for Your Paycheck?",
+    "description": "Tax Planning • 2026 IRS Guidelines 2026 Federal Tax Brackets & Standard Deduction Guide: What Changed for Your Paycheck? Key Takeaway (AEO Direct Answer) For...",
+    "url": "/blog/2026-federal-tax-brackets-standard-deduction-guide/",
+    "type": "article",
+    "badge": "Article",
+    "priority": 3,
+    "keywords": "2026 federal tax brackets & standard deduction guide: what changed for your paycheck? 2026 federal tax brackets standard deduction guide blog article guide"
   },
   {
     "id": "post-289",
@@ -991,13 +1011,13 @@
   },
   {
     "id": "post-68",
-    "title": "Top 9 States With No Income Tax in 2026 (Official List)",
-    "description": "Financial Planning • August 2026 Top 9 States With No Income Tax in 2026 (Official List) Are you searching for the complete and official list of states with ...",
+    "title": "Top 9 States With No Income Tax 2026: Cost of Living & Paycheck Comparison",
+    "description": "Financial Planning • 2026 Relocation Guide Top 9 States With No Income Tax in 2026: Cost of Living & Real Paycheck Comparison Key Takeaway (AEO Direct Answer...",
     "url": "/blog/top-9-states-with-no-income-tax-2026/",
     "type": "article",
     "badge": "Article",
     "priority": 3,
-    "keywords": "top 9 states with no income tax in 2026 (official list) top 9 states with no income tax 2026 blog article guide"
+    "keywords": "top 9 states with no income tax 2026: cost of living & paycheck comparison top 9 states with no income tax 2026 blog article guide"
   },
   {
     "id": "post-58",

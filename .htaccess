@@ -14,8 +14,8 @@ RewriteRule ^(.*)$ https://uscalchub.com/$1 [L,R=301]
 </IfModule>
 
 <IfModule mod_headers.c>
-# Cannibalization fix: Point canonical for Nevada relocation blog post to salary-calculator authority tool
+# Cannibalization fix: Point canonical for Nevada relocation blog post to dedicated Nevada salary calculator
 SetEnvIf Request_URI "^/blog/california-to-nevada-salary-equivalent/?$" CANONICAL_NEVADA
-Header set Link '<https://uscalchub.com/salary-calculator/>; rel="canonical"' env=CANONICAL_NEVADA
+Header set Link '<https://uscalchub.com/salary-calculator/nevada/>; rel="canonical"' env=CANONICAL_NEVADA
 </IfModule>
 

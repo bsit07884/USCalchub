@@ -46,15 +46,17 @@ export async function getStaticProps({ params }) {
   const calculation = calculateTakeHome(salaryConfig.amount, state);
   const comparisonData = getStateComparison(salaryConfig.amount);
 
-  const urlKey = `${state}/${amount}`;
-  const isWhitelisted = SALARY_CTR_WHITELIST.includes(urlKey);
+  const isNoTax = stateData.incomeTax.type === "none";
+  const formattedTakeHome = '$' + calculation.annualTakeHome.toLocaleString('en-US');
+  const formattedMonthly = '$' + calculation.monthlyTakeHome.toLocaleString('en-US');
 
-  const pageTitle = isWhitelisted
-    ? `$${amount} Salary in ${stateData.name}: $${calculation.annualTakeHome.toLocaleString('en-US')} Take-Home (2026)`
-    : `${salaryConfig.display} Salary in ${stateData.name} (2026 After Tax)`;
-  const metaDescription = stateData.incomeTax.type === "none"
-    ? `${salaryConfig.display} salary in ${stateData.name}? With zero state tax, your 2026 take-home pay is ~$${calculation.annualTakeHome.toLocaleString()}/yr. See full federal and FICA breakdown.`
-    : `${salaryConfig.display} salary in ${stateData.name}? Your 2026 take-home pay is ~$${calculation.annualTakeHome.toLocaleString()}/yr after federal & ${calculation.effectiveStateRate}% state tax. See full breakdown.`;
+  const pageTitle = isNoTax
+    ? `$${amount} Salary in ${stateData.name}: ${formattedTakeHome} Take-Home (0% State Tax - 2026)`
+    : `$${amount} Salary in ${stateData.name}: ${formattedTakeHome} Take-Home Pay (2026 After Tax)`;
+
+  const metaDescription = isNoTax
+    ? `A $${amount} salary in ${stateData.name} nets ${formattedTakeHome}/yr (${formattedMonthly}/mo) with 0% state income tax. See federal tax, FICA, and biweekly paycheck breakdown for 2026.`
+    : `A $${amount} salary in ${stateData.name} nets ${formattedTakeHome}/yr (${formattedMonthly}/mo) after ${calculation.effectiveStateRate}% state tax and federal deductions. Calculate your 2026 take-home pay.`;
 
   const h1Text = `${salaryConfig.short.charAt(0).toUpperCase() + salaryConfig.short.slice(1)} Salary After Taxes in ${stateData.name} 2026`;
 

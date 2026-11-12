@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getAllChildPagePaths } from './lib/taxData.js';
+import { getAllChildPagePaths, getLiveStates } from './lib/taxData.js';
 import { SS_TAXING_STATES, SS_NON_TAXING_STATES } from './lib/ssData.js';
 import { REAL_ESTATE_PRICES } from './lib/realEstateData.js';
 
@@ -36,6 +36,15 @@ async function generateSitemap() {
     xml += `  <url>\n`;
     xml += `    <loc>${url.loc}</loc>\n`;
     xml += `    <priority>${url.priority}</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
+  // Add dynamic salary calculator state hubs
+  const liveStates = getLiveStates();
+  for (const s of liveStates) {
+    xml += `  <url>\n`;
+    xml += `    <loc>https://uscalchub.com/salary-calculator/${s.slug}/</loc>\n`;
+    xml += `    <priority>0.9</priority>\n`;
     xml += `  </url>\n`;
   }
 
