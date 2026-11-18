@@ -105,11 +105,23 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://uscalchub.com/real-estate-calculator/200k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://uscalchub.com/real-estate-calculator/300k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://uscalchub.com/real-estate-calculator/400k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://uscalchub.com/real-estate-calculator/500k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/real-estate-calculator/600k/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -150,6 +162,22 @@
   </url>
   <url>
     <loc>https://uscalchub.com/salary-calculator/california/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/salary-calculator/colorado/50k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/salary-calculator/colorado/75k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/salary-calculator/colorado/85k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/salary-calculator/colorado/</loc>
     <priority>0.8</priority>
   </url>
   <url>

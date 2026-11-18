@@ -1,5 +1,5 @@
 // pseo-builder/lib/realEstateData.js
-// Single Source of Truth for Real Estate Commission Price Tiers (Phase 1)
+// Single Source of Truth for Real Estate Commission Price Tiers (Sprint 3B Expansion)
 
 export const COMMISSION_SLIDER_BOUNDS = {
   min: 3.0,
@@ -15,6 +15,52 @@ export function getCommissionRangeText(price) {
 }
 
 export const REAL_ESTATE_PRICES = [
+  // ==========================================================================
+  // TIER 1: $200,000 (Starter Home / Metro Condo Benchmark)
+  // ==========================================================================
+  {
+    slug: "200k",
+    price: 200000,
+    displayPrice: "$200,000",
+    sliderMin: 3.0,
+    sliderMax: 8.0,
+    defaultRate: 5.5,
+    typicalRangeMin: 5.0,
+    typicalRangeMax: 6.0,
+    title: "How Much Does a Realtor Make on a $200,000 Sale? ($5,000–$12,000 in 2026)",
+    metaDescription: "On a $200,000 home sale in 2026, realtors typically make $5,000 to $12,000 (2.5% to 6.0%). Calculate listing & buyer broker splits under 2026 post-NAR settlement rules.",
+    h1: "How Much Does a Realtor Make on a $200,000 Sale?",
+    aeoDirectAnswer: "On a $200,000 home sale, total realtor commission typically ranges from $10,000 to $12,000 (5.0% to 6.0%), split equally between the listing agent ($5,000 to $6,000) and buyer agent ($5,000 to $6,000). After agent-brokerage splits (typically 70/30), each agent nets approximately $3,500 to $4,200. Estimated seller net proceeds range from $185,000 to $188,000 after title and escrow fees.",
+    narContext: "Following the landmark 2024–2026 National Association of Realtors (NAR) settlement, buyer-broker compensation is completely unbundled from MLS listings on $200,000 transactions. Home sellers are no longer mandated to offer blanket buyer concessions. However, in entry-level and starter-home tiers, FHA and first-time buyers frequently request a 2.0% to 2.5% seller concession ($4,000–$5,000) to finance their mandatory written buyer representation agreements without depleting down-payment cash reserves.",
+    secondaryAngleTitle: "Starter-Home Commission Math: Maximizing Seller Equity on a $200k Sale",
+    secondaryAngleContent: [
+      "On entry-level $200,000 homes, fixed transaction costs represent a significantly higher percentage of gross seller equity compared to luxury properties. Standard settlement charges—including county transfer stamps, title insurance policies, municipal lien searches, and closing attorney fees—routinely total $2,000 to $3,500 (1.0% to 1.75% of sales volume). When combined with traditional 5.5% brokerage fees ($11,000), total closing frictions reach $14,000 or 7.0% of the entire property value.",
+      "The mathematical difference between negotiating a 5.0%, 5.5%, or 6.0% commission on a $200,000 sale equals precisely $1,000 per half percentage point. At 5.0%, total brokerage expenditure is $10,000; at 5.5%, it totals $11,000; and at a full 6.0% historical rate, it reaches $12,000. For an owner with an existing mortgage payoff of $140,000, saving 1.0% in agent commissions preserves $2,000, increasing their net cash-in-hand equity from $46,000 to $48,000 (a 4.35% equity increase).",
+      "Sellers navigating post-NAR guidelines on $200,000 properties should evaluate buyer financing constraints carefully. FHA guidelines cap interested party contributions (seller concessions) at 6.0% of the purchase price ($12,000), while conventional Fannie Mae loans limit concessions to 3.0% ($6,000) when down payments are under 10%. If a prospective buyer requests $5,000 for buyer-broker fees, sellers should negotiate a corresponding price increase to $205,000 rather than taking a direct haircut on baseline net proceeds."
+    ],
+    nearestPrices: [
+      { slug: "300k", displayPrice: "$300,000", totalAt5Pct: "$15,000", totalAt6Pct: "$18,000" },
+      { slug: "400k", displayPrice: "$400,000", totalAt5Pct: "$20,000", totalAt6Pct: "$24,000" }
+    ],
+    faqs: [
+      {
+        q: "How much does a realtor make on a $200,000 sale?",
+        a: "An individual real estate agent representing either the buyer or the seller typically earns between $5,000 and $6,000 (2.5% to 3.0%) on a $200,000 transaction before brokerage splits. After paying their managing brokerage a standard 70/30 split and deducting marketing expenses, the agent takes home between $3,500 and $4,200 in gross pre-tax income."
+      },
+      {
+        q: "What is the total commission on a $200,000 house?",
+        a: "The total combined real estate commission on a $200,000 house in 2026 is typically between $10,000 (at 5.0%) and $12,000 (at 6.0%), with an emerging national median of $11,000 (5.5%). This total is divided between the listing brokerage and the buyer's broker according to the listing contract and purchase agreement."
+      },
+      {
+        q: "Can a seller refuse to pay the buyer's agent on a $200k home?",
+        a: "Yes. Under 2026 post-NAR settlement rules, sellers have zero legal obligation to offer compensation to the buyer's agent. However, because $200,000 buyers are predominantly first-time homeowners with limited liquid cash, refusing concessions often shrinks the buyer pool, prompting price cuts far larger than the $5,000 commission saved."
+      }
+    ]
+  },
+
+  // ==========================================================================
+  // TIER 2: $300,000 (Entry-Level Suburban Benchmark)
+  // ==========================================================================
   {
     slug: "300k",
     price: 300000,
@@ -36,8 +82,9 @@ export const REAL_ESTATE_PRICES = [
       "However, starter-home sellers must weigh negotiation carefully: many $300,000 buyers are first-time purchasers utilizing FHA, VA, or conventional low-down-payment loans who may lack additional out-of-pocket cash to pay their own buyer's agent. Offering a 2.5% ($7,500) buyer-broker concession can preserve your buyer pool and drive faster, competitive offers without stalling negotiations."
     ],
     nearestPrices: [
-      { slug: "500k", displayPrice: "$500,000", totalAt5Pct: "$25,000", totalAt6Pct: "$30,000" },
-      { slug: "750k", displayPrice: "$750,000", totalAt5Pct: "$37,500", totalAt6Pct: "$45,000" }
+      { slug: "200k", displayPrice: "$200,000", totalAt5Pct: "$10,000", totalAt6Pct: "$12,000" },
+      { slug: "400k", displayPrice: "$400,000", totalAt5Pct: "$20,000", totalAt6Pct: "$24,000" },
+      { slug: "500k", displayPrice: "$500,000", totalAt5Pct: "$25,000", totalAt6Pct: "$30,000" }
     ],
     faqs: [
       {
@@ -50,6 +97,54 @@ export const REAL_ESTATE_PRICES = [
       }
     ]
   },
+
+  // ==========================================================================
+  // TIER 3: $400,000 (Target GSC Pos 12.4 Benchmark)
+  // ==========================================================================
+  {
+    slug: "400k",
+    price: 400000,
+    displayPrice: "$400,000",
+    sliderMin: 3.0,
+    sliderMax: 8.0,
+    defaultRate: 5.5,
+    typicalRangeMin: 5.0,
+    typicalRangeMax: 6.0,
+    title: "How Much Does a Realtor Make on a $400,000 Sale? ($10,000–$24,000 in 2026)",
+    metaDescription: "On a $400,000 home sale in 2026, realtors typically make $10,000 to $24,000 (2.5% to 6.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
+    h1: "How Much Does a Realtor Make on a $400,000 Sale?",
+    aeoDirectAnswer: "On a $400,000 home sale, total realtor commission is typically $20,000 to $24,000 (5.0% to 6.0%), split between the listing agent ($10,000 to $12,000) and buyer agent ($10,000 to $12,000). After broker commission splits (typically 75/25 or 80/20), each agent nets $7,500 to $9,600. Estimated seller net proceeds range from $372,000 to $377,000 after standard closing deductions.",
+    narContext: "The $400,000 price point represents the primary proving ground for 2026 Post-NAR settlement practices. Because compensation fields are banned from MLS databases, listing agents negotiate their listing fee independently (frequently 2.5% to 3.0% or $10,000–$12,000). Buyer-broker compensation is negotiated separately in written buyer representation agreements, allowing sellers to selectively grant 2.0% to 2.5% concessions during formal contract negotiations rather than committing upfront.",
+    secondaryAngleTitle: "Suburban Equity Protection: Negotiating Commissions on a $400k Property",
+    secondaryAngleContent: [
+      "At the $400,000 median benchmark, transaction fees represent a pivotal financial turning point for move-up sellers. A standard 5.5% commission equates to $22,000, surpassing the average homeowner's entire annual property tax and insurance burden. When paired with standard title search fees ($450), settlement agent closing fees ($850), owner's title policy ($1,800), and state transfer taxes (averaging 0.5% to 1.5% or $2,000–$6,000), total transactional friction consumes $27,000 to $31,000 of the transaction value.",
+      "The financial divergence between fee tiers is substantial on a $400,000 sale. Securing a competitive 5.0% total commission costs $20,000; a 5.5% arrangement costs $22,000; while an unnegotiated 6.0% commission costs $24,000. That $4,000 spread between 5.0% and 6.0% directly covers standard buyer repair request credits or provides 2 to 3 months of mortgage payments on the seller's next residence.",
+      "Under Fannie Mae and Freddie Mac lending guidelines for conventional loans with 10% to 25% down, interested party contributions (seller concessions) are capped at 6.0% of the sale price ($24,000). On a $400,000 sale, offering a 2.5% buyer-broker fee credit ($10,000) leaves $14,000 of available concession headroom to cover buyer loan origination points or pre-paid property tax escrows without violating federal secondary mortgage limits."
+    ],
+    nearestPrices: [
+      { slug: "300k", displayPrice: "$300,000", totalAt5Pct: "$15,000", totalAt6Pct: "$18,000" },
+      { slug: "500k", displayPrice: "$500,000", totalAt5Pct: "$25,000", totalAt6Pct: "$30,000" },
+      { slug: "600k", displayPrice: "$600,000", totalAt5Pct: "$30,000", totalAt6Pct: "$36,000" }
+    ],
+    faqs: [
+      {
+        q: "How much does a realtor make on a $400,000 sale?",
+        a: "An individual real estate agent on a $400,000 sale typically receives between $10,000 and $12,000 in gross commission (2.5% to 3.0%). After factoring in brokerage desk splits (70/30 or 80/20), local MLS dues, Errors & Omissions insurance, and federal self-employment taxes (15.3%), the individual agent nets approximately $5,800 to $7,500 per side."
+      },
+      {
+        q: "What is the total commission on a $400,000 house?",
+        a: "The total combined commission on a $400,000 house is between $20,000 (at 5.0%) and $24,000 (at 6.0%). At the nationwide average commission rate of 5.49% for 2026, sellers pay approximately $21,960 in total professional brokerage compensation."
+      },
+      {
+        q: "Can a seller refuse to pay the buyer's agent on a $400k home?",
+        a: "Yes, under post-NAR rules, sellers can decline to fund the buyer's broker fee. However, over 80% of buyers at the $400,000 price point sign representation agreements requiring 2.0% to 2.5% compensation. If the seller refuses to contribute, the buyer must pay out of pocket or submit an offer with an escalated purchase price to finance the fee."
+      }
+    ]
+  },
+
+  // ==========================================================================
+  // TIER 4: $500,000 (National Median Single-Family Benchmark)
+  // ==========================================================================
   {
     slug: "500k",
     price: 500000,
@@ -71,7 +166,8 @@ export const REAL_ESTATE_PRICES = [
       "In today's market, many sellers negotiate a tiered or discount listing fee of 2.0% ($10,000) while offering 2.5% ($12,500) to the cooperating buyer's broker, bringing the total cost down to 4.5% ($22,500) and putting an extra $7,500 directly into the seller's bank account."
     ],
     nearestPrices: [
-      { slug: "300k", displayPrice: "$300,000", totalAt5Pct: "$15,000", totalAt6Pct: "$18,000" },
+      { slug: "400k", displayPrice: "$400,000", totalAt5Pct: "$20,000", totalAt6Pct: "$24,000" },
+      { slug: "600k", displayPrice: "$600,000", totalAt5Pct: "$30,000", totalAt6Pct: "$36,000" },
       { slug: "750k", displayPrice: "$750,000", totalAt5Pct: "$37,500", totalAt6Pct: "$45,000" }
     ],
     faqs: [
@@ -85,6 +181,54 @@ export const REAL_ESTATE_PRICES = [
       }
     ]
   },
+
+  // ==========================================================================
+  // TIER 5: $600,000 (Move-Up Suburban / Executive Home Benchmark)
+  // ==========================================================================
+  {
+    slug: "600k",
+    price: 600000,
+    displayPrice: "$600,000",
+    sliderMin: 3.0,
+    sliderMax: 8.0,
+    defaultRate: 5.5,
+    typicalRangeMin: 4.5,
+    typicalRangeMax: 5.5,
+    title: "How Much Does a Realtor Make on a $600,000 Sale? ($15,000–$36,000 in 2026)",
+    metaDescription: "On a $600,000 home sale in 2026, realtors typically make $15,000 to $36,000 (2.5% to 6.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
+    h1: "How Much Does a Realtor Make on a $600,000 Sale?",
+    aeoDirectAnswer: "On a $600,000 home sale, total realtor commission ranges from $27,000 to $36,000 (4.5% to 6.0%), with $15,000 to $18,000 allocated to each agent side at a typical 5.0% to 5.5% rate. After senior-tier brokerage splits (80/20 or 90/10), each agent nets $12,000 to $16,200. Estimated seller net proceeds range from $558,000 to $568,000.",
+    narContext: "At the $600,000 move-up valuation, sellers possess significant negotiating leverage to compress total commission rates toward 4.5% to 5.0%. Due to post-NAR transparency mandates, executive home sellers commonly cap listing fees at 2.25% ($13,500) and condition buyer-agent concessions (2.25% or $13,500) upon clean financing terms, minimal repair contingencies, and firm 30-day closing commitments.",
+    secondaryAngleTitle: "Executive Equity Preservation: Compressing Fees on a $600k Suburban Asset",
+    secondaryAngleContent: [
+      "When marketing a $600,000 residential property, real estate fees escalate rapidly into five-figure liabilities that warrant rigorous contractual scrutiny. A standard 6.0% commission costs $36,000 in cold cash—equivalent to the down payment on an investment rental property. Concurrently, title examination fees ($600), municipal transfer taxes (often 1.0% or $6,000 in metropolitan corridors), and professional staging investments ($2,500) place total disposition expenses in excess of $45,000.",
+      "The mathematical leverage of commission tier negotiation is immense on a $600,000 asset. Total brokerage compensation at 4.5% is $27,000; at 5.0% it is $30,000; at 5.5% it is $33,000; and at 6.0% it climbs to $36,000. Successfully negotiating total broker fees down from 6.0% to 5.0% returns precisely $6,000 in cash equity directly to the seller's bottom line upon closing.",
+      "Move-up buyers transacting at $600,000 typically utilize conventional financing with 20% down ($120,000), shielding them from private mortgage insurance (PMI). Under conventional Fannie Mae guidelines for LTVs of 75% to 90%, seller concessions are capped at 6.0% ($36,000). Offering a competitive 2.25% ($13,500) or 2.5% ($15,000) buyer-broker concession creates an attractive proposition for well-qualified buyers while leaving substantial margin for customary closing credits."
+    ],
+    nearestPrices: [
+      { slug: "400k", displayPrice: "$400,000", totalAt5Pct: "$20,000", totalAt6Pct: "$24,000" },
+      { slug: "500k", displayPrice: "$500,000", totalAt5Pct: "$25,000", totalAt6Pct: "$30,000" },
+      { slug: "750k", displayPrice: "$750,000", totalAt5Pct: "$37,500", totalAt6Pct: "$45,000" }
+    ],
+    faqs: [
+      {
+        q: "How much does a realtor make on a $600,000 sale?",
+        a: "An individual agent representing either the buyer or seller on a $600,000 home sale typically makes $13,500 to $16,500 (2.25% to 2.75%). Top-producing agents operating at this price tier often enjoy 85/15 or 90/10 commission splits with their brokerages, netting between $11,500 and $14,800 in take-home commission per side."
+      },
+      {
+        q: "What is the total commission on a $600,000 house?",
+        a: "The total real estate commission on a $600,000 house in 2026 typically averages between $27,000 (at 4.5%) and $33,000 (at 5.5%). Higher-tier suburban properties rarely pay a full 6.0% ($36,000) due to competitive fee compression among premier listing brokerages."
+      },
+      {
+        q: "Can a seller refuse to pay the buyer's agent on a $600k home?",
+        a: "Yes. Post-NAR guidelines allow complete discretion. However, savvy $600k sellers often market the property as 'Buyer-Broker Concession Available' (e.g., 2.0% to 2.25%), attracting maximum agent showings while locking in an overall commission package substantially lower than legacy 6% standards."
+      }
+    ]
+  },
+
+  // ==========================================================================
+  // TIER 6: $750,000 (Move-Up Suburban Benchmark)
+  // ==========================================================================
   {
     slug: "750k",
     price: 750000,
@@ -107,6 +251,7 @@ export const REAL_ESTATE_PRICES = [
     ],
     nearestPrices: [
       { slug: "500k", displayPrice: "$500,000", totalAt5Pct: "$25,000", totalAt6Pct: "$30,000" },
+      { slug: "600k", displayPrice: "$600,000", totalAt5Pct: "$30,000", totalAt6Pct: "$36,000" },
       { slug: "1m", displayPrice: "$1,000,000", totalAt5Pct: "$50,000", totalAt6Pct: "$60,000" }
     ],
     faqs: [
@@ -124,6 +269,10 @@ export const REAL_ESTATE_PRICES = [
       }
     ]
   },
+
+  // ==========================================================================
+  // TIER 7: $1,000,000 (Luxury Benchmark)
+  // ==========================================================================
   {
     slug: "1m",
     price: 1000000,
@@ -145,7 +294,7 @@ export const REAL_ESTATE_PRICES = [
       "Even a modest reduction from 6.0% down to 4.5% preserves $15,000 in liquid equity, while negotiating down to 4.0% ($40,000 total) keeps an extra $20,000 of your wealth intact."
     ],
     nearestPrices: [
-      { slug: "500k", displayPrice: "$500,000", totalAt5Pct: "$25,000", totalAt6Pct: "$30,000" },
+      { slug: "600k", displayPrice: "$600,000", totalAt5Pct: "$30,000", totalAt6Pct: "$36,000" },
       { slug: "750k", displayPrice: "$750,000", totalAt5Pct: "$37,500", totalAt6Pct: "$45,000" }
     ],
     faqs: [

@@ -13,6 +13,7 @@ import InternalLinks from './InternalLinks';
 import HowItWorksGrid from './HowItWorksGrid';
 import FAQAccordion from './FAQAccordion';
 import ReferenceChips from './ReferenceChips';
+import { STATE_TAX_DEEP_DIVES } from '../lib/stateTaxDeepDives';
 
 export default function SalaryCalculatorPage({
   state, amount, stateData, salaryConfig,
@@ -21,6 +22,7 @@ export default function SalaryCalculatorPage({
   const [salary, setSalary] = useState(salaryConfig.amount);
   const [calc, setCalc] = useState(initialCalc);
   const [includeNYC, setIncludeNYC] = useState(false);
+  const deepDive = STATE_TAX_DEEP_DIVES[state];
 
   // Sync state when navigating between different preset amounts (e.g. clicking 75k while on 60k)
   useEffect(() => {
@@ -232,6 +234,43 @@ export default function SalaryCalculatorPage({
             currentAmount={amount}
             currentTakeHome={currentAnnualTakeHome}
           />
+
+          {/* STATUTORY DEEP DIVE (Sprint 3A Indexation Enrichment) */}
+          {deepDive && (
+            <div className="bg-white border border-slate-200 rounded-xl p-5 mb-[14px] shadow-xs">
+              <div className="flex items-center gap-2.5 mb-3 pb-3 border-b border-slate-100">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+                  <i className="ti ti-scale text-base"></i>
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">
+                    Official Statutory Tax Framework (2026)
+                  </div>
+                  <h2 className="text-base font-bold text-slate-900">
+                    {deepDive.stateName} Tax Code, Paycheck Math & Relocation Analysis
+                  </h2>
+                </div>
+              </div>
+
+              {/* Statutory Framework HTML */}
+              <div 
+                className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6 space-y-3"
+                dangerouslySetInnerHTML={{ __html: deepDive.statutoryFrameworkHtml }} 
+              />
+
+              {/* Benchmark Paycheck Calculation */}
+              <div 
+                className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-6"
+                dangerouslySetInnerHTML={{ __html: deepDive.benchmarkMathExampleHtml }} 
+              />
+
+              {/* Relocation Arbitrage */}
+              <div 
+                className="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-3"
+                dangerouslySetInnerHTML={{ __html: deepDive.relocationComparisonHtml }} 
+              />
+            </div>
+          )}
 
         </div>
 

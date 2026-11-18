@@ -12,6 +12,7 @@ import {
   calculateHourlyBreakdown,
   getHourlySlug
 } from '../../lib/hourlySalaryData';
+import { getWageCohort } from '../../lib/hourlyWageCohortMatrix';
 
 export async function getStaticPaths() {
   const slugs = getAllHourlySlugs();
@@ -34,11 +35,13 @@ export async function getStaticProps({ params }) {
   }
 
   const wageData = getHourlyData(rate);
+  const cohort = getWageCohort(rate);
   const otherRates = HOURLY_RATES.filter((r) => r !== rate);
 
   return {
     props: {
       wageData,
+      cohort,
       otherRates,
       seo: {
         title: wageData.title,
@@ -50,7 +53,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function HourlyWagePage({ wageData, otherRates, seo }) {
+export default function HourlyWagePage({ wageData, cohort, otherRates, seo }) {
   const [customRate, setCustomRate] = useState(wageData.rate);
   const [customHours, setCustomHours] = useState(40);
 
@@ -219,6 +222,49 @@ export default function HourlyWagePage({ wageData, otherRates, seo }) {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Adjacent Hourly Wage Interlinking Navigation (Sprint 3A Crawl Hub) */}
+          <div className="bg-white border border-slate-200 rounded-xl p-3.5 sm:p-4 mb-8 shadow-xs">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+              {cohort?.prev ? (
+                <Link
+                  href={`/hourly-to-salary/${cohort.prev.slug}/`}
+                  className="w-full sm:w-auto inline-flex items-center justify-start gap-2.5 px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200 hover:border-blue-300 font-semibold transition-all group"
+                >
+                  <i className="ti ti-arrow-left text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                  <div className="text-left">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block leading-tight">« Previous Wage</span>
+                    <span className="font-bold text-slate-800 group-hover:text-blue-700">{cohort.prev.hourlyDisplay} <span className="font-normal text-slate-500 text-[11px]">({cohort.prev.annualDiffDisplay})</span></span>
+                  </div>
+                </Link>
+              ) : (
+                <div className="hidden sm:block text-xs text-slate-400 font-medium px-2">« Minimum Wage Tier ($15/hr)</div>
+              )}
+
+              <Link
+                href="/hourly-to-salary/"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-600 font-semibold text-xs transition-colors border border-slate-200/80"
+              >
+                <i className="ti ti-layout-grid text-slate-500"></i>
+                <span>All 20 Hourly Wage Tiers</span>
+              </Link>
+
+              {cohort?.next ? (
+                <Link
+                  href={`/hourly-to-salary/${cohort.next.slug}/`}
+                  className="w-full sm:w-auto inline-flex items-center justify-end gap-2.5 px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200 hover:border-blue-300 font-semibold transition-all group text-right"
+                >
+                  <div className="text-right">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block leading-tight">Next Wage Tier »</span>
+                    <span className="font-bold text-slate-800 group-hover:text-blue-700">{cohort.next.hourlyDisplay} <span className="font-normal text-slate-500 text-[11px]">({cohort.next.annualDiffDisplay})</span></span>
+                  </div>
+                  <i className="ti ti-arrow-right text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                </Link>
+              ) : (
+                <div className="hidden sm:block text-xs text-slate-400 font-medium px-2">Maximum Wage Tier ($100/hr) »</div>
+              )}
             </div>
           </div>
 
@@ -551,6 +597,49 @@ export default function HourlyWagePage({ wageData, otherRates, seo }) {
             >
               Open 50-State Salary Hub <i className="ti ti-arrow-right ml-1"></i>
             </Link>
+          </div>
+
+          {/* Adjacent Hourly Wage Interlinking Navigation (Bottom) */}
+          <div className="bg-white border border-slate-200 rounded-xl p-3.5 sm:p-4 mb-8 shadow-xs">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+              {cohort?.prev ? (
+                <Link
+                  href={`/hourly-to-salary/${cohort.prev.slug}/`}
+                  className="w-full sm:w-auto inline-flex items-center justify-start gap-2.5 px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200 hover:border-blue-300 font-semibold transition-all group"
+                >
+                  <i className="ti ti-arrow-left text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                  <div className="text-left">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block leading-tight">« Previous Wage</span>
+                    <span className="font-bold text-slate-800 group-hover:text-blue-700">{cohort.prev.hourlyDisplay} <span className="font-normal text-slate-500 text-[11px]">({cohort.prev.annualDiffDisplay})</span></span>
+                  </div>
+                </Link>
+              ) : (
+                <div className="hidden sm:block text-xs text-slate-400 font-medium px-2">« Minimum Wage Tier ($15/hr)</div>
+              )}
+
+              <Link
+                href="/hourly-to-salary/"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-600 font-semibold text-xs transition-colors border border-slate-200/80"
+              >
+                <i className="ti ti-layout-grid text-slate-500"></i>
+                <span>All 20 Hourly Wage Tiers</span>
+              </Link>
+
+              {cohort?.next ? (
+                <Link
+                  href={`/hourly-to-salary/${cohort.next.slug}/`}
+                  className="w-full sm:w-auto inline-flex items-center justify-end gap-2.5 px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200 hover:border-blue-300 font-semibold transition-all group text-right"
+                >
+                  <div className="text-right">
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block leading-tight">Next Wage Tier »</span>
+                    <span className="font-bold text-slate-800 group-hover:text-blue-700">{cohort.next.hourlyDisplay} <span className="font-normal text-slate-500 text-[11px]">({cohort.next.annualDiffDisplay})</span></span>
+                  </div>
+                  <i className="ti ti-arrow-right text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                </Link>
+              ) : (
+                <div className="hidden sm:block text-xs text-slate-400 font-medium px-2">Maximum Wage Tier ($100/hr) »</div>
+              )}
+            </div>
           </div>
 
           {/* Explore Other Hourly Wages Grid */}

@@ -60,6 +60,36 @@
     "keywords": "california ca 100k 100000 $100,000 salary paycheck take home pay tax deductions 2026 brackets"
   },
   {
+    "id": "salary-colorado-50k",
+    "title": "Colorado $50,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $50,000 annual salary in Colorado (50k) for 2026 with federal and Colorado state income tax.",
+    "url": "/salary-calculator/colorado/50k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "colorado co 50k 50000 $50,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-colorado-75k",
+    "title": "Colorado $75,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $75,000 annual salary in Colorado (75k) for 2026 with federal and Colorado state income tax.",
+    "url": "/salary-calculator/colorado/75k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "colorado co 75k 75000 $75,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
+    "id": "salary-colorado-85k",
+    "title": "Colorado $85,000 Salary Take Home Pay Calculator",
+    "description": "Calculate your take-home paycheck on a $85,000 annual salary in Colorado (85k) for 2026 with federal and Colorado state income tax.",
+    "url": "/salary-calculator/colorado/85k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "colorado co 85k 85000 $85,000 salary paycheck take home pay tax deductions 2026 brackets"
+  },
+  {
     "id": "salary-florida-60k",
     "title": "Florida $60,000 Salary Take Home Pay Calculator",
     "description": "Calculate your take-home paycheck on a $60,000 annual salary in Florida (60k) for 2026 with federal and 0% state income tax.",
@@ -600,6 +630,16 @@
     "keywords": "arizona az social security retirement benefits tax exempt non taxing state property tax 2026 rules pensions 401k"
   },
   {
+    "id": "re-200k",
+    "title": "How Much Does a Realtor Make on a $200,000 Sale? ($5,000–$12,000 in 2026)",
+    "description": "On a $200,000 home sale in 2026, realtors typically make $5,000 to $12,000 (2.5% to 6.0%). Calculate listing & buyer broker splits under 2026 post-NAR settlement rules.",
+    "url": "/real-estate-calculator/200k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 200k 200000 $200,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
     "id": "re-300k",
     "title": "How Much Does a Realtor Make on a $300,000 Sale? ($7,500–$15,000 in 2026)",
     "description": "On a $300,000 home sale in 2026, realtors typically make $7,500 to $15,000 (2.5% to 5.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
@@ -610,6 +650,16 @@
     "keywords": "real estate commission realtor agent fee 300k 300000 $300,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
   },
   {
+    "id": "re-400k",
+    "title": "How Much Does a Realtor Make on a $400,000 Sale? ($10,000–$24,000 in 2026)",
+    "description": "On a $400,000 home sale in 2026, realtors typically make $10,000 to $24,000 (2.5% to 6.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
+    "url": "/real-estate-calculator/400k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 400k 400000 $400,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
     "id": "re-500k",
     "title": "How Much Does a Realtor Make on a $500,000 Sale? ($12,500–$25,000 in 2026)",
     "description": "On a $500,000 home sale in 2026, realtors typically make $12,500 to $25,000 (2.5% to 5.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
@@ -618,6 +668,16 @@
     "badge": "Calculator",
     "priority": 1,
     "keywords": "real estate commission realtor agent fee 500k 500000 $500,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
+    "id": "re-600k",
+    "title": "How Much Does a Realtor Make on a $600,000 Sale? ($15,000–$36,000 in 2026)",
+    "description": "On a $600,000 home sale in 2026, realtors typically make $15,000 to $36,000 (2.5% to 6.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
+    "url": "/real-estate-calculator/600k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 600k 600000 $600,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
   },
   {
     "id": "re-750k",
