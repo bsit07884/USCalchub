@@ -14,6 +14,7 @@ const STATIC_URLS = [
   { loc: 'https://uscalchub.com/404/', priority: '0.1' },
   { loc: 'https://uscalchub.com/credit-card-payoff/', priority: '0.8' },
   { loc: 'https://uscalchub.com/overtime-calculator/', priority: '0.8' },
+  { loc: 'https://uscalchub.com/1099-vs-w2-calculator/', priority: '0.8' },
   { loc: 'https://uscalchub.com/real-estate-calculator/', priority: '0.8' },
   { loc: 'https://uscalchub.com/salary-calculator/', priority: '0.8' },
   { loc: 'https://uscalchub.com/social-security-calculator/', priority: '0.8' },

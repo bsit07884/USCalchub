@@ -100,13 +100,23 @@ const CORE_TOOLS = [
   },
   {
     id: 'tool-overtime',
-    title: 'Overtime Tax Deduction Calculator',
-    description: 'Calculate your 2026 overtime premium and estimate your tax-free deduction (up to $12,500) under new overtime exemption rules.',
+    title: 'Overtime Pay & Tax Calculator 2026',
+    description: 'Calculate exact time-and-a-half (1.5x) and double-time (2.0x) overtime pay and discover why payroll withholds 22% supplemental tax.',
     url: '/overtime-calculator/',
     type: 'tool',
     badge: 'Tool',
     priority: 2,
-    keywords: 'overtime tax deduction calculator no tax on overtime time and a half 1.5x hourly wage overtime pay tax exemption deductions 2026 obbba'
+    keywords: 'overtime pay tax calculator time and a half 1.5x double time 2.0x 22% supplemental withholding flsa hourly wage take home paycheck 2026'
+  },
+  {
+    id: 'tool-1099-vs-w2',
+    title: '1099 vs W-2 Tax & Equivalent Calculator 2026',
+    description: 'Compare independent contractor vs W-2 employee earnings, 15.3% SECA tax, $176,100 Social Security cap, and 20% QBI deductions.',
+    url: '/1099-vs-w2-calculator/',
+    type: 'tool',
+    badge: 'Tool',
+    priority: 2,
+    keywords: '1099 vs w2 calculator independent contractor employee salary equivalent seca tax fica 15.3% 176100 cap section 199a qbi deduction benefits multiplier 2026'
   },
   {
     id: 'tool-hourly-salary',
