@@ -101,6 +101,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://uscalchub.com/real-estate-calculator/1.5m/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://uscalchub.com/real-estate-calculator/1m/</loc>
     <priority>0.8</priority>
   </url>
@@ -109,7 +113,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://uscalchub.com/real-estate-calculator/250k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://uscalchub.com/real-estate-calculator/300k/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uscalchub.com/real-estate-calculator/350k/</loc>
     <priority>0.8</priority>
   </url>
   <url>

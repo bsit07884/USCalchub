@@ -640,6 +640,16 @@
     "keywords": "real estate commission realtor agent fee 200k 200000 $200,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
   },
   {
+    "id": "re-250k",
+    "title": "How Much Does a Realtor Make on a $250,000 Sale? ($6,250–$15,000 in 2026)",
+    "description": "On a $250,000 home sale in 2026, realtors typically make $6,250 to $15,000 (2.5% to 6.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
+    "url": "/real-estate-calculator/250k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 250k 250000 $250,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
     "id": "re-300k",
     "title": "How Much Does a Realtor Make on a $300,000 Sale? ($7,500–$15,000 in 2026)",
     "description": "On a $300,000 home sale in 2026, realtors typically make $7,500 to $15,000 (2.5% to 5.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
@@ -648,6 +658,16 @@
     "badge": "Calculator",
     "priority": 1,
     "keywords": "real estate commission realtor agent fee 300k 300000 $300,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
+    "id": "re-350k",
+    "title": "How Much Does a Realtor Make on a $350,000 Sale? ($8,750–$21,000 in 2026)",
+    "description": "On a $350,000 home sale in 2026, realtors typically make $8,750 to $21,000 (2.5% to 6.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
+    "url": "/real-estate-calculator/350k/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 350k 350000 $350,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
   },
   {
     "id": "re-400k",
@@ -661,8 +681,8 @@
   },
   {
     "id": "re-500k",
-    "title": "How Much Does a Realtor Make on a $500,000 Sale? ($12,500–$25,000 in 2026)",
-    "description": "On a $500,000 home sale in 2026, realtors typically make $12,500 to $25,000 (2.5% to 5.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
+    "title": "How Much Does a Realtor Make on a $500,000 Sale? ($12,500–$30,000 in 2026)",
+    "description": "On a $500,000 home sale in 2026, realtors typically make $12,500 to $30,000 (2.5% to 6.0%). Calculate exact listing & buyer agent splits under 2026 post-NAR rules.",
     "url": "/real-estate-calculator/500k/",
     "type": "calculator",
     "badge": "Calculator",
@@ -698,6 +718,16 @@
     "badge": "Calculator",
     "priority": 1,
     "keywords": "real estate commission realtor agent fee 1m 1000000 $1,000,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
+  },
+  {
+    "id": "re-1.5m",
+    "title": "How Much Does a Realtor Make on a $1,500,000 Sale? ($30,000–$75,000 in 2026)",
+    "description": "On a $1,500,000 luxury sale in 2026, realtors typically make $30,000 to $75,000 (2.0% to 5.0%). Calculate exact luxury agent splits under 2026 post-NAR rules.",
+    "url": "/real-estate-calculator/1.5m/",
+    "type": "calculator",
+    "badge": "Calculator",
+    "priority": 1,
+    "keywords": "real estate commission realtor agent fee 1.5m 1500000 $1,500,000 home sale listing broker buyer agent net proceeds nar settlement 2026"
   },
   {
     "id": "hourly-15-an-hour",
